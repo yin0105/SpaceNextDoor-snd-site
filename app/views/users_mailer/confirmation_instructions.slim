@@ -1,0 +1,7 @@
+mj-column
+  mj-text
+    | Dear #{@resource.name},
+  mj-text
+    | Thank you for signing up with Space Next Door. Please verify your email through the link below:
+  mj-text mj-class="lk-blue"
+    = link_to "Confirm your email", confirmation_url(@resource, confirmation_token: @token), class: "lk-blue"

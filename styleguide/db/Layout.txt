@@ -1,0 +1,42 @@
+[
+  {
+    "id": 7,
+    "name": "Header ( Log In )",
+    "code": "<nav id=\"header\">\n    <div class=\"pull-left logo\">\n        <a>\n            <img src=\"\">LOGO\n        </a>\n    </div>\n    <ul class=\"pull-right menu\">\n        <li>\n            <a>Become a Host</a>\n        </li>\n        <li>\n            <a>Messages</a>\n        </li>\n        <li>\n            <a>Spaces</a>\n        </li>\n        <li>\n            <a>Booking</a>\n        </li>\n        <li id=\"profile-btn\">\n            <ul class=\"submenu show\">\n                <li>\n                    <a>Profile</a>\n                </li>\n                <li>\n                    <a>Verification</a>\n                </li>\n                <li>\n                    <a>Password</a>\n                </li>\n                <li>\n                    <a>Rating</a>\n                </li>\n                <li>\n                    <a>Log Out</a>\n                </li>\n            </ul>\n        </li>\n    </ul>\n</nav>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": true
+  },
+  {
+    "id": 8,
+    "name": "Block",
+    "code": "<div class=\"block\">\n    <div class=\"block-row\">\n        <h1>Odd Block</h1>\n    </div>\n    <div class=\"block-row\">\n        <p>blalbalbalbalblablabla</p>\n    </div>\n</div>\n<div class=\"block block-even\">\n    <div class=\"block-row\">\n        <h1>Even Block</h1>\n    </div>\n</div>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": true
+  },
+  {
+    "id": 6,
+    "name": "Header",
+    "code": "<nav class=\"navbar navbar-default\" id=\"header\">\n  <div class=\"container-fluid\"><div class=\"navbar-header\">\n      <a class=\"navbar-brand\" href=\"/\">\n        <img src=\"/assets/logo.png\" alt=\"Logo\">\n      </a>\n    </div>\n    <div class=\"collapse navbar-collapse\">\n      <p class=\"navbar-text pull-right\">\n        <a class=\"avatar\" href=\"/users/profile\">\n          <img src=\"https://www.gravatar.com/avatar/888339de9e7a88688b6acb30d33e66cd?s=60\" alt=\"888339de9e7a88688b6acb30d33e66cd?s=60\">\n        </a>\n      </p>\n      <ul class=\"nav navbar-nav navbar-right\">\n        <li><a href=\"#\">Become a Host</a></li>\n        <li><a href=\"/channels\">Messages</a></li>\n        <li><a href=\"/spaces\">Spaces</a></li>\n        <li><a href=\"/orders\">Booking</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>",
+    "description": "Use `navbar-fixed-top` to fix heade on the top of page.\nAnd use `padding-top: 100px;` to prevent header cover other web content.",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 9,
+    "name": "Footer",
+    "code": "<div id=\"footer\">\n  <div class=\"footer-nav\">\n    <div class=\"container\">\n      <aside class=\"col-md-3\">\n        <h1 class=\"footer-title\">Space Next Door</h1>\n        <ul class=\"footer-links\">\n          <li>\n            <a href=\"#\">About Us</a>\n          </li>\n          <li>\n            <a href=\"#\">Contact Us</a>\n          </li>\n          <li>\n            <a href=\"#\">Help</a>\n          </li>\n          <li>\n            <a href=\"#\">Featured Stories</a>\n          </li>\n        </ul>\n      </aside>\n      <aside class=\"col-md-3\">\n        <h1 class=\"footer-title\">Trust</h1>\n        <ul class=\"footer-links\">\n          <li>\n            <a href=\"#\">Privacy Policy</a>\n          </li>\n          <li>\n            <a href=\"#\">IP Policy</a>\n          </li>\n          <li>\n            <a href=\"#\">Trust &amp;Safety</a>\n          </li>\n          <li>\n            <a href=\"#\">Host Standard</a>\n          </li>\n        </ul>\n      </aside>\n      <aside class=\"col-md-3\">\n        <h1 class=\"footer-title\">Host</h1>\n        <ul class=\"footer-links\">\n          <li>\n            <a href=\"#\">Why become a host?</a>\n          </li>\n          <li>\n            <a href=\"#\">Responsible Hosting</a>\n          </li>\n        </ul>\n      </aside>\n      <aside class=\"col-md-3\">\n        <img class=\"logo\" src=\"/assets/logo_white-05e6967c306e057a91d9f7b589a2bb82f5547bdf0e13c161d12495f8884a04ed.png\" alt=\"Logo white\"/>\n      </aside>\n    </div>\n  </div>\n  <div class=\"copyright\">\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-md-12\">Copyright © 2017 All Rights Space Next Door.</div>\n      </div>\n    </div>\n  </div>\n</div>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": false,
+    "isDeleted": false
+  }
+]

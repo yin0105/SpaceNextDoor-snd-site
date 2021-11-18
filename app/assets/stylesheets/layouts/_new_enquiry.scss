@@ -1,0 +1,82 @@
+.new-enquiry {
+  overflow: hidden;
+
+  video {
+    width: 100%;
+  }
+}
+
+.welcome-block {
+  position: relative;
+
+  &__text {
+    position: absolute;
+
+    z-index: 1;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+  }
+
+  &__title {
+    font-size: 36px;
+
+    @include breakpoint($pc) {
+      font-size: 65px;
+    }
+  }
+
+  &__message {
+    font-size: 20px;
+
+    @include breakpoint($pc) {
+      font-size: 30px;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+  }
+}
+
+.available-space-block {
+  &__text-wrap {
+    @include breakpoint($tablet) {
+      &--right {
+        float: right;
+      }
+    }
+  }
+
+  &__photo-wrap {
+    border: 15px solid $color-white;
+    box-shadow: 0 0 20px rgba($color-black, .5);
+  }
+}
+
+.help-find-block {
+  &__content {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    @include breakpoint($pc) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__image {
+    @include breakpoint ($pc) {
+      width: 65%;
+    }
+  }
+
+  &__info {
+    min-height: 230px;
+
+    @include breakpoint ($pc) {
+      width: 35%;
+    }
+  }
+}

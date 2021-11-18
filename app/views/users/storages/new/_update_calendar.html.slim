@@ -1,0 +1,5 @@
+.update-calendar
+  h1.p-4.pt-5.text-center.text-orange Final - Update Your Calendar
+  = space_form.input :auto_extend_slot, as: :boolean, label: t('users.storages.new.auto_extend_slot')
+  p By default, your calendar is open to lease on all dates. If you do not wish to lease out on any particular dates, please uncheck the dates accordingly.
+  = space_form.input :dates, as: :yearly_datepicker, label: false, value: (Time.current.to_date..1.year.from_now.to_date).to_a.map { |date| date.strftime('%Y-%m-%d') }.join('; ')

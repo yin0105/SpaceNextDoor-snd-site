@@ -1,0 +1,7 @@
+  = simple_form_for @user, url: verification_email_path, method: :put, html: { method: :put, class: 'form-horizontal' },
+    wrapper: :horizontal_form do |form|
+    .profile-verification__form-inputs.mt-3.px-3
+      = form.input :email do
+        .form-inline
+          = form.input :email, label: false
+          = form.submit 'Verification', class: 'profile-verification__form-button button bg-white ml-2'

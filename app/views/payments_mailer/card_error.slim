@@ -1,0 +1,40 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | We were unable to charge the payment from your credit card #{@user.payment_method.identifier} associated with Transaction No. #{@payment.identity} on #{ l Date.today, format: :mail_date }.
+    | Please update your payment info to continue using Space Next Door.
+  mj-text
+    ul
+      li
+        | #{ link_to 'Sign in', new_payment_method_url } to your Space Next Door account.
+      li
+        | Hover over your profile icon, click on Profile and then choose
+        b For Guest – Add  Credit Card
+  mj-text
+    | Title of Property: #{ @payment.space.name }
+  mj-text
+    | Charge: From #{ l @payment.service_start_at, format: :mail_date } To #{ l @payment.service_end_at, format: :mail_date }
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:left;"
+      th Item
+      th Amount
+    tr
+      td &#36;#{@payment.price.format(symbol: nil)}/day * #{@payment.period} of days
+      td &#36;#{ (@payment.rent).format(symbol: false) }
+    tr
+      td Service fee
+      td &#36;#{ (@payment.guest_service_fee).format(symbol: false) }
+    - if @payment.insurance_enable?
+      tr
+        td
+          = I18n.t("insurance.#{@payment.insurance_type}.mailer_item")
+        td
+          | &#36;#{@payment.premium.format(symbol: nil)}
+    - if @payment.deposit_cents != 0
+    tr
+      td Deposit
+      td &#36;#{ (@payment.deposit).format(symbol: false) }
+    tr
+      td Total
+      td &#36;#{(@payment.rent + @payment.premium + @payment.guest_service_fee + @payment.deposit).format(symbol: false)}

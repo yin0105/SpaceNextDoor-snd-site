@@ -1,0 +1,4 @@
+= simple_form_for rating, url: rating_path(resource: rating.ratable, rating: rating), method: :patch  do |f|
+  = f.input :rate, as: :star_rating, label: rating_subject_for(rating)
+  = f.input :note, placeholder: rating_note_placeholder_for(rating)
+  = f.button :submit, 'Send', class: 'btn btn-default btn-info'

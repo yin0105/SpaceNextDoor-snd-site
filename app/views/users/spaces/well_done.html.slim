@@ -1,0 +1,5 @@
+.well-done.container.text-center.pt-100.pb-5
+  h1.p-4.pt-5.text-center.text-orange = t('.title')
+  .icon = image_tag('icons/space_done.png')
+  p.py-4.text-gray-deep = t('.description')
+  = link_to 'Preview', @space, class: 'button button-full-width button-secondary mx-auto well-done__button'

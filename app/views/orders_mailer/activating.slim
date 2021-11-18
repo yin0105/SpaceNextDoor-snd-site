@@ -1,0 +1,72 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Congratulations on getting a booking.
+  mj-text
+    | Booking ID : #{@order.identity}
+    br
+    | Transaction ID : #{@payment.identity}
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:center;"
+      th From
+      th To
+    tr style="text-align:center;"
+      td
+        = l @order.start_at, format: :mail_date
+      td
+        = render_end_date(@order, :mail_date)
+  - if @order.long_term?
+    mj-text
+      | Your Guest’s storage period will be extended automatically every 30 days until Guest gives 16 days notice.
+  mj-text
+    | Title of Property:
+    br
+    = link_to @order.space.name, space_url(@order.space_id), class: "lk-blue"
+  mj-text
+    | Address:
+    br
+    = @order.space.location
+  mj-text
+    | House rules:
+    - space_rules(@order.space).each do |rule|
+      br
+      | #{rule}
+  mj-text
+    | Booked by: #{@order.guest.name}
+    br
+    | Phone: #{@order.guest.display_phone}
+  mj-text
+    | Charges:
+    br
+    | Paid for
+    | &nbsp;
+    = l @payment.service_start_at, format: :mail_date
+    | &nbsp;to&nbsp;
+    = l @payment.service_end_at, format: :mail_date
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align: left;"
+      th Item
+      th Amount
+    tr
+      td
+        | &#36;#{@payment.price.format(symbol: nil)}/day * #{@payment.period} of days
+      td
+        | &#36;#{@payment.rent.format(symbol: nil)}
+    tr
+      td
+        | Less Service Fee
+      td
+        | (&#36;#{@payment.host_service_fee.format(symbol: nil)})
+    tr
+      td
+        | Payable to Host
+      td
+        | &#36;#{@payment.host_rent.format(symbol: nil)}
+    tr
+      td
+        | Promotion Applied: #{render_promotion(@order)}
+  mj-text
+    | Note: The amount payable will be credited to your designated bank account within 7 days after the first day of each 30 day booking period. For more information, please reach out to
+    | &nbsp;
+    = mail_to "help@spacenextdoor.com", nil, class: "lk-blue"

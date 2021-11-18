@@ -1,0 +1,147 @@
+en:
+  pages:
+    host_policy:
+      host_policy: Host Trust & Safety Policy
+      update_date: "Last Updated: February, 2017"
+      content: |
+        Space Next Door ("SND") takes the maintenance of trust and security within our community very seriously.  Hence, we are taking this opportunity to publish our standards and values for all members to share.
+        SND offers a number of elements to support the development of trust and security for our Hosts.
+      policies:
+        - section: "SECTION 1:  SAFETY"
+          content: |
+            As a community, we are very focused on the safety of all of our members.  To achieve this, we require everyone to work towards a safe, secure environment for all.
+
+            Read carefully
+
+            Look at the profiles and review of Guests before you accept a booking.  Ensure that they have verified phone numbers and are connected to social networks.
+            Please read the Guest’s description of their intended use, so that you fully understand what they want and what they are offering.
+          subjects:
+            - title: Pay and communicate on SND
+              content: |
+                Paying or communicating with Guests outside our system makes it more difficult for us to protect your personal information and puts you at greater risk of fraud and other security issues. For this reason, we prohibit paying for a reservation outside our Site in our Terms of Service and discourage communication outside our messaging system.
+                We strongly recommend that you use our messaging system before a booking to confirm details about features, access, house rules and other Users who may be sharing the space.  You can also use it to make arrangements for moving the Guest into your space.
+            - title: Set clear expectations
+              content: |
+                It is always a good idea to speak with the Guest about what they intend to do with the space and what they can expect after they move in.  If you don’t feel right about a reservation, we suggest that you don’t accept it.  If a communication with a Guest makes you feel uncomfortable or you need help during the reservation process, let us know.
+
+                <strong>Remember:</strong> In an emergency situation, or if your personal safety is threatened, contact the police or emergency services immediately.
+            - title: Ensure that the space you rent out is hazard free
+              content: |
+                You should not do anything that may increase the likelihood of a fire or impede escape in the event of emergency.  Please ensure that your property complies with all legal requirements.
+
+                In addition, you, as the Host, are entitled to set the access, terms and conditions of rental.
+              unorder_lists:
+                list_title: "You should not allow the Guest to keep any of the following items in your space: "
+                lists: ['weapons or munitions,', 'illegal or stolen items,', 'chemical, flammable, explosive, odorous, mouldy, toxic, contaminated or perishable material,', 'radioactive material or', 'animals, plants, food or perishable goods']
+            - title: Permits or Registrations
+              content: |
+                Ensure you look up any permitting, zoning, safety, and health regulations that may apply. The governing authorities that regulate the use and development of property in your area may have useful information on such regulations.
+            - title: Harming yourself or others
+              content: |
+                Acts, threats or planning of physical or sexual violence are crimes and are not tolerated in our community.  Members of dangerous organisations, including terrorist, organised criminal and violent racist groups, are not welcome.
+        - section: "SECTION 2:  SECURITY"
+          content: |
+            Our community shares its space with other members. Whether you’re a Host or a Guest, you should expect to feel safe and secure. We also ask you to respect other community members’ property and information.
+          subjects:
+            - title: Theft, vandalism, or extortion
+              content: |
+                Do not take or damage property that belongs to others.  In most jurisdictions, it is illegal to make and keep copies of identity documents or threaten anyone with bad ratings or negative publicity or harm to obtain compensation or other benefit.
+            - title: Spam, phishing, or fraud
+              content: |
+                You should not make transactions outside of SND’s payments system, commit credit card fraud or attempt to launder money through the Site.  Using SND to drive traffic to other sites or market unrelated products; diverting payments meant for others; or making false claims against other members are similarly not welcome in our community.
+            - title: Home safety
+              content: |
+                Your safety is always a priority.  If a Host finds that a guest is breaking one of the House Rules that has been set or if you have made the Host feel unsafe through your actions, the Host may decline your reservation request or cancel an existing reservation.
+            - title: Before you accept a reservation
+              content: |
+                We encourage you to take advantage of the safety features that we've provided to give you peace of mind and help you get to know potential Guests.
+            - title: Cancelling a reservation
+              content: |
+                If you've accepted a reservation, you can cancel it, subject to the published cancellation policy.
+            - title: Flagging inappropriate messages
+              content: |
+                If a message from a Guest makes you uncomfortable, let us know and we will review it and, if necessary address this with the Guest.
+
+                <strong>Remember:</strong> In an emergency situation, or if your personal safety is threatened, contact local police or emergency services immediately.
+        - section: "SECTION 3:  ONLINE SECURITY"
+          content: |
+            Paying and communicating through SND helps ensure that you're protected under our Terms Of Service, cancellation and refund policies and Protection Insurance programme. It also makes it easy to find and reference important details like the Host’s rules, contact details, payment information and rental terms. We can’t provide these benefits if your reservation isn’t booked and paid for directly through SND.
+
+            Paying or communicating outside of SND also makes it harder for us to protect your information and puts you at greater risk of fraud and other security issues.
+
+            Never pay for your reservation or ongoing rental outside of SND. .  For you safety and security, we strongly recommend that you keep all payments and communication through the SND website.  If someone asks you to pay for outside our on-site payment system, please let us know.
+
+            If you receive an email directing you to a website that looks like SND but asks for confidential information, be cautious. When in doubt, always start from our home page. Simply type https://www.spacenextdoor.com in your browser.
+          subjects:
+            - title: Look for a lock icon in your browser
+              content: |
+                You can tell if a website is secure by looking for the image of a lock in your browser’s address bar. If you don’t see this image, your connection isn’t secure.  Do not enter any personal information.
+            - title: Check the email address
+              content: |
+                You can tell if an email is really from SND by looking at what comes after the @ symbol. All official SND emails will come from an address that ends in @spacenextdoor.com.
+
+                If you receive an email that looks like it's from SND, but doesn’t have the correct ending, it's very likely fake.  By making an email seem real, fraudsters hope to trick you into providing personal information that we would never ask for.  Don't click any of its links and delete the email immediately.
+
+                If you encounter a suspicious profile, listing, or message thread, flag it for review. If someone emails you asking you to pay or accept payment off-site, let us know right away.
+            - title: How will my email address look to other people?
+              content: |
+                Whilst we strongly recommend communicating using our messaging system, on occasion, you may need to use email to communicate with the Host.  We don't share your personal email address even after you have made a reservation. Instead, we create a temporary SND address for you, and share that with your Host. Keeping your real personal email address hidden helps protect privacy, and prevent unwanted communications.
+
+                Email sent to your temporary SND email are forwarded to your personal email address. This enables you to use your email account to send or reply to messages.
+            - title: What if my SND account has been compromised?
+              unorder_lists:
+                list_title: "If you think your SND account has been compromised or that someone’s logging into it without your permission, you should immediately:"
+                lists: ['Change your password', 'Check your account settings to make sure they are correct', 'Check to ensure that no changes have been made to your listings', 'Complete the profile verification steps', 'Reset your password and report the incident to SND via <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>.']
+        - section: "SECTION 4:  VERIFICATION"
+          content: |
+            Profile verifications are a way to connect your SND profile to other information about you, such as your Facebook profile, phone number, email address, or government-issued ID.
+          subjects:
+            - title: Adding verifications
+              order_lists:
+                list_title: "To add verifications to your account:"
+                lists: ['Go to Profile on spacenextdoor.com', 'Click Trust and Verification', 'Under Add More Verifications choose a verification to add']
+              unorder_lists:
+                list_title: "Available verifications include:"
+                lists: ["Email address: Confirm that you receive email notifications and messages", "Phone number: We'll share your verified phone number with your host or guest once a reservation is accepted", "Online ID: Connect your SND profile to Facebook.", "Reviews: Build a reputation in the SND community from your Reviews tab after completing reservations", "Verified photos: If you're a host, we offer free professional photography in Singapore and Hong Kong"]
+            - title: Verified ID
+              content: |
+                You may also want to get a Verified ID badge. To get a Verified ID badge, go to the Trust and Verification area of your profile and click on Add More Verifications.
+
+                <a href="users/profile">Verify my profile</a>
+
+                How does providing identification on SND work?
+                Verifying some information about guests and hosts on SND helps make our community a safer place for everyone. That’s why, in addition to requiring a profile photo, confirmed phone number, and confirmed email address, we might also ask you to provide an official ID and other related information.
+            - title: When you'll need to provide ID
+              content: |
+                SND may ask you to provide ID for several reasons, including if you plan to book an experience or if a host requires that a guest provides ID before booking their place.
+
+                If a host requires you to provide ID, only the guest making the booking will be required to provide ID, and you'll need to complete the process before your booking is confirmed. If you need to come back later, go to spacenextdoor.com/verify and pick up where you left off.
+            - title: How it works
+              content:  |
+                If you're asked to take a selfie, your government ID photo and selfie must match, and your ID must appear to be valid. If your photos don’t match, you’re under 18, or your ID doesn't appear to be valid, your reservation may be cancelled.
+                Completing this process isn’t an endorsement of any host or guest, a guarantee of someone’s identity, or that interacting with them will be safe. Always use your own best judgement, and follow our safety tips for guests and hosts.
+              unorder_lists:
+                list_title: "When you’re asked to provide ID, you might need to:"
+                lists: ["Add a profile picture if you don’t have one already.", "Take a photo of your government-issued ID (ex: passport, driver’s license, national ID, or visa).", "Connect another online profile to your SND account, such as a Facebook account.", "Take a selfie. This needs to be a live photo taken during this process.", "Answer questions about yourself that only you would know the answer to."]
+            - title: What gets shared with your Guest
+              unorder_lists:
+                list_title: "Your Guest will see:"
+                lists: ["Your profile name and photo.", "The full name on your government ID.", "Whether they’ve successfully completed this booking with you."]
+            - title: Privacy
+              content: |
+                We take privacy seriously. The information you share with us is governed by our Privacy Policy.  Stripe, our payment partner, has their own comprehensive Privacy Policy, which you can see at <a href="https://stripe.com/sg/privacy">https://stripe.com/sg/privacy</a>.
+            - title: What is required to book on SND?
+              unorder_lists:
+                list_title: |
+                  We ask potential Guests for a few pieces of information before they book.  This information helps ensure Hosts know how their space will be used and also how to contact the guest.
+                  SND’s registration requirements for guests include:
+                lists: ['Full name', 'Email address', 'Confirmed phone number', 'Government issued ID with photo (optional, upon request by SND)', 'Profile photo of the Guest', 'Introductory message', 'Agreement to house rules', 'Payment information']
+            - title: How do I verify my phone number?
+              content: |
+                If you don’t see a confirmation message, try refreshing the page. If the method you chose isn't working, try the other one.
+                After verifying your phone number, you can manage text message notifications by going to Account and choosing Notifications on the left. As always, standard message and data rates may apply for any calls or messages sent or received. For questions about these rates, get in touch with your phone provider.
+              order_lists:
+                lists: ["Go to Profile on spacenextdoor.com.", "Next to Phone Number, click Add a phone number.", "Use the drop-down menu to select your country, and we’ll automatically insert the right country code.", "Enter your area code and phone number.", "Click Verify via SMS. We'll send you a 4-digit code via text message (SMS).", "Enter your code and click Verify"]
+            - title: Why verify?
+              content: |
+                Having a verified phone number gives Hosts, Guests and SND a confirmed way to contact each other about any issues related to your booking or your account. Hosts must verify their phone numbers before listing their space and Guests must likewise have a verified phone number before booking.

@@ -1,0 +1,15 @@
+$jcf-range: #f07320;
+
+.jcf-range-mid {
+  position: absolute;
+
+  height: 6px;
+
+  background-color: $jcf-range;
+}
+
+.range-slider {
+  .range-input {
+    display: none;
+  }
+}

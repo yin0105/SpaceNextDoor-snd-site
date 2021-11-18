@@ -1,0 +1,23 @@
+.spaces--hide-map.spaces__container
+  .content-area.spaces__form
+    = render 'search_form'
+
+  aside.sidebar.spaces__sidebar
+    .map-text
+      span.title = t('.map')
+      = button t('.show_map'), searches_path(params.permit(:hide_map).merge(searches.attributes).merge(hide_map: nil)), class: 'btn btn-secondary'
+    .widget-box
+      strong.text-title =t('.did_not_find_your_loacation')
+      = link_to t('contact_us'), contact_path
+
+  .js-scroll-area.spaces__articles
+    - if @spaces.empty?
+      h2 = t('spaces.index.not_found')
+      .row-articles
+        - @recommended_spaces.in_groups_of(3) do |spaces|
+          = render partial: 'space', collection: spaces
+    - else
+      .row-articles
+        - @spaces.in_groups_of(3) do |spaces|
+          = render partial: 'space', collection: spaces
+      = paginate @spaces

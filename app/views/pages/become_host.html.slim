@@ -1,0 +1,20 @@
+- content_for :header do
+  = render '/shared/landing_headers', image_path: 'img36.jpg', section: t('.title'), hide_search: true
+
+- content_for :host_detail_box do
+  .image-area style= "background-image: url(#{image_path 'img37.jpg'});"
+    .box
+      strong.title = t('.find_out_more')
+      = link_to t('.click_here'), new_find_out_more_path(identity: 'host'), class: 'link'
+
+section.block-host
+  .container
+    .steps-area style="padding-bottom: 70px;"
+      = link_to t('.create_your_listing'), host_onboarding_path(unauthenticated_path: become_a_host_path, msg: "Please sign in or sign up to create your listing."), class: "btn btn-primary"
+
+    = render 'shared/become_host_details'
+
+    = render 'how_to_become_a_host'
+
+= render '/shared/testimonials', items: t('shared.testimonials.homepage')
+= render '/shared/hosting'

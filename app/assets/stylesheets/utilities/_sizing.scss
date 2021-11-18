@@ -1,0 +1,28 @@
+.w-100 {
+  width: 100%;
+}
+
+@each $size in $sizes {
+  .w-#{$size} {
+    width: #{$size + '%'};
+    float: left;
+  }
+}
+
+@each $size in $sizes {
+  .w-md-#{$size} {
+    @include breakpoint($tablet) {
+      width: #{$size + '%'};
+      float: left;
+    }
+  }
+}
+
+@each $size in $sizes {
+  .w-lg-#{$size} {
+    @include breakpoint($pc) {
+      width: #{$size + '%'};
+      float: left;
+    }
+  }
+}

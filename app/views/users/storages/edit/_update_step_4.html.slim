@@ -1,0 +1,10 @@
+.step-4
+  h1.p-4.pt-5.text-center.text-orange Step 4 - Set Storage Fees
+  .storages-edit__daily-price.d-flex.flex-column.align-items-center.p-4
+    = space_form.input :daily_price, label: 'Daily rate', input_html: { min: '0' }
+    = link_to 'Cancellation policy', cancellation_policy_path, target: '_blank'
+
+  .storages-edit__rent-payout-type.d-flex.flex-column.align-items-center.pt-4
+    = space_form.input :rent_payout_type, label:'Payout options for storage fees', as: :radio_buttons, collection: display_payout_optioins(@storage.space.rent_payout_type), checked: "#{@storage.space.rent_payout_type}"
+  .storages-new__rent-payout-type-note.text-center.text-orange.pb-4
+    | Note: Any changes of the daily rate and payout option will only be applied to your next booking.

@@ -1,0 +1,24 @@
+{
+  "projectName": "Space Next Door",
+  "projectUrl": "https://spacenextdoor.com",
+  "projectLogo": "logo.png",
+  "jsResources": [],
+  "viewportWidths": [
+    320,
+    480,
+    768,
+    1024,
+    1200
+  ],
+  "serverPort": 8889,
+  "snippetTemplate": "styleguide/template.html",
+  "cssVariables": [
+    "app/assets/stylesheets/_variables.scss"
+  ],
+  "maxSassIterations": 2000,
+  "database": "styleguide/db",
+  "categories": "styleguide/db/categories.txt",
+  "uniques": "styleguide/db/uniques.txt",
+  "sassData": "styleguide/db/sassdata.txt",
+  "extension": ".txt"
+}

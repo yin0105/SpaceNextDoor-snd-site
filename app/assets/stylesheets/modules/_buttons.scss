@@ -1,0 +1,45 @@
+// Custom buttons style
+.button {
+  display: block;
+
+  min-height: 40px;
+
+  padding: 10px 12px 8px;
+
+  border-radius: 3px;
+
+  color: $color-white;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  text-align: center;
+
+  &[type='submit'] {
+    border-radius: 3px;
+  }
+}
+
+.button-primary {
+  background-color: $primary-color;
+}
+
+.button-secondary {
+  background-color: $secondary-color;
+}
+
+.button-full-width {
+  width: 100%;
+}
+
+.btn-facebook {
+  position: relative;
+
+  background-color: $fb-color;
+
+  .icon {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+  }
+}

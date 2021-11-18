@@ -1,0 +1,24 @@
+= simple_form_for [:user, @storage], html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |form|
+  = form.input :checkin_time, collection: Storage::CHECKIN_TIMES.keys
+  = form.input :category, collection: Storage::CATEGORY.keys
+  = form.simple_fields_for(:space) do |space_form|
+    = space_form.input :property, collection: Space::PROPERTY.keys
+    = space_form.input :name
+    = space_form.input :description
+    = space_form.input :images, as: :multiple_image_uploader, with_description: true
+    = space_form.input :address, as: :address
+    = space_form.input :dates, as: :datepicker, mode: :multiple, between: (Time.zone.today..1.year.from_now)
+    = space_form.input :daily_price
+    = space_form.input :govid_required
+    = space_form.input :minimum_rent_days, collection: SpaceOption.minimum_rent_days(@storage.class.name.deconstantize.downcase.to_sym, true)
+    = space_form.input :size do
+      .row
+        .col-md-6
+          = space_form.input :area, label: false, placeholder: "Area"
+        .col-md-6
+          = space_form.input :height, label: false, placeholder: "Height"
+  = form.input :features, as: :check_boxes, collection: SpaceOption.features(:storage)
+  = form.input :facilities, as: :check_boxes, collection: SpaceOption.facilities(:storage)
+  = form.input :rules, as: :check_boxes, collection: SpaceOption.rules(:storage)
+  = form.input :other_rules
+  = form.submit class: 'btn btn-primary'

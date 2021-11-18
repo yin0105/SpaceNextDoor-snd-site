@@ -1,0 +1,45 @@
+{
+  "name": "Space Next Door",
+  "repository": "git@git.5xruby.tw:snd/SND.git",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate && bundle exec rake db:seed && bundle exec rake admin:create[admin@example.com,password]"
+  },
+  "env": {
+    "ASSET_HOST": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY": {
+      "required": true
+    },
+    "AWS_BUCKET": {
+      "required": true
+    },
+    "AWS_SECRET_KEY": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "BENTO_KEY": {
+      "required": true
+    },
+    "HUBSPOT_KEY": {
+      "required": true
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

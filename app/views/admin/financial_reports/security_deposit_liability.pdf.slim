@@ -1,0 +1,41 @@
+div = "#{I18n.l(start_date, format: :mail_date)} to #{I18n.l(start_date.end_of_month, format: :mail_date)}"
+
+table
+  tr.bottom
+    th Space ID
+    th Transaction No.
+    th Guest
+    th Beginning Balance
+    th Deposit Payment
+    th Applied Deposit
+    th Deposit Refund
+    th Ending Balance
+    th Move in Date
+    th Move out Date
+  - payments.each do |payment|
+    tr.bottom
+      td.text-left = payment[:space_id]
+      td.text-left = payment[:identity]
+      td.text-left = payment[:guest_name]
+      td = payment[:beginning_balance].format
+      td = payment[:deposit].format
+      td = payment[:applied_deposit].format
+      td = payment[:deposit_refund].format
+      td = payment[:ending_balance].format
+      td = payment[:move_in]
+      td = payment[:move_out]
+  tr.total
+    td.text-left Total
+    td
+    td.text-left = payments.size
+    td = total_by_field(payments, :beginning_balance)
+    td = total_by_field(payments, :deposit)
+    td = total_by_field(payments, :applied_deposit)
+    td = total_by_field(payments, :deposit_refund)
+    td = total_by_field(payments, :ending_balance)
+    td
+    td
+h4 Report Explanation
+hr
+- t('report_explanations.security_deposit_liability').each do |content|
+  div = content

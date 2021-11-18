@@ -1,0 +1,49 @@
+@mixin question-circle($position: right) {
+  position: relative;
+  cursor: pointer;
+
+  &:focus > .content {
+    display: block;
+  }
+
+  .content {
+    display: none;
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: -4px;
+    #{$position}: -4px;
+
+    width: 200px;
+
+    padding: 10px;
+
+    border: 1px solid $border-color;
+    border-radius: 3px;
+
+    font-size: 14px;
+  }
+}
+
+.question-circle {
+  &__long-term {
+    @include question-circle(right);
+  }
+
+  &__service-fee,
+  &__deposit,
+  &__insurance {
+    @include question-circle(left);
+  }
+}
+
+.order-new {
+  .question-circle__insurance {
+    .content {
+      top: 18px;
+      left: -100px;
+    }
+  }
+}

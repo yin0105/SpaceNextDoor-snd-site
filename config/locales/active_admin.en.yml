@@ -1,0 +1,36 @@
+en:
+  time:
+    formats:
+      active_admin_date: "%d %B, %Y"
+      active_admin_short: "%d %b"
+      abbr_with_dash: "%d-%b-%y"
+  date:
+    formats:
+      active_admin_date: "%d %B, %Y"
+      active_admin_short: "%d %b"
+      abbr_with_dash: "%d-%b-%y"
+  active_admin:
+    resource:
+      new:
+        all_users: All Users
+        all_hosts: All Hosts
+        hosts_with_existing_bookings: Hosts with existing bookings
+        guests_with_existing_bookings: Guests with existing bookings
+        personal: Personal
+      show:
+        all_users: All Users
+    filters:
+      predicates:
+        eq: Equals
+    space:
+      rent_payout_type:
+        one_month: Receive payout once a month.
+        ten_days: Receive payout every ten days.
+    order:
+      rent_payout_type:
+        one_month: Receive payout once a month.
+        ten_days: Receive payout every ten days.
+      true: 'TRUE'
+      false: 'FALSE'
+      transform_long_lease_by_guest: Guest
+      transform_long_lease_by_admin: Admin

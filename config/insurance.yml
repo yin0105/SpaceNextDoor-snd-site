@@ -1,0 +1,51 @@
+null_insurance_type: coverage_null
+minial_insurance_type: coverage_1000
+insurance_types:
+  coverage_null:
+    coverage: $0.00
+    premium: 0
+    cost: $0.00
+  coverage_1000:
+    coverage: $1,000.00
+    premium: 300
+    cost: $2.00
+  coverage_5000:
+    coverage: $5,000.00
+    premium: 700
+    cost: $4.00
+  coverage_10000:
+    coverage: $10,000.00
+    premium: 1000
+    cost: $6.00
+  coverage_15000:
+    coverage: $15,000.00
+    premium: 1300
+    cost: $8.00
+  coverage_20000:
+    coverage: $20,000.00
+    premium: 1600
+    cost: $10.00
+  coverage_25000:
+    coverage: $25,000.00
+    premium: 2200
+    cost: $14.00
+  coverage_30000:
+    coverage: $30,000.00
+    premium: 2800
+    cost: $18.00
+  coverage_35000:
+    coverage: $35,000.00
+    premium: 3200
+    cost: $22.00
+  coverage_40000:
+    coverage: $40,000.00
+    premium: 3400
+    cost: $24.00
+  coverage_45000:
+    coverage: $45,000.00
+    premium: 4000
+    cost: $30.00
+  coverage_50000:
+    coverage: $50,000.00
+    premium: 5000
+    cost: $40.00

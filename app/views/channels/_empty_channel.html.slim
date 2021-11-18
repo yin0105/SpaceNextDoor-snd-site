@@ -1,0 +1,6 @@
+.text-center.pb-3
+  .d-inline-block.text-gray-deep
+    | You've no message. &nbsp;
+    - if params[:identity] == 'host'
+      = link_to 'Be a host?', become_a_host_path
+    hr

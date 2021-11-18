@@ -1,0 +1,5 @@
+.step-snd-rules
+  h1.p-4.pt-5.text-center.text-orange  Step 3 - SND Rules
+  - t('pages.snd_rules.policies').each do |policy|
+    = render_policies(policy)
+  = form.input :accepted_snd_rules, as: :boolean, label: 'Agree and Continue'

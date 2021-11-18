@@ -1,0 +1,164 @@
+.storages-new,
+.storages-edit {
+  .form-group {
+    margin-bottom: 15px;
+
+    .control-label {
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: $font-size-large;
+    }
+
+    // scss-lint:disable SelectorFormat
+    [type='checkbox'] {
+      margin-right: 10px;
+    }
+
+    .checkbox {
+      display: block;
+
+      margin: 10px 0;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+
+    height: 40px;
+
+    border: 1px solid $border-color;
+
+    background-color: $color-white;
+  }
+
+  .form-control-disable {
+    width: 100%;
+
+    height: 40px;
+
+    border: 1px solid $border-color;
+
+    background-color: $color-gray;
+  }
+
+  textarea {
+    min-height: 70px;
+  }
+
+  .btn-link {
+    width: 100%;
+
+    background-color: unset;
+    color: $primary-color;
+
+    text-decoration: underline;
+  }
+
+  .update-calendar {
+    // Flatpickr
+    .flatpickr-input {
+      display: none;
+    }
+
+    .flatpickr-calendar {
+      margin: auto;
+
+      overflow: hidden;
+    }
+  }
+
+  .space-size {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: baseline;
+
+    .control-label {
+      display: inline-block;
+
+      font-size: 16px;
+    }
+
+    .form-control {
+      width: auto;
+    }
+  }
+
+  &__button {
+    width: 60%;
+    max-width: 400px;
+  }
+
+  // Select2
+  .select2-container--snd {
+    height: 40px;
+
+    margin-bottom: 10px;
+
+    .select2-selection {
+      height: 40px;
+      border: 1px solid $border-color;
+    }
+
+    .select2-selection__rendered {
+      height: 40px;
+      padding: 10px 20px;
+    }
+
+    .select2-selection__placeholder {
+      margin-left: 7px;
+    }
+  }
+
+  .has-error {
+    .form-control {
+      border-color: $color-error-text;
+    }
+  }
+}
+
+.storages-edit__daily-price,
+.storages-new__daily-price {
+  [title='required'] {
+    display: none;
+  }
+
+  .control-label {
+    position: relative;
+
+    margin-left: -5px;
+
+    &::before {
+      content: '$';
+
+      position: absolute;
+      top: 35px;
+    }
+
+    &::after {
+      content: ' SGD';
+
+      position: absolute;
+      top: 35px;
+      right: -50px;
+    }
+  }
+
+  .form-control {
+    width: auto;
+
+    margin-left: 12px;
+  }
+}
+
+.storages-edit__rent-payout-type,
+.storages-new__rent-payout-type {
+  .radio {
+    display: block;
+
+    padding: 3px 0;
+  }
+}

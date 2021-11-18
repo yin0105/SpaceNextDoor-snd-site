@@ -1,0 +1,62 @@
+.alert {
+  padding: 15px;
+
+  font-size: 14px;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+
+  .close {
+    position: absolute;
+
+    top: 12px;
+    right: 8px;
+
+    background-color: transparent;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.alert-info,
+.alert-success {
+  background-color: $color-orange;
+  color: $color-white;
+}
+
+.alert-warning,
+.alert-danger {
+  background-color: $alert-warning-background;
+  color: $color-white;
+}
+
+.common-header-alert {
+  .alert {
+    position: sticky;
+
+    z-index: 100;
+
+    top: 96px;
+    right: 0;
+    left: 0;
+
+    margin-top: 96px;
+    margin-bottom: -60px;
+    padding: 20px;
+
+    @include breakpoint($pc) {
+      top: 100px;
+
+      margin-top: 100px;
+      margin-bottom: -110px;
+    }
+  }
+
+  .close {
+    top: 15px;
+  }
+}

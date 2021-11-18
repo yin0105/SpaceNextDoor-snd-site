@@ -1,0 +1,51 @@
+.profile__sidebar.w-lg-35
+  .pc-only.pt-5
+    ul
+      li.profile__sidebar-list
+        = active_link_to 'Profile', edit_user_registration_path
+      li.profile__sidebar-list
+        = active_link_to 'Trust and Verification', verification_path
+      li.profile__sidebar-list
+        = active_link_to 'Preferred Phone', preferred_phone_path
+      li.profile__sidebar-list
+        = active_link_to 'Password', edit_profile_password_path
+      li.text-gray Account
+      li.profile__sidebar-list.pl-4
+        = active_link_to 'For Guest - Add Credit Card', payment_method_path
+      li.profile__sidebar-list.pl-4
+        = active_link_to 'For Host - Add Bank Account', bank_account_path
+      li.profile__sidebar-list.pl-4
+        = active_link_to 'Past Transactions', orders_path
+      li.text-gray Alternate Contact
+      li.profile__sidebar-list.pl-4
+        = active_link_to 'For Guest - Alternate Contact', guest_contact_path
+      li.profile__sidebar-list.pl-4
+        = active_link_to 'For Host - Alternate Contact', host_contact_path
+      li.profile__sidebar-list
+        = active_link_to 'Rating', ratings_path
+  .hidden-pc.profile-dropdown__sidebar
+    button type= 'button' data-toggle= 'dropdown' aria-expanded= 'false' class= 'w-100 px-3 py-2 text-left bg-gray profile-dropdown__button'
+      | Dashboard
+      i.fa.fa-caret-down.profile-dropdown__icon--open
+      i.fa.fa-caret-up.profile-dropdown__icon--close
+    ul.profile-dropdown__menu.bg-white.p-3
+      li.profile__sidebar-list.profile-dropdown__sidebar-list
+        = active_link_to 'Profile', edit_user_registration_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list
+        = active_link_to 'Trust and Verification', verification_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list
+        = active_link_to 'Password', edit_profile_password_path
+      li.text-gray Account
+      li.profile__sidebar-list.profile-dropdown__sidebar-list.pl-4
+        = active_link_to 'For Guest - Add Credit Card', payment_method_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list.pl-4
+        = active_link_to 'For Host - Add Bank Account', bank_account_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list.pl-4
+        = active_link_to 'Past Transactions', orders_path
+      li.text-gray Alternate Contact
+      li.profile__sidebar-list.profile-dropdown__sidebar-list.pl-4
+        = active_link_to 'For Guest - Alternate Contact', guest_contact_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list.pl-4
+        = active_link_to 'For Host - Alternate Contact', host_contact_path
+      li.profile__sidebar-list.profile-dropdown__sidebar-list
+        = active_link_to 'Rating', ratings_path

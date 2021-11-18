@@ -1,0 +1,14 @@
+.message-dialog.clearfix
+  = simple_form_for @message, url: channel_messages_path(@channel), method: :post do |f|
+    .message-dialog__wrapper.float-left
+      = f.hidden_field :channel_id, value: @channel.id
+      = f.input :content, placeholder: 'Type in your message…', label: false, :input_html => { 'rows' => 4 }
+      = f.input :images, as: :multiple_image_uploader, label: false, drop_zone_selector: '.message-dialog'
+      .message-dialog__actions.text-right
+        = link_to %(javascript: $('.message_images input[type="file"]').trigger('click')), class: 'button message-dialog__add-image-button' do
+          | &nbsp;&nbsp;
+          i.icon.fa.fa-plus.mr-1
+        | &nbsp;
+        = f.button :submit, class: 'button message-dialog__send-button bg-gray-deep'
+    .message-dialog__avatar.float-left.ml-3
+      = image_tag current_user.avatar.small.url

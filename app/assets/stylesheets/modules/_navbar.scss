@@ -1,0 +1,286 @@
+.nav {
+  &__user-dropdown,
+  &__dropdown {
+    position: relative;
+  }
+
+  &__user-dropdown {
+    height: 96px;
+
+    padding-bottom: 22px;
+
+    @include breakpoint($pc) {
+      padding: 17px 0;
+    }
+  }
+
+  &__user-dropdown-avatar {
+    display: block;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    @include breakpoint($pc) {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__user-dropdown-menu {
+    padding-bottom: 30px;
+
+    @include breakpoint($pc) {
+      position: absolute;
+
+      top: 93px;
+      right: 0;
+
+      padding-top: 5px;
+      padding-bottom: 0;
+
+      li:nth-child(2)::before {
+        display: none;
+      }
+    }
+  }
+
+  &__dropdown-menu {
+    @include breakpoint($pc) {
+      position: absolute;
+
+      top: 100px;
+      left: 50%;
+
+      transform: translateX(-50%);
+    }
+  }
+
+  &__signin-link {
+    padding: 16px 6px;
+  }
+
+  li &__user-dropdown-item {
+    @include breakpoint($pc) {
+      border-bottom: 1px solid $color-gray;
+
+      background-color: rgba($color-gray-deep, .9);
+
+      a {
+        padding: 16px 34px;
+      }
+
+      &.unread::before {
+        content: '';
+
+        display: block;
+
+        position: absolute;
+        top: 21px;
+        left: 20px;
+
+        width: 7px;
+        height: 7px;
+
+        border-radius: 50%;
+
+        background: $color-orange;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__dropdown-item {
+    @include breakpoint($pc) {
+      border-bottom: 1px solid $color-gray;
+
+      background-color: rgba($color-gray-deep, .9);
+
+      a {
+        width: 170px;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.dropdown-menu {
+  @include breakpoint($pc) {
+    display: none;
+  }
+
+  &:hover {
+    display: block;
+  }
+}
+
+.dropdown {
+  &:hover .dropdown-menu {
+    @include breakpoint($pc) {
+      display: block;
+
+      box-shadow: 0 6px 12px rgba($color-black, .175);
+    }
+  }
+}
+
+// adjust the nav bar display on mobile mode.
+// navbar open button
+.nav-open {
+  display: block;
+
+  position: absolute;
+
+  z-index: 100;
+
+  top: 36px;
+  right: 10px;
+
+  width: 30px;
+  height: 20px;
+
+  @include breakpoint($pc) {
+    display: none;
+  }
+}
+
+.modal-open .nav-open {
+  display: none;
+}
+
+.nav-open::before,
+.nav-open::after {
+  content: '';
+
+  position: absolute;
+
+  top: 10px;
+  left: 0;
+
+  width: 30px;
+  height: 2px;
+
+  transition: all .4s ease;
+
+  background: $color-white;
+}
+
+.nav-open::before {
+  box-shadow: 0 -10px $color-white;
+}
+
+.nav-open::after {
+  box-shadow: 0 10px $color-white;
+}
+
+.menu-open {
+  // navbar open button
+  .nav-open::before,
+  .nav-open::after {
+    transition: transform .4s ease;
+    box-shadow: none;
+  }
+
+  .nav-open::before {
+    transform: rotate(-45deg);
+  }
+
+  .nav-open::after {
+    transform: rotate(45deg);
+  }
+
+  // mobile menu
+  &.mobile-menu {
+    right: 0;
+
+    @include breakpoint($pc) {
+      right: -200px;
+    }
+  }
+
+  &#wrapper {
+    max-height: 100vh;
+
+    overflow: hidden;
+  }
+
+  // overlay
+  #header::after {
+    content: '';
+
+    display: block;
+
+    position: fixed;
+
+    z-index: 99;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $overlay-background;
+
+    @include breakpoint($pc) {
+      display: none;
+    }
+  }
+
+  #nav {
+    height: 100%;
+
+    overflow-y: scroll;
+  }
+
+  // Conponent position transition
+  .header#header,
+  &#wrapper,
+  .space__sidebar {
+    right: 200px;
+    left: -200px;
+
+    @include breakpoint($pc) {
+      right: 0;
+      left: 0;
+    }
+  }
+}
+
+// navbar open within modal open
+.mobile-menu,
+.modal-open .mobile-menu {
+  display: block;
+
+  position: fixed;
+
+  z-index: 9999;
+
+  top: 0;
+  right: -200px;
+
+  width: 200px;
+  height: 100%;
+
+  padding: 0;
+
+  transition: all .4s ease;
+
+  background-color: $color-orange;
+  color: $color-white;
+}
+
+#wrapper,
+.modal-open .menu-open#wrapper {
+  right: 0;
+  left: 0;
+
+  overflow: unset;
+
+  transition: all .4s ease;
+}

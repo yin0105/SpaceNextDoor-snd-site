@@ -1,0 +1,66 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Congratulations on getting a renewed booking! 
+    | Your Guest, #{@order.guest.name} have requested for their booking to be changed so that your Guest’s storage period be extended automatically every 30 days until 16 days notice is given with effect from #{@order.long_term_start_at.strftime('%d-%b-%Y')}.
+  mj-text
+    | Booking ID: #{@order.identity}
+    br
+    | Transaction ID : #{@payment.identity}
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:center;"
+      th From
+      th To
+    tr style="text-align:center;"
+      td
+        = l @order.start_at, format: :mail_date
+      td
+        = render_end_date(@order, :mail_date)
+  mj-text
+    | Title of Property:
+    br
+    = link_to @order.space.name, space_url(@order.space_id), class: "lk-blue"
+  mj-text
+    | Address:
+    br
+    = @order.space.location
+  mj-text
+    | House rules:
+    - space_rules(@order.space).each do |rule|
+      br
+      | #{rule}
+  mj-text
+    | Booked by: #{@order.guest.name}
+    br
+    | Phone: #{@order.guest.display_phone}
+  mj-text
+    | Charges:
+    br
+    | Paid for
+    | &nbsp;
+    = l @payment.service_start_at, format: :mail_date
+    | &nbsp;to&nbsp;
+    = l @payment.service_end_at, format: :mail_date
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align: left;"
+      th Item
+      th Amount
+    tr
+      td
+        | &#36;#{@payment.price.format(symbol: nil)}/day * #{@payment.period} of days
+      td
+        | &#36;#{@payment.rent.format(symbol: nil)}
+    tr
+      td
+        | Less Service Fee
+      td
+        | (&#36;#{@payment.host_service_fee.format(symbol: nil)})
+    tr
+      td
+        | Payable to Host
+      td
+        | &#36;#{@payment.host_rent.format(symbol: nil)}
+    tr
+      td
+        | Promotion Applied: #{render_promotion(@order)} 

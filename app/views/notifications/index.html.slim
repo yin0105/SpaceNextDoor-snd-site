@@ -1,0 +1,8 @@
+.notification-index.pt-100.pb-5
+  .container
+    .text-center.py-4
+      = render_channel_navigation
+    div
+      = render(@notifications) || render('empty')
+
+    = paginate @notifications

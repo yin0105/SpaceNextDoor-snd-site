@@ -1,0 +1,18 @@
+.form-group
+  label.control-label.required.pb-2 Who is your alternate contact?
+  - if current_contact("as_host")&.present?
+    .bg-white
+      .pb-2
+        label Name
+        input.form-control-disable.mt-2 type='text' disabled=true value=current_contact("as_host")&.name
+      .pb-2
+        label Email
+        input.form-control-disable.mt-2 type='text' disabled=true value=current_contact("as_host")&.email
+      .pb-2
+        label Phone Number
+        input.form-control-disable.mt-2 type='text' disabled=true value=current_contact("as_host")&.phone
+      .pb-2
+        = link_to 'Click here to edit your alternate contact person’s details.', host_contact_path
+  - if current_contact("as_host").nil?
+    .bg-white
+      = link_to 'Please add your alternate contact person’s details to continue.', host_contact_path

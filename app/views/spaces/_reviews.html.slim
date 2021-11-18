@@ -1,0 +1,11 @@
+section.space-reviews.mt-5.py-5.bg-gray
+  .container
+    div
+      h1.text-center.text-gray-deep.font-size-large
+        | #{@evaluations.count} Reviews&nbsp;
+        span.space__reviews-ratings.rating.text-orange = render_rating_icons(@space.rate_score)
+    div
+      = render partial: 'review_item', collection: @evaluations
+    div
+      nav.space__reviews-pagination
+        = paginate @evaluations

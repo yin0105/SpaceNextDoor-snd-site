@@ -1,0 +1,24 @@
+section#size__section.block-storage
+  .container
+    header.section-head
+      h2.section-head
+        span.text = t('.storage_size_guide')
+    .row
+      - t('.storages').each do |storage|
+        .col
+          .storage-box
+            span.tag = storage[:title]
+            .image-holder = image_tag(storage[:thumbnail], alt: 'image description')
+            .tet-holder
+              h3 = storage[:size]
+              = link_to t('.detail'), '#size-guide-popup', class: 'btn btn-primary js-size-open', data: {'active'=> storage[:active], 'toggle'=> 'modal' }
+      .col
+        .storage-box.style style= "background-image: url(#{image_path 'img10.png'});"
+          .wrap
+            h3
+              | For More
+              br
+              | Storage Options,
+            = link_to t('.contact_us'), new_find_out_more_path, class: 'link'
+
+  = render '/size_guide_modal/modal_with_carousel'

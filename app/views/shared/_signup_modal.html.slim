@@ -1,0 +1,48 @@
+#signup-popup.modal.p-0.pt-5.registration
+  .modal-dialog.modal-dialog--sm
+    .modal-content
+      .modal-body
+        button type='button' class='close' data-dismiss='modal' aria-label='close'
+        .registration__body.px-5
+          = link_to omniauth_authorize_path(:user, :facebook), class: 'button button-full-width btn-facebook' do
+            i.icon.fa.fa-facebook
+            | Sign up with Facebook
+          .py-4.text-center OR
+          = simple_form_for(User.new, as: :user, remote: true, url: registration_path(:user, format: :json)) do |f|
+            = f.input :email, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-envelope-o
+                = f.input :email, label: false, required: false, autofocus: true, placeholder: 'Email', input_html: { class: 'registration__input' }
+              p.help-block
+            = f.input :first_name, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-user
+                = f.input :first_name, label: false, required: false, placeholder: 'First Name', input_html: { class: 'registration__input' }
+              p.help-block
+            = f.input :last_name, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-user
+                = f.input :last_name, label: false, required: false, placeholder: 'Last Name', input_html: { class: 'registration__input' }
+              p.help-block
+            = f.input :password, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-lock
+                = f.input :password, label: false, required: false, placeholder: 'Password', input_html: { class: 'registration__input' }
+              p.help-block
+            .mb-2.px-2.font-size-small
+              p
+                = ("By signing up, I agree to Space Next Door’s #{link_to "Terms & Policies", terms_and_policies_path, target: 'blank'}.").html_safe
+
+            = f.button :submit, 'Sign up', class: 'button button-secondary button-full-width'
+        .mt-4.p-4.text-center.bg-gray-deep.text-gray
+          | Already have account?
+          = link_to 'Login in here', '#signin-popup', data: { dismiss: 'modal', toggle: 'modal' }, class: 'ml-3'
+
+javascript:
+  if (#{should_open_signup_modal}) {
+    $('#signup-popup').modal('show');
+  }

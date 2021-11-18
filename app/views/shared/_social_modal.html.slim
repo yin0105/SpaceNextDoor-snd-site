@@ -1,0 +1,36 @@
+#social-popup.modal.fade.p-0.pt-5.pb-4.social-popup
+  .modal-dialog.modal-dialog--sm
+    .modal-content.p-4
+      .modal-body
+        button type='button' class='close' data-dismiss='modal' aria-label='close'
+        h2 Share
+        ul.m-0.p-0
+          li = link_to '', class: 'js-share-facebook text-gray d-block mb-3', target: '_blank', data: { 'facebook-share': true } do
+            i.icon.ico-facebook.social-popup__link-btn.bg-fb-color.text-center.text-white.mr-3.p-2.d-inline-block
+            | Facebook
+          li = link_to '', class: 'js-share-mail text-gray d-block mb-3' do
+            i.icon.ico-envelope.social-popup__link-btn.social-popup__link-btn--envelope.bg-envelope-color.text-center.text-white.mr-3.p-2.d-inline-block.font-size-small
+            | E-mail
+
+        p.text-gray-deep.m-0.mt-4 Click to copy link
+        .social-popup__copy-link.js-social-popup-copy-link
+          input#js-copy-link.social-popup__input type= 'text'
+          button.fa.fa-link.social-popup__copy-link-icon.p-0.text-white#js-copy-btn
+
+javascript:
+  $('.js-social-share').on('click', (event) => {
+    var button = $(event.delegateTarget);
+    var spaceUrl = button.data('space-url');
+    var mailInfo = button.data('share-mail-url');
+
+    $('.js-share-facebook').attr('href', spaceUrl);
+    $('.js-share-mail').attr('href', mailInfo);
+    $('.js-social-popup-copy-link input').val(spaceUrl);
+  });
+
+  $('#js-copy-btn').on('click', function(){
+    var copyText = $('#js-copy-link');
+
+    copyText.select();
+    document.execCommand('copy');
+  });

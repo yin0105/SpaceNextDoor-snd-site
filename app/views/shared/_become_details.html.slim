@@ -1,0 +1,6 @@
+- details.each do |detail|
+  .col
+    .image-holder = image_tag(detail[:image], alt: detail[:alt])
+    .text-holder
+      h3 = detail[:title].html_safe
+      p = detail[:description]

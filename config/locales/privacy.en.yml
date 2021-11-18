@@ -1,0 +1,70 @@
+en:
+  pages:
+    privacy:
+      privacy_policy: Privacy Policy
+      destruction: Policy on personal data protection (“PDP”)
+      update_date: "Last Updated: February, 2017"
+      content: |
+        Space Next Door ("SND") takes the protection of your personal information and your privacy very seriously.
+        SND is committed to the highest standards of privacy and data protection compliance and expects all its employees and management as well as any third parties with whom SND does business, to adhere to these standards.We are bound by the relevant PDP legislation in each jurisdiction in which we operate.
+
+        <h3>In Singapore</h3>
+        In particular, SND is bound by the Personal Data Protection Act 2012 (“PDPA and acts in accordance with this legislation where the information we collect amounts to “Personal Data”.
+
+        <h3>In Hong Kong</h3>
+        In particular, SND is bound by the Personal Data (Privacy) Ordinance (Cap 486) and acts in accordance with this legislation where the information we collect amounts to “Personal Data”.
+        This Privacy Policy governs the manner in which SND collects, uses, maintains and discloses information collected from Users ("Users") of the SND website ("Site"). This Policy applies to the Site and all services offered by SND.
+      policies:
+        - section: Personal identification information
+          content: |
+            We may collect personal identification information from Users when they visit our Site.  Personal identification information means information related to your identity. Personal information that may be collected by us about you includes your name, date of birth, address, account details, passport or other identification number and any other information we may need to effectively identify you.
+
+            By using the SND Site, you will be giving us your personal information which you agree we can use in accordance with this privacy policy.
+
+            We collect personal information from Users only if they voluntarily provide this information.  The User may choose to not provide personal information.  However, this may prevent them from fully utilising the functionality of the Site.
+        - section: Non-personal identification information
+          content: |
+            To simply browse our Website, you are not required to provide any Personal Data. However, through this, we may collect non-personal identification information about Users which may include the browser and the type of device used to access the Site and technical information such as the operating system, the internet service provider and similar information.  This is solely for the purposes of monitoring and improving our website and the services we offer. We will not share this information with third parties or use it to target any advertisements to you.
+        - section: How we use collected information
+          subjects:
+            - unorder_lists:
+                list_title: "SND may collect and use personal information for the following purposes:"
+                lists: ['To provide you with information about our services', 'To process transactions and manage your account', 'To provide you with documentation about your transaction', 'To maintain records about past transactions', 'To make offers regarding new products and services', 'To improve customer service', 'To improve our Site', 'To personalise the User experience', 'To administer a promotion, survey or other Site feature', 'To send Users information they agreed to receive about topics we think will be of interest to them.', 'To send periodic emails including marketing materials about our products and services', 'To manage disputes if any']
+              content: |
+                We may use the information Users provide about themselves when making a transaction only to provide support for that transaction. We do not share this information with outside parties except to the extent necessary to complete the transaction.
+
+                The email address Users provide, will be used to send information and updates related to their transaction. It will also be used to respond to requests or questions.
+
+                If you join our mailing list, you will receive emails that may include updates, service information or news about our company.  We include detailed unsubscribe instructions at the bottom of each email if you wish to unsubscribe.
+        - section: Disclosing Your Information
+          subjects:
+            - unorder_lists:
+                list_title: "We may disclose your personal information:"
+                lists: ['to a third party, where you have provided us consent to do so', 'where we are compelled to do so by law', 'to investors, agents or advisers']
+            - unorder_lists:
+                list_title: "Before disclosing your personal information, we will take all reasonable steps to satisfy ourselves that:"
+                lists: ['the receiving party has a strong privacy policy in place to protect your interests, and', 'you have consented to us making the disclosure to this party.']
+        - section: Protecting Your Information
+          content: |
+            We adopt appropriate practices and security measures for data collection, storage and processing and to protect against unauthorised access, alteration, disclosure or destruction of your personal information, username, password, transaction information and data stored on our Site.
+
+            We may hold personal information in either hard copy and electronically or both. Our technology and security procedures are of a standard reasonable to protect your personal information from misuse, disclosure and unauthorised access.
+
+            Whilst we collect your credit card information in order to process transactions, we do not retain credit card information. However, your credit card details may be retained by Stripe, the payment gateway that we use. They have their own privacy policy for the protection of your personal information.  For detail on Stripe’s privacy policy please see <a href="https://stripe.com/sg/privacy">https://stripe.com/sg/privacy</a>.
+
+            SND will provide some or all of its services from systems located outside your jurisdiction.  As such personal information may be transferred, processed and stored outside of the country where you live.
+        - section: Accessing & Updating Personal Information
+          content:  |
+            You may access the personal information that we hold about you at any time by making a written request to SND.  In addition, we ask that you inform us as soon as possible if any of your personal information changes.
+        - section: Web browser cookies
+          content: |
+            Our Site may use "cookies" to enhance the User’s experience. You may choose to set your web browser to refuse cookies, or to alert you when cookies are being sent. If you do so, please note that some parts of the Site may not function properly.
+        - section: Changes to this privacy policy
+          content: |
+            SND retains the right to vary or update this Privacy Policy at any time.  We encourage Users to periodically check this page for any changes.  You acknowledge and agree that it is your responsibility to keep yourself aware of any future changes.
+        - section: Acceptance
+          content: |
+            By using this Site, you signify your acceptance of this policy and SND’s Terms Of Service.  The Privacy Policy may be changed from time to time.  If you continue to use the Site, this will be considered acceptance of the revised Privacy Policy.  If you do not agree with this policy, please do not use our Site.
+        - section: Contact us
+          content: |
+            If you have any questions about this Privacy Policy or SND policies generally, or if you would like information about our privacy policy or if you are dissatisfied with how we have dealt with your personal information, please contact us at: <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>.

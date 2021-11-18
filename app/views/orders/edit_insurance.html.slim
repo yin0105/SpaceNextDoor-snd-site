@@ -1,0 +1,21 @@
+.update-insurance
+  span.hidden.js-current-order-insurance = I18n.t("insurance.#{@order.insurance_type}.insurance")
+  .container.text-center.pt-100.pb-5
+    h1.p-4.pt-5.text-orange = t('.title')
+    .d-inline-block.text-center
+      p.text-left
+        | Space name : &nbsp; #{@order.space.name}
+      p.text-left
+        | Current insurance : &nbsp;
+        span.js-last-payment-insurance = display_insurance(current_insurance_type(@order))
+      = render_renewal_insurance(@order)
+      = form_for @order, url: update_insurance_order_path(@order) do |f|
+        .booking-insurance-options.text-left
+          = select_tag :insurance_type, options_for_select(insurance_options, @order.insurance_type), class: 'js-insurance-option'
+        p.text-left.text-orange.pt-2
+          | By confirming, you agree to Space Next Door’s &nbsp;
+          = link_to  "Insurance Terms and Conditions", insurance_terms_path, target: '_blank'
+        p.text-left.text-orange.pt-2 = t('.notice')
+        .mx-auto.text-center.mt-5
+          = link_to 'Back', orders_path, class: 'px-3 py-2 mr-5'
+          = f.button 'Confirm', class: 'js-confirm-btn button-secondary text-white px-3 py-2 border-0 rounded-sm'

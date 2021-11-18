@@ -1,0 +1,21 @@
+.step-5
+  h1.p-4.pt-5.text-center.text-orange = t('users.storages.new.set_promotion')
+
+  .p-4.text-center
+    .d-inline-block
+      .text-left
+        = space_form.input :discount_code, label: false, input_html: { class: 'hidden', id: 'discount-code', value: discount_code_val(@storage.space) }
+
+        input#have-promotion.select-options type='radio' name='discount-options' checked= has_discount_code?(@storage.space)
+          span.ml-1 = t('users.storages.new.need_promotion')
+
+        = render_discount_code_options(@storage.space)
+
+        .mt-3
+          input#no-promotion.select-options type='radio' name='discount-options' checked= no_discount_code?(@storage.space)
+            span.ml-1 = t('users.storages.new.no_promotion')
+
+        .discount-tips.pt-4
+          div#one-month-tip.text-error-text.hidden.pb-2 = t('users.storages.new.one_month_promotion_tip')
+          div#two-months-tip.text-error-text.hidden.pb-2 = t('users.storages.new.two_months_promotion_tip')
+          div#six-months-tip.text-error-text.hidden = t('users.storages.new.six_months_promotion_tip')

@@ -1,0 +1,8 @@
+.channel-index.pt-100.pb-5
+  .container
+    .text-center.py-4
+      = render_channel_navigation
+    div
+      = render(partial: 'channel', collection: @channels) || render('empty_channel')
+
+    = paginate @channels

@@ -1,0 +1,28 @@
+- content_for :header do
+  = render '/shared/landing_headers', image_path: 'img43.jpg', section: ''
+
+- content_for :guest_detail_box do
+  .image-area style= "background-image: url(#{image_path 'img44.jpg'});"
+    .box
+      strong.title = t('.explore_spaces')
+      = link_to t('.click_here'), spaces_path, class: 'link'
+
+- content_for :host_detail_box do
+  .image-area style= 'background-image: none;'
+    .box
+      strong.title = t('.start_hosting_now')
+      = link_to t('.click_here'), user_spaces_path(unauthenticated_path: become_a_host_path, msg: "Please sign in or sign up to create your listing."), class: 'link'
+
+section.block-host.style
+  .container
+    header.section-head
+      h2
+        span.text = t('.for_guests')
+    = render 'shared/become_guest_details'
+
+section.block-host
+  .container
+    header.section-head
+      h2
+        span.text = t('.for_hosts')
+    = render 'shared/become_host_details'

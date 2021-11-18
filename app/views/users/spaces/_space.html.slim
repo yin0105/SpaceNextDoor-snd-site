@@ -1,0 +1,25 @@
+.list-panel.mb-3
+  .list-panel__content
+    .list-panel__image
+      = link_to image_tag(space.images.last.url(:thumb)), space_path(space)
+    h3.list-panel__title = link_to space.name, space_path(space)
+    .list-panel__info.text-gray-deep
+      p.font-size-medium = "Space ID: #{space.id}"
+      p = space.daily_price.format
+      div
+        i.icon.fa.fa-map-marker.mr-2
+        span = space.location
+    .list-panel__widgets
+      .list-panel__share
+        = link_to content_tag(:i, nil ,class: 'fa icon fa-facebook'), space_url(space), data: { 'facebook-share': true }
+      .list-panel__status.text-gray-deep
+        - if params[:identity] != 'guest'
+          .pt-2
+            = render_space_availability(space)
+            = status_color(space)
+  .list-panel__buttons
+    - if params[:identity] == 'guest'
+      = link_to t('users.space.remove'), space_favorite_path(space), method: :delete, class: 'list-panel__button bg-gray-deep'
+    - else
+      = render_edit_promotion_button(@required_fields, space)
+      = render_edit_listing_button(@required_fields, space)

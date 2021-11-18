@@ -1,0 +1,14 @@
+.order-show
+  .container.order-show__container.pt-100.pb-5
+    h1.p-4.pt-5.text-center.text-orange Order Details
+    h2.text-center.text-gray-deep.font-size-large.mt-4.mb-3 = @order.space.name
+    .clearfix.text-center.text-gray-deep
+      .order-show__service-date
+        .order-show__service-time.font-size-large.text-left
+          span.d-block.font-size-medium From:
+          = l @order.start_at, format: :date
+        .order-show__service-time.font-size-large.text-left
+          span.d-block.font-size-medium To:
+          = render_end_date(@order, :date)
+    .order-show__payments.mx-auto.pt-4.text-gray-deep
+      = render(partial: 'orders/payments/payment', collection: @order.payments) || render('empty_order')

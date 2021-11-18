@@ -1,0 +1,44 @@
+mj-column
+  mj-text
+    | Hi #{@user.name},
+  mj-text
+    | Thank you for being part of the Space Next Door community.
+  mj-text
+    | With reference to your last transaction No #{@payout.payment_identity}. We have refunded your deposit amount of #{@order.remain_deposit.format} to your credit card No. ending with #{@payout.user.payment_method.identifier}.
+  mj-text
+    | Transaction Period: From
+    | &nbsp;
+    = l @payout.payment.service_start_at, format: :mail_date
+    | &nbsp;
+    | To
+    | &nbsp;
+    = l @payout.payment.service_end_at, format: :mail_date
+  mj-text
+    | Title of Property: #{@order.space.name}
+  mj-text
+    | Booking Period: From
+    | &nbsp;
+    = l @order.start_at, format: :mail_date
+    | &nbsp;
+    | To
+    | &nbsp;
+    = @order.long_term? ? l(@order.long_term_cancelled_at, format: :mail_date) : l( @order.end_at, format: :mail_date )
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:left;"
+      th Item
+      th Amount
+    tr
+      td
+        | Deposit Amount
+      td
+        | &#36;#{@order.deposit.format(symbol: false)}
+    tr
+      td
+        | Damage Amount
+      td
+        | &#36;#{@order.damage_fee.format(symbol: false)}
+    tr
+      td
+        | Refund Deposit Amount
+      td
+        | &#36;#{@order.remain_deposit.format(symbol: false)}

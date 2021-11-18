@@ -1,0 +1,69 @@
+.size-guide {
+  &__content {
+    padding: 50px 10px 0;
+
+    overflow: unset;
+
+    @include breakpoint($tablet) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__image,
+  &__details {
+    display: inline-block;
+
+    width: 100%;
+
+    vertical-align: middle;
+
+    @include breakpoint($tablet) {
+      width: 50%;
+    }
+  }
+
+  &__details {
+    padding: 20px;
+
+    @include breakpoint($tablet) {
+      padding: 0;
+    }
+  }
+
+  &__list--blue-dot {
+    text-indent: -30px;
+
+    &::before {
+      content: '';
+
+      display: inline-block;
+
+      width: 10px;
+      height: 10px;
+
+      margin-right: 14px;
+
+      border-radius: 50%;
+
+      background-color: $primary-color;
+    }
+  }
+
+  &__btn-wrap {
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    min-width: 170px;
+
+    height: 50px;
+
+    border-radius: 0 4px 4px 34px;
+
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,17 @@
+.step-2
+  h1.p-4.pt-5.text-center.text-orange Step 2: Featuring Your Space
+  = space_form.input :images, as: :multiple_image_uploader, with_description: true, label: 'Upload your photos'
+  p
+    | (At least 2 not more than 6 photos, best in <b>LANDSCAPE</b> format with dimensions of <b>930 x 523</b> pixels.)
+  = space_form.input :name, label: 'Give an interesting title to your property', placeholder: 'Space Title ...'
+  = space_form.input :description, label: 'This space is good for...', placeholder: 'E.g. Storing toys and collectibles.'
+  .form-group
+    .font-size-large.pb-1 Space size
+    .space-size
+      = space_form.input :area, label: 'Square meter:', wrapper_html: { class: 'd-inline-block' }, input_html: { min: '0' }
+      | &nbsp;
+      | sqm
+      | &nbsp;/&nbsp;
+      = space_form.input :height, label: 'Height (optional):', wrapper_html: { class: 'd-inline-block' }, input_html: { min: '0' }
+      | &nbsp;
+      | m

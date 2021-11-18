@@ -1,0 +1,16 @@
+.block-template
+  .container
+    header.section-head
+      h2
+        span.text = t('.terms_of_service')
+    article.article-box
+      p = t('.update_date')
+      p = simple_format t('.content')
+
+      h2 = t('.contents')
+      ol
+        - t('.contents_list').each do |list|
+          li = link_to(list.split('#').first, "##{list.split('#').last}")
+
+    - t('.policies').each do |policy|
+      = render_policies(policy)

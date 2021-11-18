@@ -1,0 +1,20 @@
+section.four-cols
+  .container
+    header.section-head
+      h2
+        span.text = t('.at_a_glance')
+    .space-slider
+      .slide
+        - if @first_space
+          = render 'space', space: @first_space
+      - @other_speces.each do |space|
+        - if space
+          .slide
+            = render 'space', space: space
+      .slide
+        - if @first_space
+          = render 'space', space: @first_space
+      - @other_speces.each do |space|
+        - if space
+          .slide
+            = render 'space', space: space

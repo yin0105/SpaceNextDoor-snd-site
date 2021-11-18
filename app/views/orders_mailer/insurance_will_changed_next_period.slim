@@ -1,0 +1,7 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for your request. Your insurance coverage for Space, #{link_to @space.name, space_url(@space.id)} will be updated to #{I18n.t("insurance.#{@order.insurance_type}.insurance")} with effect from your next renewal, #{I18n.l(@order.next_service_start_at.to_date, format: :abbr_month_inverse)}.
+  mj-text
+    | Booking ID: #{@order.identity}

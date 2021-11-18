@@ -1,0 +1,5 @@
+.space-slideshow
+  aside.container.space-slideshow__container
+    ul.rslides.space-slideshow__widget
+      - @space.images.valid.each do |image|
+        li = image_tag image.url(:slide)

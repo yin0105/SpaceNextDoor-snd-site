@@ -1,0 +1,160 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import 'active_admin/mixins';
+// @import "active_admin/base";
+
+$icon-font-path: 'bootstrap/';
+
+@import 'active_material';
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'bootstrap/glyphicons';
+
+@import 'mixins/important';
+
+@import 'select2';
+@import 'select2-bootstrap';
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+$white: #fff;
+$green: #009688;
+$red: #dc3545;
+$light-green: #00c9b6;
+
+.text-danger {
+  color: $red;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.scope {
+  a {
+    // scss-lint:disable PlaceholderInExtend
+    @extend .button;
+  }
+
+  &.selected a {
+    color: $white;
+  }
+}
+
+.download_links { // scss-lint:disable SelectorFormat
+  span {
+    display: none;
+  }
+
+  a {
+    display: inline-block;
+    position: relative;
+    margin: 10px 4px 4px;
+
+    &::after {
+      content: 'EXPORT REPORT';
+      display: inline-block;
+
+      position: absolute;
+      right: 0;
+      bottom: -50%;
+      padding: 13px 16px;
+
+      transition: .25s all;
+
+      background-color: $green;
+      color: $white;
+
+      font-size: .875rem;
+      letter-spacing: .01em;
+      white-space: nowrap;
+    }
+
+    &:hover::after {
+      background-color: $light-green;
+    }
+  }
+}
+
+.choices ol {
+  list-style-type: none;
+
+  padding-inline-start: 0;
+
+  li {
+    display: inline-block;
+
+    margin-left: 10px;
+  }
+}
+
+.notification .select {
+  padding: 0 32px;
+}
+
+.ui-dialog {
+  .ui-dialog-content {
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+      text-align: center;
+    }
+  }
+}
+
+// order edit page
+.total-refund-calculator {
+  .title,
+  .content {
+    display: inline-block;
+  }
+
+  .title {
+    width: 240px;
+  }
+
+  .content {
+    width: calc(100% - 250px);
+  }
+
+  // scss-lint:disable SelectorFormat
+  #order_damage_fee_input,
+  #order_add_fee_input {
+    display: inline-block;
+
+    width: 100px;
+
+    padding: 0;
+  }
+
+  // scss-lint:disable SelectorFormat
+  #order_note_input,
+  #order_reasons_for_adjustment_input {
+    display: inline-block;
+
+    width: calc(100% - 250px);
+    max-width: 700px;
+
+    padding: 0;
+
+    vertical-align: middle;
+  }
+}
+
+// scss-lint:disable SelectorFormat
+.attributes_table.admin_action_log {
+  .row-changes td {
+    white-space: pre;
+  }
+}

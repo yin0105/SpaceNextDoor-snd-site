@@ -1,0 +1,11 @@
+section.blog.block
+  .container
+    .row
+      h1.heading = t(".featured_stories")
+    .row
+      - 3.times.each do
+        article.col-md-4.blog-article.col-sm-4
+          .blog-feature-image = image_tag("blog_placeholder_image.jpg")
+          .blog-wrapper
+            h1.blog-title = truncate(t(".blog_title"), length: 60)
+            p.blog-summary = t(".blog_summary")

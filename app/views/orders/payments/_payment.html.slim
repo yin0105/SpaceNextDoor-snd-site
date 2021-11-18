@@ -1,0 +1,14 @@
+.payment-item.mb-4.p-3.font-size-medium.clearfix
+  .payment-item__details
+    .payment-item__date
+      .payment-item__identity = display_charged_identity(payment)
+      .payment-item__created_at = "Date: #{l payment.created_at, format: :date}"
+    .payment-item__lease
+      | Lease Period
+      .payment-item__lease-item = "From: #{l payment.service_start_at, format: :date}"
+      .payment-item__lease-item = "To: #{l payment.service_end_at, format: :date}"
+      .payment-item__lease-item = display_rent_to_host_amount(payment)
+  .payment-item__actions.text-right
+    .payment-item__status.font-size-large = status_color(payment)
+    .payment-item__price.mb-1 = display_invoice_amount(payment)
+    = render_payment_actions(payment)

@@ -1,0 +1,55 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rspec
+AllCops:
+  TargetRubyVersion: 2.6.5
+  DisplayCopNames: true
+  Exclude:
+    - bin/*
+    - vendor/**/*
+    - node_modules/**/*
+    - db/schema.rb
+Rails:
+  Enabled: true
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - staging
+    - development
+    - test
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+    - lib/tasks/**/*
+    - spec/**/*
+    - app/admin/*
+Metrics/ClassLength:
+  Exclude:
+    - app/controllers/*
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Layout:
+  Exclude:
+    - config/environments/*
+Style:
+  Exclude:
+    - spec/*_helper.rb
+Style/BlockComments:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+Style/Documentation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Layout/LineLength:
+  Max: 180

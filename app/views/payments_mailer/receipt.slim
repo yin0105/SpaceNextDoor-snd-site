@@ -1,0 +1,101 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for booking with Space Next Door.
+  mj-text
+    | Booking ID : #{@order.identity}
+    br
+    | Transaction ID : #{@payment.identity}
+  mj-text
+    | Your Tax Invoice is available on the
+    | &nbsp;
+    = link_to "Space Next Door website", root_url
+    | .
+    | &nbsp;
+    | To retrieve it, please log in and go to
+    | &nbsp;
+    b Booking
+    | &nbsp;
+    | then select
+    | &nbsp;
+    b Details.
+  mj-table
+    tr style="border-bottom:1px solid #ecedee;text-align:center;"
+      th From
+      th To
+    tr style="text-align:center;"
+      td
+        = l @order.start_at, format: :mail_date
+      td
+        = render_end_date(@order, :mail_date)
+  - if @order.long_term?
+    mj-text
+      | Your storage period will be extended automatically and your account debited monthly until 16 days notice is given.
+  mj-text
+    | Title of Property:
+    br
+    = link_to @order.space.name, space_url(@order.space_id), class: "lk-blue"
+  mj-text
+    | Address:
+    br
+    = @order.space.location
+  mj-text
+    | House rules:
+    - space_rules(@order.space).each do |rule|
+      br
+      | #{rule}
+  mj-text
+    | Hosted by: #{@order.host.name}
+    br
+    | Phone: #{@order.host.display_phone}
+  mj-text
+    | Charges:
+    br
+    | Paid for
+    | &nbsp;
+    = l @payment.service_start_at, format: :mail_date
+    | &nbsp;to&nbsp;
+    = l @payment.service_end_at, format: :mail_date
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align: left;"
+      th Item
+      th Amount
+    tr
+      td
+        | &#36;#{@payment.price.format(symbol: nil)}/day * #{@payment.period} of days
+      td
+        | &#36;#{@payment.rent.format(symbol: nil)}
+    tr
+      td
+        | Deposit
+      td
+        | &#36;#{@payment.deposit.format(symbol: nil)}
+    tr
+      td
+        | Service Fee
+      td
+        | &#36;#{@payment.guest_service_fee.format(symbol: nil)}
+    - if @payment.insurance_enable?
+      tr
+        td
+          = I18n.t("insurance.#{@payment.insurance_type}.mailer_item")
+        td
+          | &#36;#{@payment.premium.format(symbol: nil)}
+    tr
+      td
+        | Total
+      td
+        | &#36;#{@payment.amount.format(symbol: nil)}
+    tr
+      td
+        | Promotion Applied: #{render_promotion(@order)}
+  - if @payment.insurance_enable?
+    mj-text
+      | A copy of the Insurance Terms and Conditions is attached for your reference.
+  mj-text
+    | Your Host will be in touch with you shortly to make arrangements for your move in. Please contact
+    | &nbsp;
+    = mail_to "help@spacenextdoor.com", nil, class: "lk-blue"
+    | &nbsp;
+    | if you need any further information or clarification.

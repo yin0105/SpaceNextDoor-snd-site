@@ -1,0 +1,43 @@
+.bg-gray
+  .container.profile-verification.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'Trust and Verification'
+        .profile__content-body.profile--verified-form.profile-verification__form.py-4.bg-white
+          - if params[:update] == 'true'
+            - if @user.phone_verified?
+              = render 'update_phone'
+
+            - if @user.email_verified?
+              = render 'update_email'
+          - else
+            = simple_form_for @user, url: verification_path, method: :post, html: { method: :put, class: 'form-horizontal' },
+            wrapper: :horizontal_form do |form|
+              - if @user.phone_verified?
+                .profile--form-group.profile-verification__form-inputs.px-3.clearfix
+                  label.d-block.w-md-20.font-bold.mb-2.pt-3 = 'Phone'
+                  .form-inline
+                    .w-50.w-md-40.pt-2
+                      p.m-0.pt-2 = @user.phone
+                    .w-50.w-md-40.p-2.text-green
+                      i.fa.fa-check-circle
+                      span Verified
+                      = link_to 'Update', verification_path(update: true), class: 'profile-verification__form-button text-gray button bg-white ml-2'
+              - else
+                = render 'verification_phone', form: form
+
+              - if @user.email_verified?
+                .profile--form-group.profile-verification__form-inputs.mt-3.px-3.clearfix
+                  label.d-block.w-md-20.font-bold.mb-2.pt-3 = 'Email'
+                  .form-inline
+                    .w-50.w-md-40.pt-2
+                      p.m-0.pt-2 = @user.email
+                    .w-50.w-md-40.p-2.text-green
+                      i.fa.fa-check-circle
+                      span Verified
+                      = link_to 'Update', verification_path(update: true), class: 'profile-verification__form-button text-gray button bg-white ml-2'
+
+              - else
+                = render 'verification_email', form: form

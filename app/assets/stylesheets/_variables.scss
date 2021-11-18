@@ -1,0 +1,100 @@
+// Color
+$primary-color: #377da6;
+$secondary-color: #f46634;
+
+$color-white: #fff;
+$color-black: #000;
+$color-yellow: #ffc601;
+$color-yellow-deep: #eba036;
+$color-orange: #ec5c2a;
+$color-orange-deep: #e8460d;
+$color-green: #04a936;
+$color-gray: #c8c8c8;
+$color-gray-light: #919191;
+$color-gray-deep: #404040;
+$color-error-text: #a94442;
+
+// Social
+$fb-color: #3b5998;
+$twitter-color: #00aced;
+$envelope-color: #a94442;
+
+// Text colors
+$text-colors:(
+  white: $color-white,
+  orange: $color-orange,
+  green: $color-green,
+  gray: $color-gray,
+  gray-light: $color-gray-light,
+  gray-deep: $color-gray-deep,
+  error-text: $color-error-text
+);
+
+// Background
+$overlay-background: rgba(0, 0, 0, .4);
+$popup-close-background: #eee;
+$popup-footer-background: #333;
+$alert-warning-background: #999;
+$sidebar-header-background: #333;
+$sidebar-input-background: #eee;
+$sidebar-favorite-background: #aaa;
+$bg-color-white: #fff;
+$bg-color-gray: #f6f6f6;
+$bg-color-gray-deep: #404040;
+$bg-color-blue: #34aef4;
+$bg-color-blue-deep: #3b5998;
+
+// Background colors
+$bg-colors: (
+  white: $bg-color-white,
+  blue: $bg-color-blue,
+  blue-deep: $bg-color-blue-deep,
+  orange: $color-orange,
+  yellow-deep: $color-yellow-deep,
+  gray: $bg-color-gray,
+  gray-deep: $bg-color-gray-deep,
+  fb-color: $fb-color,
+  twitter-color: $twitter-color,
+  envelope-color: $envelope-color,
+  gray-sidebar: $sidebar-header-background,
+  gray-input: $sidebar-input-background
+);
+
+// Border
+$popup-border: rgba(0, 0, 0, .2);
+$border-color: #ccc;
+$border-width: 1px;
+$error-border: #a94442;
+
+// Rounded
+$border-radius: 5px;
+$border-radius-sm: 3px;
+
+// Button
+$close-button: #aaa;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3)
+);
+
+// Display
+$displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex;
+
+// Font
+$font-size-large: 20px;
+$font-size-medium: 14px;
+$font-size-small: 12px;
+
+// Sizing
+$sizes: 20, 33, 35, 40, 50, 60, 65, 80;
+
+// Breakpoints
+$tablet: 768px;
+$pc: 1024px;

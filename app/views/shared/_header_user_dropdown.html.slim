@@ -1,0 +1,11 @@
+li.dropdown.nav__user-dropdown
+  = link_to image_tag(current_user.avatar.small.url, class: 'nav__user-avatar avatar pc-only'), nil, class: 'nav__user-dropdown-avatar nav-avatar ml-3 pc-only'
+  ul.menu.dropdown-menu.nav__user-dropdown-menu.text-center
+    li.nav__user-dropdown-item = link_to t('.spaces'), user_spaces_path
+    li.nav__user-dropdown-item = link_to t('.booking'), orders_path
+    = nav_user_message_item
+    li.nav__user-dropdown-item = link_to t('.profile'), edit_user_registration_path
+    li.nav__user-dropdown-item = link_to t('.verification'), verification_path
+    li.nav__user-dropdown-item = link_to t('.password'), edit_profile_password_path
+    li.nav__user-dropdown-item = link_to t('.rating'), ratings_path
+    li.nav__user-dropdown-item = link_to t('.sign_out'), destroy_user_session_path, method: :delete

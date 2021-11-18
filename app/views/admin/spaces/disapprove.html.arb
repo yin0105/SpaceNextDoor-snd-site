@@ -1,0 +1,31 @@
+# frozen_string_literal: true
+
+panel 'Space' do
+  active_admin_form_for [:admin, space], url: update_disapproval_admin_space_path(space) do |f|
+    attributes_table_for space do
+      row :id
+      row :host do
+        link_to space.user.name, admin_user_path(space.user)
+      end
+      row :type_of_property do
+        space.property
+      end
+      row :size do
+        space.area
+      end
+      row :price do
+        space.daily_price
+      end
+      row :offering_promotion do
+        space.discount_code? ? I18n.t('backstage.space.' + space.discount_code) : I18n.t('backstage.space.none')
+      end
+      row :disapprove_reason do
+        f.input :reasons_for_disapproval, label: false, wrapper_html: { style: 'padding: 0;list-style: none;' }
+      end
+    end
+    f.actions do
+      f.submit :disapprove
+      f.cancel_link
+    end
+  end
+end

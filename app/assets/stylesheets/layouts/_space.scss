@@ -1,0 +1,427 @@
+// Slide Show
+%rslide-tab-item {
+  li {
+    display: inline-block;
+
+    width: 11px;
+    height: 11px;
+
+    margin: 3px;
+
+    overflow: hidden;
+
+    border: 2px solid $color-white;
+    border-radius: 50%;
+
+    text-indent: -99999;
+  }
+
+  // scss-lint:disable SelectorFormat
+  .rslides_here {
+    background-color: $color-white;
+  }
+}
+
+.space-slideshow {
+  padding-top: 52px;
+
+  @include breakpoint($pc) {
+    padding-top: 0;
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    z-index: 99;
+
+    top: 50%;
+
+    width: 15px;
+    height: 28px;
+
+    margin-top: -18px;
+    padding-top: 7px;
+
+    overflow: hidden;
+
+    background-color: rgba($color-black, .3);
+
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      width: 50px;
+      height: 50px;
+
+      margin-top: -25px;
+      padding-top: 16px;
+    }
+  }
+
+  .prev {
+    left: 18px;
+
+    @include breakpoint($tablet) {
+      left: 34px;
+    }
+  }
+
+  .next {
+    right: 18px;
+
+    @include breakpoint($tablet) {
+      right: 34px;
+    }
+  }
+
+  // scss-lint:disable SelectorFormat
+  .rslides_tabs {
+    @extend %rslide-tab-item;
+
+    position: absolute;
+    z-index: 99;
+
+    right: 15px;
+    bottom: 10px;
+    left: 15px;
+
+    padding: 0;
+
+    text-align: center;
+  }
+
+  &__container {
+    position: relative;
+
+    padding-top: 60%;
+
+    overflow: hidden;
+
+    @include breakpoint($pc) {
+      width: 960px;
+      padding-top: 576px;
+    }
+  }
+
+  &__widget {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: auto;
+    transform: translateY(-50%);
+  }
+}
+
+// Information
+.space-information {
+  &__container {
+    @include breakpoint($pc) {
+      width: 960px;
+    }
+
+    .space-status {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 18px;
+    }
+  }
+
+  &__description {
+    border-top: 1px solid $border-color;
+
+    white-space: pre-wrap;
+  }
+
+  &__property-item {
+    width: 100%;
+
+    font-weight: bolder;
+
+    line-height: 2em;
+
+    > p {
+      font-weight: initial;
+    }
+  }
+
+  &__size-estimator-btn {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__tax-law-btn {
+    &::before {
+      content: '';
+      display: block;
+    }
+  }
+
+  // Features & Categories
+  &__features-item,
+  &__categories-item {
+    width: 50%;
+
+    line-height: 2em;
+
+    @include breakpoint($tablet) {
+      width: 33.3333%;
+    }
+  }
+}
+
+.space-sidebar {
+  position: relative;
+
+  @include breakpoint($pc) {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.space {
+  // Sidebar
+  &__sidebar {
+    position: fixed;
+    z-index: 99;
+    top: 96px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    overflow-y: auto;
+
+    transition: all .4s ease;
+
+    border: 1px solid $border-color;
+
+    -ms-overflow-style: none;
+
+    @include breakpoint($pc) {
+      position: relative;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__sidebar-header {
+    margin: -17px;
+
+    background-color: $sidebar-header-background;
+
+    font-size: 20px;
+
+    line-height: 20px;
+  }
+
+  &__sidebar-actions {
+    font-size: 14px;
+  }
+
+  &__sidebar-favorite {
+    margin-top: 2px;
+  }
+
+  &__favorite-button {
+    padding: 8px 12px;
+
+    border-radius: 3px;
+
+    background-color: $sidebar-favorite-background;
+
+    color: $color-white;
+
+    @include breakpoint($pc) {
+      display: block;
+
+      padding: 16px;
+
+      background-color: $sidebar-header-background;
+    }
+  }
+
+  &__favorite-icon {
+    @include breakpoint($pc) {
+      margin-right: 10px;
+    }
+  }
+
+  // Calculator
+  &__booking-datepicker {
+    @include breakpoint($pc) {
+      padding-right: 4px;
+      padding-left: 4px;
+    }
+  }
+
+  &__booking-label,
+  &__booking-input {
+    width: 100%;
+  }
+
+  &__booking-long-term-mark:disabled {
+    cursor: not-allowed;
+  }
+
+  &__booking-details {
+    display: none;
+
+    margin-top: 17px;
+    margin-right: -16px;
+    margin-left: -16px;
+
+    padding-top: 30px;
+
+    @include breakpoint($pc) {
+      display: block;
+    }
+
+    &__block {
+      display: block;
+    }
+  }
+
+  &__booking-social {
+    margin: 40px -16px 0;
+
+    background-color: $sidebar-input-background;
+
+    a {
+      display: inline-block;
+
+      width: 30px;
+      height: 30px;
+
+      padding: 4px;
+
+      border: 3px solid $color-gray-deep;
+      border-radius: 50%;
+
+      color: $color-gray-deep;
+    }
+  }
+
+  // Actions
+  &__actions {
+    display: none;
+
+    margin-right: -17px;
+    margin-left: -17px;
+
+    @include breakpoint($pc) {
+      display: block;
+    }
+  }
+}
+
+// Information sidebar select2
+.select2-container--insurance-options {
+  height: 40px;
+
+  .selection {
+    color: $color-gray-deep;
+  }
+
+  .select2-selection__rendered {
+    padding: 8px;
+
+    border: 1px solid $border-color;
+
+    font-size: 14px;
+  }
+
+  .select2-results {
+    height: 185px;
+
+    padding-bottom: 50px;
+
+    overflow-y: scroll;
+
+    @include breakpoint($pc) {
+      height: auto;
+
+      padding-bottom: 0;
+    }
+  }
+
+  .select2-results__option {
+    font-size: 14px;
+  }
+
+  .select2-search--dropdown {
+    display: none;
+  }
+}
+
+// Host
+.space-host {
+  &__container {
+    @include breakpoint($pc) {
+      width: 960px;
+    }
+  }
+
+  &__avatar {
+    width: 80px;
+    height: 80px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+  }
+}
+
+// Sidebar Toggle
+.space__sidebar-overlay {
+  position: absolute;
+
+  z-index: -1;
+
+  top: 55px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  background-color: $overlay-background;
+}
+
+.space__sidebar-toggle {
+  display: inline-block;
+
+  padding: 10px 12px 8px;
+
+  transition: unset;
+
+  border-radius: 3px;
+
+  background-color: $color-black;
+
+  font-size: 14px;
+
+  &::before {
+    display: inline-block;
+
+    padding: 10px 12px 8px;
+
+    border-radius: 3px;
+  }
+
+  &.collapsed {
+    padding: initial;
+
+    background-color: $sidebar-header-background;
+
+    font-size: 0;
+
+    &::before {
+      content: 'Detail';
+
+      background-color: $color-orange;
+      color: $color-white;
+
+      font-size: 14px;
+    }
+  }
+}

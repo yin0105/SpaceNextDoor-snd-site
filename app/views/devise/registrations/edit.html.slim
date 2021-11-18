@@ -1,0 +1,25 @@
+.bg-gray
+  .container.profile-basic-info.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'Basic Info'
+        .profile__content-body.p-4.bg-white
+          = simple_form_for resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' },
+          wrapper: :horizontal_form, wrapper_mappings: { file: :horizontal_file_input } do |form|
+            .form-inputs
+              = form.input :identity, as: :hidden, input_html: { value: @identity }
+              = form.input :avatar, label: 'Profile Photo', as: :basic_image_uploader, thumb_size: :small
+              = form.input :name do
+                .form-inline
+                  = form.input :first_name, placeholder: 'First Name', label: false
+                  = form.input :last_name, placeholder: 'Last Name', label: false
+
+              = form.input :gender, collection: User.genders.keys
+              = form.input :birthday, label: 'Birth Date', as: :datepicker
+              = form.input :address, as: :address
+              = form.input :biography, as: :text
+
+            .form-actions.profile__form-actions.text-center
+              = form.button :submit, render_edit_button_text(@identity), class: 'profile-basic-info__button profile__button button-secondary text-white px-3 py-2 border-0'

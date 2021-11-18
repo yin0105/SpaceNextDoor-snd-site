@@ -1,0 +1,23 @@
+- if space
+  = space_item(space) do
+    .image-holder
+      = link_to(image_tag(space.images.last.url(:cover), alt: 'image description'), space)
+      = render_space_status_tag(space)
+    .text-holder
+      h3 = link_to space.name, space
+      address
+        i.ico.ico-pin
+        = space.location
+      ul.list-info
+        li
+          i.ico.ico-arrow
+          | #{space.area} SQM
+        li
+          i.ico.ico-home
+          = t(".#{space.property}")
+      strong.priace
+        = space.daily_price.format
+        | &nbsp;Per Day
+      .btn-holder
+        = link_to t('.book_now'), space, class: 'btn btn-primary'
+        = render_share_modal_button(space)

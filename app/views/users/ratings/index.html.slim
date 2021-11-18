@@ -1,0 +1,26 @@
+.bg-gray
+  .container.profile-rating.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'Rating'
+        .profile__content-body.px-4.py-3.bg-white.text-center
+          = render_profile_rating_navigation
+
+          - @ratings.each do |rating|
+            .profile-rating__item-wrapper.mt-3.px-2.py-3.clearfix
+              .w-md-20.px-2
+                .profile-rating__item-avatar.mb-2.mx-auto
+                  = image_tag(rating.user.avatar.small.url, class: 'avatar')
+                .text-center.font-size-medium
+                  = rating.user.name
+              .w-md-80.px-2
+                p.mb-2
+                  span.text-orange.mr-3 = render_rating_icons(rating.rate)
+                  = rating.created_at.strftime('%B %Y')
+                  | &nbsp;
+                p.text-left.m-0
+                  = rating.note
+
+          = paginate @ratings

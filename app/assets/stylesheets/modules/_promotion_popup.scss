@@ -1,0 +1,28 @@
+.promotion-popup {
+  .modal-dialog {
+    width: auto;
+  }
+  .modal-content {
+    width: 500px;
+    padding-top: 0px;
+    .close {
+      background-color: transparent;
+      margin-top: -25px;
+      margin-right: -15px;
+    }
+    .close::before,.close::after {
+      background-color: black;
+    }
+  }
+
+  .close {
+    top: 30px;
+    right: 24px;
+  }
+
+  @media only screen and (min-width: 800px) {
+    .modal-content {
+      width: 800px;
+    }
+  }
+}

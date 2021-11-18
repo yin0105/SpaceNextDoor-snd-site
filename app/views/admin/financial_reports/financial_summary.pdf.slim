@@ -1,0 +1,44 @@
+div = "#{I18n.l(start_date, format: :mail_date)} to #{I18n.l(start_date.end_of_month, format: :mail_date)}"
+
+table
+  tr.bottom
+    th Transaction No.
+    th Guest ID
+    th Guest
+    th Guest Rent (All Others)
+    th Guest Rent (SND)
+    th Guest Service Fee
+    th Host Service Fee
+    th Refund
+    th Total
+    th Start At
+    th End At
+  - payments.each do |payment|
+    tr.bottom
+      td.text-left = payment[:identity]
+      td.text-left = payment[:guest_id]
+      td.text-left = payment[:guest_name]
+      td = payment[:all_rent].format
+      td = payment[:snd_rent].format
+      td = payment[:guest_service_fee].format
+      td = payment[:host_service_fee].format
+      td = payment[:refund].format
+      td = payment[:total].format
+      td = payment[:service_start_at]
+      td = payment[:service_end_at]
+  tr.total
+    td.text-left Total
+    td
+    td.text-left = payments.size
+    td = total_by_field(payments, :all_rent)
+    td = total_by_field(payments, :snd_rent)
+    td = total_by_field(payments, :guest_service_fee)
+    td = total_by_field(payments, :host_service_fee)
+    td = total_by_field(payments, :refund)
+    td = total_by_field(payments, :total)
+    td
+    td
+h4 Report Explanation
+hr
+- t('report_explanations.financial_summary').each do |content|
+  div = content

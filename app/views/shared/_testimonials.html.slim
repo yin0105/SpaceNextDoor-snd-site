@@ -1,0 +1,9 @@
+section.block-testimonial style= "background-image: url(#{image_path 'img11.png'});"
+  header.section-head
+    h2
+      span.text = t('shared.testimonials.title')
+  .testimonial-slider
+    - items.each do |item|
+      .slide
+        .slide-wrap
+          = render 'shared/testimonial_item', item: item

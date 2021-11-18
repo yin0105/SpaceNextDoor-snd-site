@@ -1,0 +1,3 @@
+- unless Rails.env.test?
+  = render 'shared/tawk_to' if Settings.feature_flags.enable_tawk
+= render 'shared/facebook_pixel' if Rails.env.production?

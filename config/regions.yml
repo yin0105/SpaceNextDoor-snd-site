@@ -1,0 +1,285 @@
+SGP:
+  name: "Singapore"
+  currency: "SGD"
+  cities:
+    SGP:
+      name: "Singapore"
+      areas:
+        "":
+          name: ""
+        "AMK":
+          name: "Ang Mo Kio"
+        "BE":
+          name: "Bedok"
+        "BI":
+          name: "Bishan"
+        "BL":
+          name: "Boon Lay"
+        "BB":
+          name: "Bukit Batok"
+        "BM":
+          name: "Bukit Merah"
+        "BP":
+          name: "Bukit Panjang"
+        "BT":
+          name: "Bukit Timah"
+        "CWC":
+          name: "Central Water Catchment"
+        "CH":
+          name: "Changi"
+        "CB":
+          name: "Changi Bay"
+        "CCK":
+          name: "Choa Chu Kang"
+        "CL":
+          name: "Clementi"
+        "DC":
+          name: "Downtown Core"
+        "GE":
+          name: "Geylang"
+        "HO":
+          name: "Hougang"
+        "JE":
+          name: "Jurong East"
+        "JW":
+          name: "Jurong West"
+        "KA":
+          name: "Kallang"
+        "LCK":
+          name: "Lim Chu Kang"
+        "MA":
+          name: "Mandai"
+        "ME":
+          name: "Marina East"
+        "MS":
+          name: "Marina South"
+        "MP":
+          name: "Marine Parade"
+        "MU":
+          name: "Museum"
+        "NE":
+          name: "Newton"
+        "NEI":
+          name: "North-Eastern Islands"
+        "NO":
+          name: "Novena"
+        "OR":
+          name: "Orchard"
+        "OU":
+          name: "Outram"
+        "PR":
+          name: "Pasir Ris"
+        "PL":
+          name: "Paya Lebar"
+        "PI":
+          name: "Pioneer"
+        "PU":
+          name: "Punggol"
+        "QU":
+          name: "Queenstown"
+        "RV":
+          name: "River Valley"
+        "RO":
+          name: "Rochor"
+        "SEL":
+          name: "Seletar"
+        "SEM":
+          name: "Sembawang"
+        "SEN":
+          name: "Sengkang"
+        "SER":
+          name: "Serangoon"
+        "SI":
+          name: "Simpang"
+        "SR":
+          name: "Singapore River"
+        "SI":
+          name: "Southern Islands"
+        "SV":
+          name: "Straits View"
+        "SK":
+          name: "Sungei Kadut"
+        "TAM":
+          name: "Tampines"
+        "TAN":
+          name: "Tanglin"
+        "TE":
+          name: "Tengah"
+        "TP":
+          name: "Toa Payoh"
+        "TU":
+          name: "Tuas"
+        "WI":
+          name: "Western Islands"
+        "WW":
+          name: "Western Water Catchment"
+        "WO":
+          name: "Woodlands"
+        "YI":
+          name: "Yishun"
+      latlng:
+        "Ang Mo Kio":
+          latitude: 1.3691149
+          longitude: 103.8454342
+        "Bedok":
+          latitude: 1.3236038
+          longitude: 103.9273405
+        "Bishan":
+          latitude: 1.3236038
+          longitude: 103.9273405
+        "Boon Lay":
+          latitude: 1.3142556
+          longitude: 103.7093099
+        "Bukit Batok":
+          latitude: 1.3590288
+          longitude: 103.7636796
+        "Bukit Merah":
+          latitude: 1.2819046
+          longitude: 103.8239182
+        "Bukit Panjang":
+          latitude: 1.3774142
+          longitude: 103.7719498
+        "Bukit Timah":
+          latitude: 1.3294113
+          longitude: 103.8020777
+        "Central Water Catchment":
+          latitude: 1.3421712
+          longitude: 103.8254304
+        "Changi":
+          latitude: 1.3644202
+          longitude: 103.9915308
+        "Changi Bay":
+          latitude: 1.3219708
+          longitude: 104.0290022
+        "Choa Chu Kang":
+          latitude: 1.3839803
+          longitude: 103.7469611
+        "Clementi":
+          latitude: 1.3161811
+          longitude: 103.7649377
+        "Downtown Core":
+          latitude: 1.2866961
+          longitude: 103.8535097
+        "Geylang":
+          latitude: 1.3200544
+          longitude: 103.8917746
+        "Hougang":
+          latitude: 1.3612182
+          longitude: 103.8862529
+        "Jurong East":
+          latitude: 1.3328572
+          longitude: 103.7435522
+        "Jurong West":
+          latitude: 1.3403898
+          longitude: 103.7089875
+        "Kallang":
+          latitude: 1.3100334
+          longitude: 103.8651056
+        "Lim Chu Kang":
+          latitude: 1.4304941
+          longitude: 103.7173325
+        "Mandai":
+          latitude: 1.4260074
+          longitude: 103.8241046
+        "Marina East":
+          latitude: 1.2912788
+          longitude: 103.8709039
+        "Marina South":
+          latitude: 1.279294
+          longitude: 103.8701686
+        "Marine Parade":
+          latitude: 1.284198
+          longitude: 103.8756391
+        "Museum":
+          latitude: 1.2966147
+          longitude: 103.8485095
+        "Newton":
+          latitude: 1.3075517
+          longitude: 103.8403765
+        "North-Eastern Islands":
+          latitude: 1.4063775
+          longitude: 104.0323021
+        "Novena":
+          latitude: 1.3208572
+          longitude: 103.8424319
+        "Orchard":
+          latitude: 1.301674
+          longitude: 103.8380766
+        "Outram":
+          latitude: 1.2848825
+          longitude: 103.8438992
+        "Pasir Ris":
+          latitude: 1.3720937
+          longitude: 103.9473728
+        "Paya Lebar":
+          latitude: 1.3516087
+          longitude: 103.899516
+        "Pioneer":
+          latitude: 1.3226154
+          longitude: 103.6789788
+        "Punggol":
+          latitude: 1.3984457
+          longitude: 103.9072046
+        "Queenstown":
+          latitude: 1.2941664
+          longitude: 103.7861271
+        "River Valley":
+          latitude: 1.2959376
+          longitude: 103.8360614
+        "Rochor":
+          latitude: 1.3051345
+          longitude: 103.8509134
+        "Seletar":
+          latitude: 1.405163
+          longitude: 103.8663418
+        "Sembawang":
+          latitude: 1.4491107
+          longitude: 103.8184954
+        "Sengkang":
+          latitude: 1.3868121
+          longitude: 103.8914433
+        "Serangoon":
+          latitude: 1.3553567
+          longitude: 103.8678708
+        "Simpang":
+          latitude: 1.4443218
+          longitude: 103.8427696
+        "Singapore River":
+          latitude: 1.2895263
+          longitude: 103.8397852
+        "Southern Islands":
+          latitude: 1.2536568
+          longitude: 103.8257048
+        "Straits View":
+          latitude: 1.2728954
+          longitude: 103.8627293
+        "Sungei Kadut":
+          latitude: 1.4073821
+          longitude: 103.7561919
+        "Tampines":
+          latitude: 1.3495907
+          longitude: 103.9567879
+        "Tanglin":
+          latitude: 1.306932
+          longitude: 103.8188845
+        "Tengah":
+          latitude: 1.3555189
+          longitude: 103.7308145
+        "Toa Payoh":
+          latitude: 1.3343035
+          longitude: 103.8563265
+        "Tuas":
+          latitude: 1.2949472
+          longitude: 103.6304833
+        "Western Islands":
+          latitude: 1.2478844
+          longitude: 103.6767958
+        "Western Water Catchment":
+          latitude: 1.3471977
+          longitude: 103.682541
+        "Woodlands":
+          latitude: 1.4381922
+          longitude: 103.7889597
+        "Yishun":
+          latitude: 1.430368
+          longitude: 103.8353628

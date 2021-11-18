@@ -1,0 +1,15 @@
+en:
+  report_explanations:
+    account_receivable:
+    - 1. Ending balance is the sum of (Guest Rent + Guest Service Fee - Payment).
+    - 2. Guest Service Fee = 10% of Guest Rent.
+    - 3. Ending balance will be stated as $0.00 unless payment was unsuccessful.
+    - 4. Guest rent, guest service fee and deposit are based on creation date. Creation date is the same as invoice date.
+    - 5. Host service fee is not included in this report as it it not collected via Stripe.
+    - 6. Payments are via Stripe.
+    financial_summary:
+    - 1. Revenue = Income for the month.
+    - 2. Refund = Unutilised rental and service fee refunded.
+    security_deposit_liability:
+    - 1. Applied deposit means any damages to our premise will be deducted from the deposit.
+    - 2. Refund is made via Stripe.

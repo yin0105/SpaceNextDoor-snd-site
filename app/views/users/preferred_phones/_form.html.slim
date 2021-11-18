@@ -1,0 +1,6 @@
+= simple_form_for @user, url: { action: 'update' }, html: { class: 'form-horizontal' },
+wrapper: :horizontal_form do |form|
+  .form-inputs
+    = form.input :preferred_phone, label: 'Preferred Phone'
+  .form-actions.profile__form-actions.text-center
+    = form.button :submit, 'Update Preferred Phone', class: 'profile__button button-secondary text-white px-3 py-2 border-0'

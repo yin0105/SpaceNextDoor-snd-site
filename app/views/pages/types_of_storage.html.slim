@@ -1,0 +1,21 @@
+- content_for :header do
+  = render '/shared/landing_headers', image_path: 'img25.jpg', section: t('.title')
+section.block-types
+  .container
+    article.article-item
+      .image-holder = image_tag('img26.jpg', alt: 'image description')
+      .text-holder
+        h2
+          span = t('.article_title')
+        - t('.article_contents').each do |content|
+          p = content
+        = link_to t('.find_out_more'), spaces_path, class: 'btn btn-primary'
+    .types-detail
+      - t('.articles').each do |article|
+        .article-detail style="background-image: url(#{image_path article[:image_path]})"
+          .wrap
+            h2
+              span = article[:title]
+            p = article[:content]
+    .btn-holder
+      = link_to t('.find_out_more'), spaces_path, class: 'btn btn-secondary'

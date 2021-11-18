@@ -1,0 +1,83 @@
+default: &default
+  domain:
+    main: <%= ENV['MAIN_DOMAIN'] || 'spacenextdoor.com' %>
+  google:
+    api_key: <%= ENV['GOOGLE_API_KEY'] %>
+    frontend_api_key: <%= ENV['GOOGLE_FRONTEND_API_KEY'] %>
+    tag_manager_id: <%= ENV['GOOGLE_TAG_MANAGER_ID'] %>
+    recaptcha_v2_site_key: <%= ENV['RECAPTCHA_V2_SITE_KEY'] %>
+    recaptcha_v2_secret_key: <%= ENV['RECAPTCHA_V2_SECRET_KEY'] %>
+    recaptcha_v3_site_key: <%= ENV['RECAPTCHA_V3_SITE_KEY'] %>
+    recaptcha_v3_secret_key: <%= ENV['RECAPTCHA_V3_SECRET_KEY'] %>
+  stripe:
+    public_key: <%= ENV['STRIPE_PUBLIC_KEY'] %>
+    secret_key: <%= ENV['STRIPE_SECRET_KEY'] %>
+  twilio:
+    sid: <%= ENV['TWILIO_SID'] %>
+    token: <%= ENV['TWILIO_TOKEN'] %>
+    service_sid: <%= ENV['TWILIO_SERVICE_SID'] %>
+  facebook:
+    app_id: <%= ENV['FACEBOOK_APP_ID'] %>
+    app_secret: <%= ENV['FACEBOOK_APP_SECRET'] %>
+  service_fee:
+    host_rate: 0.1
+    guest_rate: 0.0
+  deposit:
+    days: 30
+  order:
+    extended_days: <%= ENV['LONG_LEASE_EXTENDED_DAYS'] || 30 %>
+    days_to_next_service_end: <%= ENV['DAYS_TO_NEXT_SERVICE_END'] || 14 %>
+    days_to_notify_service_end: <%= ENV['DAYS_TO_NOTIFY_SERVICE_END'] || 7 %>
+    min_notice_days: <%= ENV['MIN_NOTICE_DAYS'] || 16 %>
+    one_month_payout_cycle: <%= ENV['ONE_MONTH_PAYOUT_CYCLE'] || 15 %>
+    ten_days_payout_cycle: <%= ENV['TEN_DAYS_PAYOUT_CYCLE'] || 10 %>
+  space:
+    auto_extend_days: <%= ENV['SPACE_AUTO_EXTEND_DAYS'] || 180 %>
+  asset:
+    host: <%= ENV['ASSET_HOST'] %>
+  mail:
+    recipient: <%= ENV['MAIL_RECIPIENT'] || 'help@spacenextdoor.com' %>
+  mailer: &mailer_default
+    url:
+      host: <%= ENV['MAILER_URL_HOST'] %>
+    asset:
+      host: <%= ENV['MAILER_ASSET_HOST'] || ENV['ASSET_HOST'] %>
+    default:
+      from: '"Space Next Door" <noreply@spacenextdoor.com>'
+      reply_to: 'service@spacenextdoor.com'
+  notification:
+    bcc_list: <%= ENV['BCC_LIST'] %>
+  feature_flags:
+    enable_tawk: <%= ENV['FF_ENABLE_TAWK'] == 'true' %>
+  aws:
+    access_key: <%= ENV['AWS_ACCESS_KEY'] %>
+    secret_key: <%= ENV['AWS_SECRET_KEY'] %>
+    bucket: <%= ENV['AWS_BUCKET'] %>
+  smtp:
+    username: <%= ENV['SENDGRID_USERNAME'] %>
+    password: <%= ENV['SENDGRID_PASSWORD'] %>
+    address: smtp.sendgrid.net
+    domain: <%= ENV['MAILER_URL_HOST'] %>
+    port: 25
+    authentication: plain
+    enable_starttls_auto: true
+  bento:
+    key: <%= ENV['BENTO_KEY'] %>
+  hubspot:
+    key: <%= ENV['HUBSPOT_KEY'] %>
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+
+production:
+  <<: *default
+
+test:
+  <<: *default
+  mailer:
+    <<: *mailer_default
+    url:
+      host: test.host

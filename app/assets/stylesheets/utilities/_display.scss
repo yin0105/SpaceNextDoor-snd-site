@@ -1,0 +1,7 @@
+// Display
+
+@each $value in $displays {
+  .d-#{$value} {
+    display: $value;
+  }
+}

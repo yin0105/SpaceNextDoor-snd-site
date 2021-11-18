@@ -1,0 +1,12 @@
+scss_files: 'app/assets/stylesheets/**/*.scss'
+linters:
+  DuplicateProperty:
+    enabled: false
+  IdSelector:
+    enabled: false
+  PropertySortOrder:
+    order: smacss
+  TrailingWhitespace:
+    enabled: false
+  SelectorFormat:
+    convention: hyphenated_BEM

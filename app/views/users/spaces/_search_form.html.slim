@@ -1,0 +1,10 @@
+= simple_form_for search_space, url: user_spaces_path, method: :get, class: 'form-filter', html: { id: 'host-space-search-filter', enforce_utf8: false } do |form|
+  .container
+    .user-space-serach__form-inputs.clearfix.mt-3
+      label.w-100.w-md-33.py-2.font-bold Location
+      .w-100.w-md-60.py-2
+        = form.input :region, label: false, input_html: { data: { 'search': 'region' }}, placeholder: 'Please select location.', required: false
+    .user-space-serach__form-inputs.clearfix.mt-1
+      label.w-100.w-md-33.py-2.font-bold Space ID/ Name
+      .w-100.w-md-60.py-2
+        = form.input :field, as: :select, label: false, placeholder: 'Please enter Space ID or name.', required: false

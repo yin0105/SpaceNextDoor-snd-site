@@ -1,0 +1,42 @@
+.order-new
+  .container.order-new__container.pt-100.pb-5
+    h1.p-4.pt-5.text-center.text-orange.hidden-pc Booking Your Storage
+    .clearfix
+      .w-lg-40.order-new__sidebar.mx-auto.pb-5
+        aside.order-new__sidebar-wrapper
+          = render 'form'
+      .w-lg-60.order-new__wrapper
+        h1.p-4.pt-5.text-center.text-orange.pc-only Booking Your Storage
+        h1.text-center = current_space.name
+        section.order-new__space-information.mb-3.mx-auto
+          div
+            i.icon.fa.fa-map-marker.mr-2
+            = current_space.location
+          ul
+            li.space-information__property-item
+              i.icon.fa.fa-cube.mr-2
+              | Type of space: #{current_space.spaceable.category}
+            li.space-information__property-item
+              i.icon.fa.fa-clock-o.mr-2
+              | Check in: #{current_space.spaceable.checkin_time}
+            li.space-information__property-item
+              i.icon.fa.fa-cube.mr-2
+              | Type of property: #{current_space.property}
+            li.space-information__property-item
+              i.icon.fa.fa-calendar.mr-2
+              | Min storage: #{space_minimum_rent_days(current_space)}
+            li.space-information__property-item
+              i.icon.fa.fa-usd.mr-2
+              | Cancellation policy: 50% return except for service fee
+            li.space-information__property-item
+              = render_space_area(current_space)
+            li.space-information__property-item = link_to 'Local Tax and Law', tax_and_law_path, target: '_blank'
+        section.order-new__space-rules.py-3.mx-auto
+          h2.text-center House rules
+          ul
+            - space_rules(current_space).each do |rule|
+              li.space-information__rules-item.pb-2 = rule
+            = render_addational_rules(current_space)
+          = link_to t('orders.show.snd_rules'), snd_rules_path, target: '_blank'
+
+= render_cannot_promotion_modal(@form)

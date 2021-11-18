@@ -1,0 +1,40 @@
+en:
+  new_enquiries:
+    new:
+      help_find_message: Let us help you find storage
+      welcome_title: Need Storage Space?
+      welcome_message: There's Some Next Door...
+      intro_first: WHO WE ARE
+      snd: Space Next Door
+      who_we_are_content_one: brings together two groups of people who would love to meet.
+      who_we_are_content_two: People who have spare space in their homes... And people who have too much stuff.
+      who_we_are_content_three: By bringing everyone together,
+      who_we_are_content_three_1: ensures you never run out of room for keep your treasured belongings safe.
+      available_space_title: SOME OF OUR AVAILABLE SPACES
+      spaces:
+        - title: Excellent Wine Cellar
+          price: $5.00 per day
+          area: Bukit Timah, Singapore
+          image: demo_space_wine.jpg
+          text_direction: left
+        - title: Lockable Storage Room
+          price: $1.90 per day
+          area: Bukit Timah, Singapore
+          image: demo_space_clothes.jpg
+          text_direction: right
+        - title: Locker Storage
+          price: $3.00 per day
+          area: Kallang, Singapore
+          image: demo_space_locker_storage.jpg
+          text_direction: left
+        - title: Non Air-Con Self Storage
+          price: $8.00 per day
+          area: Ang Mo Kio, Singapore
+          image: demo_space_none_air.jpg
+          text_direction: right
+      help_block_title: Let us help you find storage space
+      help_block_phone: +65 6353 9325
+      help_block_mail : help@spacenextdoor.com
+      help_block_content: Tell us what you need to store and we’ll help find the best storage match for you.
+      find_out_title: Find Out More!
+      find_out_button: Tell us what you need to store and we’ll help find the best storage match for you.

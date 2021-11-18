@@ -1,0 +1,11 @@
+.signup-success {
+  &__button {
+    @include breakpoint($tablet) {
+      width: 300px;
+    }
+
+    &:hover {
+      background-color: $color-orange-deep;
+    }
+  }
+}

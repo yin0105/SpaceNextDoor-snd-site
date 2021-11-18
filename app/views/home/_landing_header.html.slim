@@ -1,0 +1,16 @@
+- content_for :search do
+  = render '/shared/search'
+= flash_messages
+.top-container style= "background-image: url(#{image_path image_path})"
+  = render 'media'
+  = render '/shared/header'
+  .visual-area
+    .container
+      h1 = t('.welcome_to_space_next_door')
+      .caption-slider
+        - t('.welcome_messages').each do |message|
+          .slide
+            span.slide-text = message
+      ul.list-btns
+        li = link_to(t('.explore_spaces'), spaces_path, class: 'btn btn-primary')
+        li = link_to(t('.host_a_space'), become_a_host_path, class: 'btn btn-secondary')

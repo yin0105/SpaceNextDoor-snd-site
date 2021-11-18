@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      padding: 20px 60px;
+
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    #wrapper { text-align: center; }
+    .error { margin-top: 200px; }
+    .error__code {
+      color: #f46634;
+      font-size: 68px;
+    }
+    .error__reason { font-size: 20px; }
+    .error__tips { font-size: 15px; }
+    .error__actions { margin-top: 40px; }
+    .error__button {
+      display: inline-block;
+      padding: 10px 40px;
+      color: white;
+      background-color: #333;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" role="header">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="Space Next Door" />
+    </a>
+  </header>
+  <div id="wrapper">
+    <div class="error">
+      <div class="error__code">404</div>
+      <div class="error__message">
+        <p class="error__reason">Oops, This Page Not Found!</p>
+        <p class="error__tips">Please try one of the following pages:</p>
+      </div>
+      <div class="error__actions">
+        <a href="/" class="error__button">Home Page</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+html
+  head
+    title = page_name
+    = csrf_meta_tags
+    = csp_meta_tag
+    = render '/shared/open_graph_meta'
+    meta name="google-site-verification" content="0qYcOQK7Zl5xnL0tGOha7Jz_Y_W2R8fNt9Q6F-q9ns4"
+    meta name="facebook-domain-verification" content="odv1cg7ebepsw4fqi4nzzjlnnvnjhk"
+    = render '/shared/pre_script'
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Open+Sans'
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/swipe/2.0.0/swipe.js'
+    = javascript_pack_tag 'application'
+    = meta_robots_content
+    meta charset='utf-8'
+    meta content="#{page_description}" name='description'
+    meta content='width=device-width,initial-scale=1' name='viewport'
+    = favicon_link_tag('favicon.ico')
+  body
+    = render '/shared/google_tag_manager_noscript'
+    = render '/shared/nav_bars'
+    #wrapper
+      = render_header
+      main#main
+        = yield :search
+        = yield
+      = render '/shared/footer'
+      = render_user_registration_modal
+      = render '/shared/map_modal'
+      = render '/shared/social_modal'
+      = render_cannot_book_modal
+      = render '/shared/facebook'
+      = render '/shared/post_script'
+      = yield :script

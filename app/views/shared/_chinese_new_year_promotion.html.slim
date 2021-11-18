@@ -1,0 +1,15 @@
+#promotion-popup.modal.fade.p-0.pt-5.pb-4.promotion-popup
+  .modal-dialog
+    .modal-content
+      .modal-body
+        button type='button' class='close' data-dismiss='modal' aria-label='close'
+
+        = link_to searches_path(promotion: true) do
+          picture
+            source media='(min-width: 800px)' srcset=image_path('promotion_desktop.jpg')
+            source media='(max-width: 800px)' srcset=image_path('promotion.jpg')
+            = image_tag('promotion_desktop.jpg')
+  / = image_tag('promotion.jpg', srcset: { 'promotion.jpg': '600w', 'promotion_desktop.jpg': '800w' })
+
+javascript:
+  $("#promotion-popup").modal()

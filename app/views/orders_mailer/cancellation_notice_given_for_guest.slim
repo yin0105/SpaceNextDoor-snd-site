@@ -1,0 +1,6 @@
+mj-column width="100%"
+	mj-text
+		p Dear #{@user.name},
+		p Your termination notice for Space, #{@space.name} <b>under Booking ID #{@order.id}</b> has been received and the last day of storage is #{@order.long_term_cancelled_at.strftime('%d-%b-%Y')}.
+		p If you are holding any keys to the space, please arrange for them to be returned and inform your host once the space has been vacated.
+		p We’re sad to see you go but please come back again real soon!

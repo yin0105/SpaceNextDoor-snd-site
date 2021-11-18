@@ -1,0 +1,13 @@
+- if message.is_system?
+  .message-system.font-size-medium.text-gray-deep.text-center.mt-3
+    = message.content
+- else
+  .message-dialog.mt-3.clearfix(class="#{message_dialog_extra_style(message)}")
+    .message-dialog__wrapper.float-left
+      = simple_format message.content
+      - message.images.each do |image|
+        = image_thumb_with_link(image)
+      .message-dialog__date
+        = l message.created_at, format: :date
+    .message-dialog__avatar.float-left.ml-3
+      = image_tag message.user.avatar.small.url

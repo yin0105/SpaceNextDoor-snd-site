@@ -1,0 +1,13 @@
+article.channel-show__profile.mt-3.pc-only.clearfix
+  .channel-show__profile-avatar.float-left
+    = image_tag @channel.target.avatar.small.url
+  .channel-show__profile-info.ml-3.float-left.text-gray-deep
+    h1.channel-show__profile-name.mb-1.font-size-large = @channel.target.name
+    .channel-show__profile-review.font-size-small.text-gray
+      .channel-show__profile-rating.text-orange.d-inline-block.pr-2
+        = render_rating_icons @channel.target.rate_score
+      | #{@channel.target.evaluations.count} Reviews
+    .channel-show__profile-verified.mt-2
+      = render_user_verified_badge(@channel.target)
+  .channel-show__profile-biography
+    = @channel.target.biography

@@ -1,0 +1,11 @@
+.notification-index__wrapper.mt-3.text-gray-deep
+  .notification-index__heading.bg-gray.p-3
+    .notification-index__title.d-inline-block
+      = notification.title
+    .notification-index__date.pull-right
+      = l notification.created_at, format: :date
+  .notification-index__body.clearfix.p-3
+    .notification-index__icon.w-md-20.text-center
+      = image_tag('icons/system_message.png')
+    .notification-index__content.w-md-80
+      = simple_format(notification.content)

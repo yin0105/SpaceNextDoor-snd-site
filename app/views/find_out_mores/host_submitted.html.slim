@@ -1,0 +1,4 @@
+.container.find-out-more.text-center.pt-100.pb-5
+  h1.p-4.pt-5.text-orange = t('.title')
+  p.my-5 = t('.description', space_next_door: content_tag(:b, 'Space Next Door') ).html_safe
+  = link_to 'Home', root_path, class: 'button button-secondary mx-auto find-out-more__button'

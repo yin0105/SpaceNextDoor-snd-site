@@ -1,0 +1,8 @@
+= simple_form_for @contact, url: url, method: :post, html: { class: 'form-horizontal' },
+wrapper: :horizontal_form do |form|
+  = form.input :identity, as: :hidden, input_html: { value: @identity }
+  = form.input :name
+  = form.input :phone
+  = form.input :email
+  .form-actions.profile__form-actions.text-center
+    = form.submit 'Submit', class: 'profile__button button-secondary text-white px-3 py-2 border-0'

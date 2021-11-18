@@ -1,0 +1,332 @@
+// Dependent on main.css
+
+// Fix icon position on index page glance section
+[class^="ico-"],
+[class*=" ico-"] {
+  line-height: inherit;
+}
+
+html input[disabled] {
+  cursor: no-drop;
+}
+
+.article .list-info li i {
+  margin: 0 5px 0 0;
+}
+
+// Fix caption-slider height on index page
+.slick-slide {
+  height: auto;
+}
+
+// Adjust range-holder position and font size on spaces page
+.range-holder {
+  .value-holder,
+  .min-val,
+  .max-val {
+    font-size: 12px;
+  }
+
+  .min-val {
+    left: 1px;
+  }
+
+  .max-val {
+   right: -2px;
+  }
+
+  &.sqm {
+    .min-val {
+      left: -10px;
+    }
+
+    .max-val {
+      right: -14px;
+    }
+  }
+}
+
+// Adjust spaces page
+.two-cols .map-text .btn,
+.two-cols .widget-box a {
+  font-size: 12px;
+}
+
+.form-filter {
+  label {
+    font-size: 16px;
+
+    color: inherit;
+  }
+
+  input[type="text"],
+  select {
+    font-size: 12px;
+
+    line-height: 18px;
+  }
+
+  select {
+    color: #000;
+    width: 100%;
+    border: none;
+    background: #e4e4e4;
+    border-radius: 5px;
+    height: 44px;
+    padding: 15px 11px;
+  }
+
+  .col-filter__type {
+    width: unset;
+  }
+  .col-clear-filter {
+    width: unset;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
+    
+    .btn-clear-filter {
+      min-width: unset;
+      width: 125px;
+      height: unset;
+      padding: 7px;
+      margin-top: 8px;
+      font-size: 16px;
+      border-radius: unset;
+
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.spaces {
+  &__container {
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    order: 1;
+  }
+
+  &__sidebar {
+    order: 3;
+
+    @media (min-width: 768px) {
+      order: 2;
+    }
+  }
+
+  &__articles {
+    width: 100%;
+
+    order: 2;
+
+    @media (min-width: 768px) {
+      order: 3;
+    }
+  }
+}
+
+.two-cols .sidebar {
+  @media (max-width: 767px) {
+    margin-top: 50px;
+  }
+}
+
+.two-cols .spaces--hide-map .article {
+  @media (min-width: 768px) {
+    margin: 0 10px 50px;
+
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+.two-cols .spaces--hide-map .row-articles {
+  @media (min-width: 768px) {
+    margin: 0 -10px;
+
+    justify-content: flex-start;
+  }
+}
+
+// Adjust header position
+.header {
+  position: fixed !important;
+
+  z-index: 100 !important;
+}
+
+#header.bg-orange {
+  @media (min-width: 1024px) {
+    padding: 0 0 1px 0;
+  }
+}
+
+#footer .bottom-bar {
+  overflow: hidden;
+}
+
+.nav-drop {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  height: 310px;
+
+  font-size: 14px;
+
+  @media (min-width: 768px) {
+    height: 454px;
+  }
+
+  @media (min-width: 1024px) {
+    height: auto;
+
+    overflow: visible;
+  }
+}
+
+.menu {
+  padding: 0;
+
+  margin: 0 -5px;
+
+  li {
+    @media (max-width: 1023px) {
+      margin: 0;
+    }
+  }
+
+  > li {
+    padding: 0;
+    margin: 0;
+
+    a {
+      display: block;
+      padding: 16px 12px;
+    }
+
+    > a {
+      @media (min-width: 1024px) {
+        padding: 42px 8px;
+      }
+    }
+  }
+}
+
+.list-contact {
+  margin: 0;
+
+  @media (min-width: 1024px) {
+    padding: 0;
+  }
+
+  > li {
+    @media (min-width: 1024px) {
+      padding: 17px 8px;
+    }
+
+    &:nth-child(2):before {
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      height: 16px;
+    }
+  }
+
+  .btn {
+    font-size: 14px;
+
+    min-width: 120px;
+  }
+
+  i {
+    margin-right: 0;
+  }
+}
+
+// Adjust button font size
+.btn-primary,
+.btn-secondary,
+.list-btns .btn,
+.form-search .btn,
+.block-info .btn {
+  font-size: 18px;
+}
+
+.storage-box .btn {
+  font-size: 14px;
+}
+
+// Adjust glance section style
+.space {
+  &.article {
+    height: auto; // Adjust height setting of glance section on index for safari browser
+
+    h3 {
+      font-size: 18px;
+    }
+
+    address {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    .list-info,
+    .priace {
+      font-size: 14px;
+    }
+  }
+}
+
+// Adjust height setting of storage size guide section on index for safari browser
+.storage-box {
+  height: auto;
+
+  &::before {
+    border-radius: 0 0 100px 0;
+
+    @media (max-width: 767px) {
+      border-radius: 0 0 50px 0;
+    }
+  }
+
+  &.style {
+    height: 296px;
+  }
+}
+
+// Adjust index page why section style
+.block-info .text-holder .text {
+  justify-content: center;
+}
+
+// Adjust height setting of how it work page for safari browser
+.tabset a {
+  height: auto;
+}
+
+// Adjust height setting for safari browser
+.hosting-detail .image-area {
+  height: 337px;
+
+  @media (max-width: 767px) {
+    height: 297px;
+  }
+}
+
+// Adjust rounded corners setting of index page for safari browser
+.top-container::before,
+.bg-video-holder .bg-video {
+  border-radius: 0 0 0 150px;
+
+  overflow: hidden;
+
+  @media (max-width: 767px) {
+    border-radius: 0 0 0 70px;
+  }
+}

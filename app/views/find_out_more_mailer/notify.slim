@@ -1,0 +1,23 @@
+mj-column
+  mj-text
+    | Preferred location: #{@request.location},
+  mj-text
+    | Preferred start date: #{l @request.start_at, format: :mail_date}
+  mj-text
+    | Approximate end date:&nbsp;
+    = l @request.end_at, format: :mail_date if @request.end_at.present?
+  mj-text
+    | Tell us more about the items you are planning to store:
+    p = @request.description
+  mj-text
+    | How much space do you need?: #{@request.size}sqm
+  mj-text
+    | Name: #{@request.name}
+  mj-text
+    | Phone: #{@request.phone}
+  mj-text
+    | Email: #{@request.email}
+  - if @request.space.present?
+    mj-text
+      | Space viewed:&nbsp;
+      = link_to "#{@request.space.id} - #{@request.space.name}", @request.space, target: '_blank'

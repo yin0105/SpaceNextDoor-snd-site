@@ -1,0 +1,47 @@
+.well-done {
+  &__button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.user-space-index {
+  &__navigation.active {
+    a {
+      color: $color-orange;
+
+      text-decoration: underline;
+    }
+  }
+
+  &__button {
+    width: 300px;
+  }
+}
+
+// Search form select2
+.user-space-serach__form-inputs {
+  .select2-container--snd {
+    height: auto;
+
+    .select2-selection__rendered {
+      padding: 0;
+
+      @include breakpoint($tablet) {
+        padding: 0;
+      }
+    }
+
+    .select2-results__options {
+      max-height: unset;
+
+      overflow-y: scroll;
+
+      color: $color-gray;
+    }
+
+    .select2-selection__placeholder {
+      margin-left: 0;
+    }
+  }
+}

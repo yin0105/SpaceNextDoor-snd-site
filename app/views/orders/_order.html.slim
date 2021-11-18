@@ -1,0 +1,23 @@
+.list-panel.mb-3
+  .list-panel__content
+    .list-panel__image
+      = image_tag order.space.featured_image_url(size: :thumb)
+    h3.list-panel__title.text-gray-deep = order.space.name
+    .list-panel__info.text-gray-deep
+      p
+        span.font-size-small = "Space ID: #{order.space.id}"
+        br
+        span.font-size-small = "Booking ID: #{order.id}"
+      .d-inline-block.font-size-medium
+        span.d-block.font-bold From:
+        = l order.start_at, format: :date
+      .d-inline-block.font-size-medium.ml-5
+        span.d-block.font-bold To:
+        = render_end_date(order, :date)
+    .list-panel__widgets
+      .list-panel__status = status_color order
+  .list-panel__buttons
+    = render_insurance_buttons(order)
+    = render_transform_long_lease_buttons(order)
+    = render_cancel_renewal_button(order)
+    = render_order_details_button(order)

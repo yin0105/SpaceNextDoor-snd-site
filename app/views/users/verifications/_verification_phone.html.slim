@@ -1,0 +1,8 @@
+.profile-verification__form-inputs.px-3
+  = form.input :phone, error: false do
+    .form-inline
+      = form.input :phone, label: false
+      = form.submit 'Verification', class: 'profile-verification__form-button button bg-white ml-2'
+    - if active_verification_code?(type: :phone)
+      .form-inline.profile-verification-code.bg-gray-input.my-3
+        = form.input :phone_verify_code,label: 'Phone verification code' , as: :verification_code

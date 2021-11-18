@@ -1,0 +1,89 @@
+// _carousel.scss Bootstrap v4.0.0
+
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-item {
+  display: none;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transition: transform .6s ease-in-out;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: block;
+}
+
+.carousel-item-next,
+.carousel-item-prev {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-item-next.carousel-item-left,
+.carousel-item-prev.carousel-item-right {
+  transform: translateX(0);
+
+  @supports (transform-style: preserve-3d) {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.carousel-item-next,
+.active.carousel-item-right {
+  transform: translateX(100%);
+
+  @supports (transform-style: preserve-3d) {
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.carousel-item-prev,
+.active.carousel-item-left {
+  transform: translateX(-100%);
+
+  @supports (transform-style: preserve-3d) {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  color: $color-gray;
+  font-size: 24px;
+  font-weight: bolder;
+
+  &:hover {
+    color: lighten($color-gray, 10%);
+    cursor: pointer;
+  }
+
+  &.left {
+    left: -18px;
+
+    @include breakpoint($tablet) {
+      left: -22px;
+    }
+  }
+
+  &.right {
+    right: -18px;
+
+    @include breakpoint($tablet) {
+      right: -22px;
+    }
+  }
+}

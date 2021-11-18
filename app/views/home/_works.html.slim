@@ -1,0 +1,23 @@
+section.three-cols
+  .container
+    header.section-head
+      h2
+        span.text = t('.book_space')
+    .row
+      .col
+        .image-holder = image_tag('icons/icon-map.svg')
+        .text-holder
+          strong.title = t('.find')
+          p = t('.find_description')
+      .col
+        .image-holder = image_tag('icons/icon-booking.svg')
+        .text-holder
+          strong.title = t('.book')
+          p = t('.book_description')
+      .col
+        .image-holder = image_tag('icons/icon-move.svg')
+        .text-holder
+          strong.title = t('.move')
+          p = t('.move_description')
+    div.text-center
+      = link_to t('.find_out_more'), how_it_work_path, class: 'btn btn-primary'

@@ -1,0 +1,11 @@
+section.block-hosting
+  .container
+    .text-holder
+      h3 = t('.title')
+      ul.list-bullets
+        - t('.descriptions').each do |description|
+          li = description
+      = link_to t('.create_your_listing'), user_spaces_path(unauthenticated_path: become_a_host_path, msg: "Please sign in or sign up to create your listing."), class: 'btn btn-primary'
+
+    .image-holder
+      = image_tag('img15.jpg')

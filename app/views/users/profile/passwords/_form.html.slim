@@ -1,0 +1,8 @@
+= simple_form_for @user, url: { action: 'update' } , html: { class: 'form-horizontal' },
+wrapper: :horizontal_form do |form|
+  .form-inputs
+    = form.input :current_password, label: 'Old Password'
+    = form.input :password, label: 'New Password'
+    = form.input :password_confirmation, label: 'Confirm Password'
+  .form-actions.profile__form-actions.text-center
+    = form.button :submit, 'Update Password', class: 'profile-change-password__button profile__button button-secondary text-white px-3 py-2 border-0'

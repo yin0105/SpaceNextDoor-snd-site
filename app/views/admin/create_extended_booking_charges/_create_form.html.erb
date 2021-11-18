@@ -1,0 +1,13 @@
+<%= semantic_form_for :late_fee_payment, url: admin_create_extended_booking_charges_create_path do |f| %>
+
+    <%= f.inputs :name => "Charge Extended Booking Charges" do %>
+      <%= f.input :order_id , :label => 'Order ID'%>
+      <%= f.input :check_in, :as => :date_select %>
+      <%= f.input :check_out, :as => :date_select %>
+    <% end %>
+
+      <%= f.actions do %>
+        <%= f.action :submit, :label => "Submit Extended Booking Charges", :as => :button %>
+      <% end %>
+
+<% end %>

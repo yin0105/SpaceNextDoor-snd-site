@@ -1,0 +1,26 @@
+- if space.discounted?
+  .discount-area-title.mb-1 = t('spaces.information.promotion_block_title')
+  .form-group
+    - unless (1 & Space.discount_codes[space.discount_code]).zero?
+      .option-group.mb-1
+        = radio_button_tag 'order[discount_code]', 1, defined?(order) && order.one_month_discount_code?, class: 'discount-options-checkboxes order-date-inputs', id: 'discount-code-1', disabled: defined?(order)
+        == content_tag :label, t('spaces.information.promotion_first_month_free'), class: 'ml-1'
+    - unless (2 & Space.discount_codes[space.discount_code]).zero?
+      .option-group.mb-1
+        = radio_button_tag 'order[discount_code]', 2, defined?(order) && order.two_months_discount_code?, class: 'discount-options-checkboxes order-date-inputs', id: 'discount-code-2', disabled: defined?(order)
+        == content_tag :label, t('spaces.information.promotion_first_and_sixth_month_free'), class: 'ml-1'
+    - unless (4 & Space.discount_codes[space.discount_code]).zero?
+      .option-group.mb-1
+        = radio_button_tag 'order[discount_code]', 3, defined?(order) && order.six_months_discount_code?, class: 'discount-options-checkboxes order-date-inputs', id: 'discount-code-3', disabled: defined?(order)
+        == content_tag :label, t('spaces.information.promotion_six_months_50_discount'), class: 'ml-1'
+    .option-group.mb-1
+      = radio_button_tag 'order[discount_code]', '', defined?(order) && order.discount_code == '', class: 'discount-options-checkboxes order-date-inputs', disabled: defined?(order)
+      = content_tag :label, t('spaces.information.no_promotion'), class: 'ml-1'
+    br
+    .promotion-tips.mb-2
+      - if 1 & Space.discount_codes[space.discount_code]
+        strong#discount-code-1-tip.text-error-text.mb-1.hidden = t('spaces.information.promotion_tips_first_month')
+      - if 2 & Space.discount_codes[space.discount_code]
+        strong#discount-code-2-tip.text-error-text.mb-1.hidden = t('spaces.information.promotion_tips_sixth_month')
+      - if 4 & Space.discount_codes[space.discount_code]
+        strong#discount-code-3-tip.text-error-text.mb-1.hidden = t('spaces.information.promotion_tips_sixth_month')

@@ -1,0 +1,64 @@
+.star-rating-input {
+  display: inline-block;
+
+  input {
+    display: none;
+  }
+}
+
+.star-rating-input__stars {
+  display: inline-block;
+
+  font-weight: 700;
+
+  direction: rtl;
+
+  %enabled-star {
+    &::before {
+      opacity: 1;
+
+      color: $color-yellow;
+    }
+  }
+
+  %disabled-star {
+    &::before {
+      opacity: .5;
+
+      color: $color-gray;
+    }
+  }
+
+  span {
+    @extend %disabled-star;
+
+    display: inline-block;
+
+    padding-right: 2px;
+
+    font-size: 20px;
+
+    cursor: pointer;
+  }
+
+  @for $i from 1 through 5 {
+    [data-value="#{$i}"] > & {
+      @for $j from 5 through (6 - $i) {
+        span:nth-child(#{$j}) {
+          @extend %enabled-star;
+        }
+      }
+    }
+  }
+
+  &.star-rating-input__stars:hover {
+    span {
+      @extend %disabled-star;
+    }
+
+    span:hover,
+    span:hover ~ span {
+      @extend %enabled-star;
+    }
+  }
+}

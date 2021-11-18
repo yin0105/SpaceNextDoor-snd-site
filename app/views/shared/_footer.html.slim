@@ -1,0 +1,42 @@
+footer#footer style= "background-image: url(#{image_path 'img16.jpg'});"
+  = link_to '#wrapper', class: 'btn-back smooth-scroll' do
+    i.ico.ico-arrow-right
+  .container
+    strong.logo
+      = link_to image_tag('logo_white.png', alt: 'SPACE NEXT DOOR'), root_path
+    .wrap
+      .col
+        strong.title = t('.trust')
+        ul.list-links
+          li = link_to t('.terms_of_service'), terms_of_service_path
+          li = link_to t('.guest_trust_and_safety'), guest_policy_path
+          li = link_to t('.host_trust_and_safety'), host_policy_path
+      .col
+        strong.title = t('.host')
+        ul.list-links
+          li = link_to t('.why_become_a_host'), become_a_host_path
+          li = link_to t('.host_standard'), host_standard_path
+      .col
+        strong.title = t('.about_us')
+        ul.list-links
+          li = link_to t('.the_team'), about_path
+          li = link_to t('.contact_us'), contact_path
+          li = link_to t('.help'), help_path, target:'_blank'
+    ul.social-networks
+      li = link_to content_tag(:i, nil, class: 'ico ico-facebook'), 'https://www.facebook.com/spacenextdoor/', target: '_blank'
+      li = link_to content_tag(:i, nil, class: 'ico ico-instagram'), 'https://www.instagram.com/spacenextdoor/', target: '_blank'
+
+  .bottom-bar
+    .container
+      p
+        i.fa.fa-map-marker.mr-2
+        = t('.address')
+      p
+        i.fa.fa-phone.mr-2
+        = link_to t('.phone'), "tel: #{t('.phone')}"
+      p.pb-3
+        i.fa.fa-envelope.mr-2
+        = mail_to t('.email')
+      p
+       = t('.copyright')
+       = link_to " #{t('.sitename')}", root_path

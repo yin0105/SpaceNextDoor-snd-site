@@ -1,0 +1,24 @@
+mj-section mj-class="pd-bm-10 pd-tp-10 bg-black"
+  mj-column width="10px"
+  mj-column width="120px"
+    mj-image width="120px" src="#{image_url("logo_white_font.png")}"
+  mj-column width="480px"
+
+mj-section mj-class="pd-bm-0 pd-tp-0 bg-black"
+  mj-column
+    mj-divider mj-class="ftr-dvdr"
+
+mj-section mj-class="pd-bm-10 pd-tp-10 bg-black"
+  mj-column
+    mj-text color="#abadaf" padding="0" align="center"
+      | Tap
+      | &nbsp;
+      = link_to "Help", "https://help.spacenextdoor.com/hc/en-us", class: "lk-blue"
+      | &nbsp;
+      | or contact us at
+      | &nbsp;
+      = mail_to "help@spacenextdoor.com", nil, class: "lk-blue"
+      | &nbsp;
+      | with your questions
+    mj-text color="#abadaf" padding="0" align="center" font-size="10px"
+      | Copyrights &copy 2017 All Rights Space Next Door

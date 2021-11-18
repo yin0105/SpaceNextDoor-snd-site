@@ -1,0 +1,7 @@
+.step-3
+  h1.p-4.pt-5.text-center.text-orange Step 3 - House Rules
+  = form.input :rules, as: :check_boxes, collection: SpaceOption.rules(:storage), label: 'What are your house rules?'
+  p Other:
+  = form.input :other_rules, label: false, placeholder: 'Text'
+  = form.input :checkin_time, collection: Storage::CHECKIN_TIMES.keys, label: 'When can guest check in?', include_blank: false
+  = space_form.input :minimum_rent_days, collection: SpaceOption.minimum_rent_days(:storage), label: 'Minimum storage requirement?', include_blank: false

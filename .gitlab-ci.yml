@@ -1,0 +1,167 @@
+# base image
+image: "circleci/ruby:2.6.5-node-browsers-legacy"
+
+# Services
+services:
+  - postgres:9.6.16
+
+include:
+  template: Jobs/Browser-Performance-Testing.gitlab-ci.yml
+
+# default variables
+variables:
+  RAILS_ENV: test
+  POSTGRES_DB: snd
+  NODE_VERSION: 7.4.0
+  PHANTOMJS_VERSION: 2.1.1
+  DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
+
+# build stages
+stages:
+  - test
+  - deploy
+  - analysis
+
+# cache gems in between builds
+cache:
+  paths:
+    - vendor/ruby
+    - node_modules
+    - phantomjs-${PHANTOMJS_VERSION}-linux-x86_64
+    - node-v${NODE_VERSION}-linux-x64
+    - .scannerwork
+
+# this is a basic example for a gem or script which doesn't use
+# services such as redis or postgres
+before_script:
+  - if [[ ! -f /usr/local/bin/node ]]; then curl -SLO https://nodejs.org/dist/v$NODE_VERSION/node-v${NODE_VERSION}-linux-x64.tar.xz && tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1; fi
+  - gem install bundler -v 2.1.4    # bundler is not installed with the image
+  - sudo chmod -R 777 /builds/
+  - ruby -v
+  - node -v
+  - bundle install --retry 3 --path vendor  # install dependencies into ./vendor/ruby
+  - npm install
+
+# jobs
+rspec:
+  stage: test
+  script:
+    - bundle exec rake db:schema:load
+    - bundle exec rspec -p --exclude-pattern "**/features/*_spec.rb"
+  artifacts:
+    paths:
+      - coverage
+
+rubocop:
+  stage: test
+  services: []
+  before_script:
+    - gem install rubocop -v 0.81.0
+    - gem install rubocop-rails -v 2.5.2
+    - gem install rubocop-performance -v 1.6.1
+    - gem install rubocop-rspec -v 1.41.0
+  script:
+    - rubocop --format progress --format json --out rubocop.json
+  artifacts:
+    paths:
+      - rubocop.json
+
+eslint:
+  stage: test
+  image: "node:12.18"
+  services: []
+  before_script:
+    - npm install
+  script:
+    - npm run eslint
+
+scsslint:
+  stage: test
+  services: []
+  before_script:
+    - gem install scss_lint -v 0.53.0
+  script:
+    - scss-lint app/assets/stylesheets/
+
+sonarqube:
+  stage: analysis
+  image:
+    name: sonarsource/sonar-scanner-cli
+    entrypoint: [""]
+  variables:
+    GIT_DEPTH: 0
+  before_script: []
+  script:
+    - sonar-scanner
+      -Dsonar.projectKey=space-next-door
+      -Dsonar.sourceEncoding=UTF-8
+      -Dsonar.qualitygate.wait=true
+      -Dsonar.ruby.rubocop.reportPaths=rubocop.json
+      -Dsonar.eslint.reportPaths=eslint.json
+      -Dsonar.ruby.coverage.reportPaths=coverage/.resultset.json
+      -Dsonar.exclusions=vendor/ruby/**/*
+      -Dsonar.coverage.exclusions=spec/**/*,config/**/*
+      -Dsonar.projectVersion=${CI_COMMIT_SHORT_SHA}
+      -Dsonar.sources=.
+  allow_failure: true
+  only:
+    - develop
+    - master
+
+capybara:
+  stage: test
+  before_script:
+    - if [[ ! -f /usr/local/bin/node ]]; then curl -SLO https://nodejs.org/dist/v$NODE_VERSION/node-v${NODE_VERSION}-linux-x64.tar.xz && tar -xJf node-v${NODE_VERSION}-linux-x64.tar.xz -C /usr/local --strip-components=1; fi
+    - if [[ ! -e phantomjs-${PHANTOMJS_VERSION}-linux-x86_64 ]]; then curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-${PHANTOMJS_VERSION}-linux-x86_64.tar.bz2 | tar -jx; fi
+    - cp phantomjs-${PHANTOMJS_VERSION}-linux-x86_64/bin/phantomjs ~/bin
+    - sudo chmod -R 777 /builds/
+    - ruby -v
+    - node -v
+    - gem install bundler -v 2.1.4    # bundler is not installed with the image
+    - bundle install -j $(nproc) --path vendor  # install dependencies into ./vendor/ruby
+    - npm install
+  script:
+    - bundle exec rake db:schema:load
+    - bundle exec rspec -p -P spec/features/*_spec.rb
+  artifacts:
+    when: on_failure
+    paths:
+      - tmp/capybara
+
+performance:
+  stage: analysis
+  before_script: []
+  variables:
+    URL: https://stg-snd.5xruby.com
+    SITESPEED_VERSION: 10.3.2-plus1
+    SITESPEED_OPTIONS: '--plugins.add /lighthouse'
+
+staging_deploy:
+  stage: deploy
+  services: []
+  before_script:
+    - gem install bundler -v 2.1.4    # bundler is not installed with the image
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --api-key=$HEROKU_TOKEN --app=snd-staging
+    - "curl -n -X POST https://api.heroku.com/apps/snd-staging/ps -H \"Accept: application/json\" -H \"Authorization: Bearer ${HEROKU_TOKEN}\" -d \"command=bundle exec rails db:migrate\""
+  only:
+    - /^release\/.*$/
+    - /^hotfix\/.*$/
+    - master
+  environment: staging
+
+staging_deploy_5xruby:
+  stage: deploy
+  before_script:
+    - which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+    - eval $(ssh-agent -s)
+      # add ssh key stored in SSH_PRIVATE_KEY variable to the agent store
+    - ssh-add <(echo -e "$SSH_PRIVATE_KEY")
+    - gem install bundler -v 2.1.4    # bundler is not installed with the image
+    - bundle install --path vendor
+  environment: staging
+  script:
+    - bundle exec cap staging deploy
+  only:
+    - develop

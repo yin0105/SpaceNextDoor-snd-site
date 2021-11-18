@@ -1,0 +1,31 @@
+javascript:
+  (function(window) {
+    var GlobalConfig = {
+      'Google': '#{Settings.google.frontend_api_key}',
+      'Stripe': {
+        'Key': '#{Settings.stripe.public_key}'
+      },
+      'GSFRate': '#{Settings.service_fee.guest_rate}',
+      'DepositDays': '#{Settings.deposit.days}',
+      'Facebook': {
+        'AppId': '#{Settings.facebook.app_id}'
+      },
+      'Path': {
+        'Root': '#{root_path}',
+        'SignupSuccess': '#{ signup_success_path }',
+        'PaymentMethod': '#{payment_method_path(format: :json)}',
+        'VerificationVerify': '#{verification_verify_path(format: :json)}'
+      },
+      'InsuranceOptions': JSON.parse('#{(Insurance::INSURANCE_OPTIONS.to_json.html_safe)}'),
+      'Regions': JSON.parse('#{(Regions::REGIONS.to_json.html_safe)}'),
+      'VerificationCodeDigit': '#{VerificationCode::CODE_DIGIT}',
+      'Assets': {
+        'Map': {
+          'Available': "#{image_path('icons/map_icon_active.png')}",
+          'Booked': "#{image_path('icons/map_icon.png')}",
+          'Active': "#{image_path('icons/map_icon_hover.png')}",
+        }
+      },
+    };
+    window.GlobalConfig = window.GlobalConfig || GlobalConfig;
+  })(window);

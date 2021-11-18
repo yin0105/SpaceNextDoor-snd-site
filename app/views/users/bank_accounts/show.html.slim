@@ -1,0 +1,25 @@
+.bg-gray
+  .container.profile-bank-account.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'For Host - Add Bank Account'
+        .profile__content-body.profile--verified-form.p-4.bg-white
+          - if @bank_account.present?
+            table.table
+              tbody
+                tr
+                  th.text-left Country
+                  td = @bank_account.country
+                tr
+                  th.text-left Bank Code
+                  td = @bank_account.bank_code
+                tr
+                  th.text-left Account Name
+                  td = @bank_account.account_name
+                tr
+                  th.text-left Account Number
+                  td = @bank_account.account_number
+          - else
+            p.text-center.profile-bank-account__button = link_to 'Add Bank Account', new_bank_account_path(identity: @identity), class: 'button-secondary text-white px-3 py-2 rounded-sm'

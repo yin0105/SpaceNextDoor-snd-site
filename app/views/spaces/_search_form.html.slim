@@ -1,0 +1,44 @@
+= simple_form_for searches, url: spaces_path, method: :get, html: { id: 'space-search-filter', class: 'form-filter', data: { 'search-trigger': true } } do |form|
+  = form.input :region, label: false, placeholder: 'Where do you need storage space?', as: :search_box, mode: :search, search: :region
+  = form.input :user_latitude, as: :hidden
+  = form.input :user_longitude, as: :hidden
+  = form.input :hide_map, as: :hidden, value: params[:hide_map]
+  = form.input :checkin_out, label: false do
+    .row
+      .col
+        = label_tag nil, t('.check_in')
+        .field
+          = form.input :check_in, label: false, as: :datepicker, min_date: Time.zone.today
+          = label_tag 'search_check_in', content_tag(:i, nil, class: 'ico ico-calendar-alt'), class: 'img'
+      .col
+        = label_tag nil, t('.check_out')
+        .field
+          = form.input :check_out, label: false, as: :datepicker, min_date: Time.zone.today
+          = label_tag 'search_check_out', content_tag(:i, nil, class: 'ico ico-calendar-alt'), class: 'img'
+  .row
+    .col
+      span.title = t('.price')
+      .range-holder
+        .range-slider
+          = form.input :price, label: false, as: :range_slider, range: Search::MIN_SEARCH_PRICE..Search::MAX_SEARCH_PRICE
+    .col
+      span.title = t('.size')
+      .range-holder.sqm
+        .range-slider.sqm
+          = form.input :size, label: false, as: :range_slider, range: Search::MIN_SEARCH_SIZE..Search::MAX_SEARCH_SIZE
+  .row
+    .col
+      span.title = t('.sort')
+      = form.select :sort, sort_options, value: params[:sort]
+  .row
+    .col
+      .space-search-filter__type
+        = label_tag nil, t('.promotion')
+        = form.input :promotion, as: :radio_buttons, label: false, value: params[:promotion]
+  .row
+    .col.col-filter__type
+      .space-search-filter__type
+        = label_tag nil, t('.type')
+        = form.input :type, label: false, as: :radio_buttons, collection: property_options, value: params[:type]
+    .col.col-clear-filter.text-right
+      = link_to t('.clear_filters'), spaces_path, class: 'btn btn-primary btn-clear-filter'

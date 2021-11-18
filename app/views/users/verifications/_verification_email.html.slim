@@ -1,0 +1,6 @@
+.profile-verification__form-inputs.mt-3.px-3
+  = form.input :email do
+    .form-inline
+      = form.input :email, label: false, disabled: true
+      - unless @user.confirmed?
+        = link_to 'Resend', verification_email_path, method: :post, class: 'profile-verification__form-button button bg-white ml-2'

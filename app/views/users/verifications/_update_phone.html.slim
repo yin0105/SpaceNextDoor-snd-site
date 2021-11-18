@@ -1,0 +1,10 @@
+= simple_form_for @user, url: verification_path, method: :post, html: { method: :put, class: 'form-horizontal' }, wrapper: :horizontal_form do |form|
+  .profile--form-group.profile-verification__form-inputs.px-3.clearfix
+    - if active_verification_code?(type: :phone)
+      .form-inline.profile-verification-code.bg-gray-input.my-3
+        = form.input :phone_verify_code,label: 'Phone verification code' , as: :verification_code
+    - else
+      = form.input :phone, error: false do
+        .form-inline
+          = form.input :phone, label: false
+          = form.submit 'Verification', class: 'profile-verification__form-button button bg-white ml-2'

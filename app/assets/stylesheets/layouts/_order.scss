@@ -1,0 +1,159 @@
+.order-new {
+  &__container {
+    @include breakpoint($pc) {
+      padding-top: 150px;
+    }
+  }
+
+  &__space-information,
+  &__space-rules {
+    @include breakpoint($tablet) {
+      width: 60%;
+    }
+
+    @include breakpoint($pc) {
+      width: 100%;
+    }
+  }
+
+  &__sidebar {
+    @include breakpoint($tablet) {
+      max-width: 400px;
+    }
+
+    @include breakpoint($pc) {
+      float: right;
+    }
+  }
+
+  &__sidebar-wrapper {
+    border: 1px solid $border-color;
+  }
+
+  &__booking-datepicker {
+    label,
+    input {
+      display: block;
+
+      width: 100%;
+    }
+
+    input {
+      @include input-border {
+        background: $sidebar-input-background;
+      }
+    }
+  }
+
+  &__note {
+    input {
+      @include input-border {
+        width: 100%;
+
+        margin-top: 8px;
+      }
+    }
+  }
+
+  &__policies {
+    padding-left: 20px;
+
+    [type='checkbox'] {
+      margin-right: 6px;
+      margin-left: -20px;
+    }
+  }
+
+  &__contact {
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+.order-payment {
+  .well-done {
+    &__description {
+      @include breakpoint($tablet) {
+        width: 50%;
+      }
+    }
+
+    &__button {
+      width: 100%;
+      max-width: 100%;
+
+      transition: unset;
+
+      @include breakpoint($tablet) {
+        max-width: 225px;
+      }
+    }
+  }
+}
+
+.order-index {
+  &__navigation.active {
+    a {
+      color: $color-orange;
+
+      text-decoration: underline;
+    }
+  }
+}
+
+.order-show {
+  &__service-date {
+    display: inline-block;
+
+    @include breakpoint($tablet) {
+      display: block;
+    }
+  }
+
+  &__service-time {
+    display: block;
+
+    padding: 5px 20px;
+
+    @include breakpoint($tablet) {
+      display: inline-block;
+    }
+  }
+
+  &__payments {
+    max-width: 70%;
+  }
+}
+
+.order-cancel {
+  &__container {
+    @include breakpoint($tablet) {
+      max-width: 60%;
+    }
+  }
+
+  &__cancel-button,
+  &__terminate-button {
+    display: inline-block;
+  }
+
+  &__cancel-button {
+    width: 100px;
+
+    border: 1px solid $color-gray;
+
+    color: $color-gray;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}
+
+.edit-transform-long-lease {
+  &__container {
+    @include breakpoint($tablet) {
+      max-width: 60%;
+    }
+  }
+}

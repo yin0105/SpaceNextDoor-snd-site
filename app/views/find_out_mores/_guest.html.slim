@@ -1,0 +1,14 @@
+h1.p-4.pt-5.text-center.text-orange Find Out More!
+.alert.alert-success.mb-4.rounded
+  | Tell us what you need to store and we’ll help find the best storage match for you.
+= form.input :identity, as: :hidden
+= form.input :location, as: :select2, collection: @locations, required: true
+= form.input :start_at, as: :datepicker, min_date: Date.today
+= form.input :end_at, as: :datepicker, min_date: Date.today
+= form.input :description
+= form.input :size, hint: "#{link_to 'Not sure? View our size visualiser', root_path(anchor: 'size__section')}".html_safe do
+  .clearfix.mb-3
+    .w-md-50
+      = form.text_field :size, class: 'form-control'
+    .w-md-50
+      strong.find-out-more__size-unit.d-inline-block sqm

@@ -1,0 +1,96 @@
+#!/usr/bin/env ruby
+
+GITLAB_BASE_URL = 'https://git.5xruby.com/'
+GITLAB_API_ENDPOINT = "#{GITLAB_BASE_URL}/api/v4"
+GITLAB_PROJECT_NAME = 'snd/SND'
+TARGET_BRANCH = 'master'
+MR_MERGE_COMMIT_REGEX = /merge request #{GITLAB_PROJECT_NAME}\!(\d+)$/m
+MR_MAX = 1000
+ALLOWED_SOURCE_BRANCH = /^release\/\d+$/ # i.e. release/20190315
+MR_TITLE_TEMPLATE = "<%= source_branch %> to <%= target_branch %>"
+MR_LABELS = "Release" # comma-separated list
+MR_TEMPLATE = <<~MR_TEMPLATE_HEREDOC
+# Merge Requests
+
+<% merge_requests.each do |mr| -%>
+* [ ] !<%= mr.iid %> <%= mr.title %> @<%= mr.author.username %>
+<% end -%>
+MR_TEMPLATE_HEREDOC
+
+GITLAB_API_PRIVATE_TOKEN_FILE = File.expand_path("../.gitlab-release-mr-api-token", __dir__)
+unless File.exists?(GITLAB_API_PRIVATE_TOKEN_FILE)
+  STDERR.puts <<~GITLAB_API_PRIVATE_TOKEN_HELP
+    please provide api token file: #{GITLAB_API_PRIVATE_TOKEN_FILE}
+
+    create one here: #{GITLAB_BASE_URL}/profile/personal_access_tokens
+    and paste JUST token in the api token file
+  GITLAB_API_PRIVATE_TOKEN_HELP
+  exit 1
+end
+GITLAB_API_PRIVATE_TOKEN = File.read(GITLAB_API_PRIVATE_TOKEN_FILE).strip
+
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../Gemfile", __dir__)
+require "bundler/setup"
+require "gitlab"
+
+Gitlab.configure do |config|
+  config.endpoint      = GITLAB_API_ENDPOINT
+  config.private_token = GITLAB_API_PRIVATE_TOKEN
+end
+
+def commit_to_mr(commit_msg)
+  commit_msg =~ MR_MERGE_COMMIT_REGEX
+  $1
+end
+
+source_branch = `git rev-parse --abbrev-ref HEAD`.strip
+target_branch = TARGET_BRANCH
+
+unless source_branch =~ ALLOWED_SOURCE_BRANCH
+  STDERR.puts "current branch is #{source_branch}, please create release merge request from a branch like release/20201112"
+  exit 1
+end
+
+puts ">> collecting merge requests for #{source_branch} -> #{target_branch}..."
+
+merge_requests_iids =
+  Gitlab.repo_compare(GITLAB_PROJECT_NAME, target_branch, source_branch)
+  .commits.map do |commit|
+    commit_to_mr(commit["message"])
+  end.compact.map(&:to_i).uniq
+
+if merge_requests_iids.count > 0
+  merge_requests = Gitlab.merge_requests(GITLAB_PROJECT_NAME, iids: merge_requests_iids, per_page: MR_MAX)
+else
+  STDERR.puts "WARNGING: no merge requests collected"
+  merge_requests = []
+end
+
+puts ">> collecting merge requests related to operations..."
+
+description = ERB.new(MR_TEMPLATE, nil, "-").result(binding).strip
+title = ERB.new(MR_TITLE_TEMPLATE).result(binding).strip
+
+puts ""
+puts title
+puts "=================="
+puts description
+
+puts ""
+print "Please confirm to create merge request [enter Y to continue] "
+exit unless gets.strip == 'Y'
+
+puts ""
+puts ">> creating release merge request..."
+options = {
+  source_branch: source_branch,
+  target_branch: target_branch,
+  description:   description,
+  labels:        MR_LABELS,
+}
+
+mr = Gitlab.create_merge_request(GITLAB_PROJECT_NAME, title, options)
+
+puts ""
+puts "merge request created:"
+puts "#{GITLAB_BASE_URL}/#{GITLAB_PROJECT_NAME}/merge_requests/#{mr.iid}"

@@ -1,0 +1,7 @@
+.block-template
+  .container
+    header.section-head
+      h2
+        span.text = t('.snd_rules')
+    - t('.policies').each do |policy|
+      = render_policies(policy)

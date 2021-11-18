@@ -1,0 +1,8 @@
+// Cover input border css
+// Also could assign $prop to: 'border-top', 'border-right', 'border-bottom', 'border-left', to setting single border style
+
+@mixin input-border($line-width: $border-width, $line-style: solid, $color: $border-color, $prop: border) {
+  border: 0;
+  #{$prop}: $line-width solid $color;
+  @content;
+}

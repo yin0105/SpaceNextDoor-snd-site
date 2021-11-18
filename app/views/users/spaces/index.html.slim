@@ -1,0 +1,15 @@
+.user-space-index.pt-100.pb-5
+  .container
+    div
+      .text-center.pt-4
+        = render_space_navigation
+    - if current_space_page?(:host)
+      div.pb-4
+        = render partial: 'search_form'
+    div
+      = render(partial: 'space', collection: @spaces) || render('empty_space')
+
+    .user-space-index__button.mx-auto.mt-5
+      = render_create_listing_button(@required_fields)
+    = paginate @spaces
+= render partial: '/shared/cannot_create_space_modal'

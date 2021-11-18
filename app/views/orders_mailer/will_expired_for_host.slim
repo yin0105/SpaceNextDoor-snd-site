@@ -1,0 +1,15 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for listing your space on Space Next Door.
+    | &nbsp;
+    | We hope you are having a good experience with your guest, #{@order.guest.name}.
+    | &nbsp;
+    | Do make sure your space is available for booking again after the current booking expires on #{@order.end_at.strftime('%d-%b-%Y')}.
+    | &nbsp;
+    | Click
+    | &nbsp;
+    = link_to "here", space_url(@order.space_id), class: "lk-blue"
+    | &nbsp;
+    | to view your listing.

@@ -1,0 +1,3 @@
+mj-section mj-class="pd-bm-0 pd-tp-0" background-color="#ffffff"
+  mj-column
+    mj-image src="#{image_url('logo.png')}" width="103px"

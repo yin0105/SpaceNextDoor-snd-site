@@ -1,0 +1,286 @@
+.channel-index {
+  &__navigation {
+    position: relative;
+
+    &.active a {
+      color: $color-orange;
+
+      text-decoration: underline;
+    }
+
+    &.unread::before {
+      content: '';
+
+      display: block;
+      position: absolute;
+      top: 23px;
+      left: 3px;
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: $color-orange;
+    }
+  }
+}
+
+.channel-item {
+  position: relative;
+
+  padding: 20px;
+
+  border: 1px solid $color-gray;
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    @include breakpoint($tablet) {
+      width: 80px;
+      height: 80px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__message,
+  &__date {
+    @include breakpoint($tablet) {
+      font-size: 16px;
+    }
+  }
+
+  &__message {
+    a:hover {
+      color: $color-orange;
+    }
+  }
+}
+
+.channel-show {
+  &__sidebar {
+    @include breakpoint($pc) {
+      float: right;
+    }
+  }
+
+  &__space,
+  &__profile {
+    padding: 20px;
+
+    border: 1px solid $color-gray;
+  }
+
+  &__space-icon,
+  &__profile-avatar {
+    width: 80px;
+    height: 80px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__space-name,
+  &__profile-name {
+    overflow: hidden;
+  }
+
+  &__space-info {
+    overflow: hidden;
+  }
+
+  &__space-book-button {
+    max-width: 200px;
+
+    margin-top: 88px;
+
+    @include breakpoint($pc) {
+      max-width: unset;
+    }
+  }
+
+  &__profile-info {
+    width: calc(100% - 100px);
+  }
+}
+
+.channel-ratings-form {
+  border: 1px solid $color-gray;
+
+  .control-label::after {
+    content: ':';
+
+    padding: 0 6px;
+  }
+
+  .form-group {
+    margin-top: 10px;
+  }
+
+  textarea {
+    width: 100%;
+
+    margin: 4px 0;
+
+    border-color: $color-gray;
+
+    resize: none;
+
+    &:focus {
+      border-color: $color-gray;
+
+      outline: 0;
+    }
+  }
+}
+
+.message-dialog {
+  &__wrapper {
+    position: relative;
+
+    width: calc(100% - 65px);
+    min-height: 80px;
+
+    padding: 20px;
+
+    border: 1px solid $color-gray;
+
+    @include breakpoint($tablet) {
+      width: calc(100% - 100px);
+    }
+
+    &::after {
+      content: '';
+
+      position: absolute;
+
+      top: 20px;
+      right: -5px;
+
+      width: 8px;
+      height: 8px;
+
+      transform: rotate(45deg);
+
+      border-top: 1px solid $color-gray;
+      border-right: 1px solid $color-gray;
+
+      background-color: $color-white;
+
+      @include breakpoint($tablet) {
+        top: 40px;
+      }
+    }
+  }
+
+  &__avatar {
+    width: 45px;
+    height: 45px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    @include breakpoint($tablet) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  &__add-image-button,
+  &__send-button {
+    display: inline-block;
+  }
+
+  &__add-image-button,
+  &__send-button:hover {
+    border: 1px solid $color-gray;
+
+    background-color: $color-white;
+    color: $color-gray;
+  }
+
+  textarea {
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    resize: none;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+}
+
+.target .message-dialog {
+  &__wrapper {
+    float: right;
+
+    &::after {
+      right: unset;
+      left: -5px;
+
+      transform: rotate(-135deg);
+    }
+  }
+
+  &__avatar {
+    margin-right: 16px;
+    margin-left: 0;
+  }
+}
+
+//scss-lint:disable SelectorFormat
+.message_images[data-length='0'] {
+  display: none;
+}
+
+.message_images:not([data-length='0']) ~ .message-dialog__actions .message-dialog__add-image-button {
+  display: none;
+}
+
+.message-system {
+  position: relative;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+
+    right: 30%;
+    bottom: -.5em;
+    left: 30%;
+
+    border-bottom: 1px solid $color-gray-deep;
+  }
+}
+
+.notification-index {
+  &__wrapper {
+    border: 1px solid $color-gray;
+  }
+
+  &__heading {
+    height: 50px;
+  }
+}

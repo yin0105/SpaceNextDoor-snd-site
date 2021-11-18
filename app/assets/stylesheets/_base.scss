@@ -1,0 +1,58 @@
+html {
+  touch-action: manipulation;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-pc {
+  display: block;
+
+  @include breakpoint($pc) {
+    display: none;
+  }
+}
+
+.pc-only {
+  display: none;
+
+  @include breakpoint($pc) {
+    display: block;
+  }
+}
+
+.help-block {
+  display: block;
+
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  color: $color-gray;
+}
+
+.has-error {
+  .control-label {
+    color: $color-error-text;
+  }
+
+  .form-control {
+    border-color: $color-error-text;
+  }
+
+  .help-block {
+    color: $color-error-text;
+  }
+}

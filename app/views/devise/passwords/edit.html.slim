@@ -1,0 +1,21 @@
+.pt-100.pb-5.forget-and-reset-password
+  .container
+    h1.p-4.pt-5.text-center.text-orange Change your password
+    .text-center
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+        = f.error_notification
+
+        = f.input :reset_password_token, as: :hidden
+        = f.full_error :reset_password_token
+
+        .form-inputs.pb-3.text-left
+          = f.input :password, label: 'New password', required: true, autofocus: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+          = f.input :password_confirmation, label: 'Confirm your new password', required: true
+
+        .form-actions
+          = f.button :submit, 'Change my password', class: 'button text-gray bg-gray-deep mx-auto forget-and-reset-password__button'
+
+      div.mt-4.text-gray-deep
+        = link_to 'Login in', '#signin-popup', data: { toggle: :modal }
+        span &#32; &#47; &#32;
+        = link_to 'Sign up', '#signup-popup', data: { toggle: :modal }

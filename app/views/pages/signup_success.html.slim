@@ -1,0 +1,9 @@
+.container.text-center.text-orange.pt-100.pb-5
+  .signup-success__container.pt-5
+    h1.pages__heading = t('.title')
+    .icon.py-3 = image_tag('icons/payment_done.png')
+    p.py-3
+      | Please click link to read our
+      | &nbsp;
+      = link_to 'Terms of Service', terms_of_service_path, target: '_blank'
+      = link_to 'Home', root_path, class: 'signup-success__button button button-secondary button-full-width border-0 mt-4 mx-auto'

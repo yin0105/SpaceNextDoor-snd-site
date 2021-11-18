@@ -1,0 +1,139 @@
+.multiple-image-upload-input {
+  position: relative;
+
+  border: 1px solid $color-gray;
+  border-radius: 3px;
+
+  background-color: $bg-color-gray;
+
+  .images-wrapper {
+    padding: 6px 8px;
+
+    overflow-x: auto;
+
+    white-space: nowrap;
+  }
+
+  .add-image {
+    display: inline-block;
+
+    position: relative;
+
+    width: 176px;
+    height: 176px;
+
+    margin: 6px;
+
+    overflow: hidden;
+
+    border: 2px dashed rgba($color-black, .9);
+    border-radius: 12px;
+
+    opacity: .4;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+
+    .input {
+      position: relative;
+      top: -50px;
+      left: -50px;
+
+      width: 200%;
+      height: 200%;
+    }
+  }
+
+  .images {
+    display: inline-block;
+
+    vertical-align: top;
+
+    white-space: nowrap;
+  }
+
+  .image {
+    display: inline-block;
+
+    position: relative;
+
+    width: 180px;
+    height: 180px;
+
+    margin: 2px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba($color-gray, .8);
+
+    vertical-align: top;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    input {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+
+  .remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    padding: 3px 8px;
+
+    color: rgba($color-white, .9);
+
+    font-size: 22px;
+
+    text-decoration: underline;
+    text-shadow: 0 0 12px rgba($color-black, .5);
+
+    &:hover {
+      text-decoration: none;
+      text-shadow: 0 0 18px rgba($color-black, .8);
+    }
+
+    &::after {
+      content: '×';
+    }
+  }
+
+  .drop-zone {
+    display: flex;
+
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    bottom: 4px;
+    left: 4px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 2px rgba($color-gray-deep, .5) dashed;
+    border-radius: 4px;
+
+    background-color: rgba($color-white, .5);
+    color: rgba($color-gray-deep, .6);
+    font-size: 16pt;
+
+    pointer-events: none;
+  }
+}

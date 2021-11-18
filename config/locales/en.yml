@@ -1,0 +1,842 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  snd:
+    sitename: Space Next Door
+    description: Space Next Door
+    share:
+      mail_subject: Check out this listing on Space Next Door
+      mail_info: Check out this listing %{name} on Space Next Door %{url}
+    users:
+      phone_verification_message: "Your verification code is %{code}, please fill it in 5 minutes before expiry."
+    success:
+      # TODO confirm the copywriting
+      create_user_favorite_space_relation_succeeded: "Congrats on your new favorite space!"
+      remove_user_favorite_space_relation_succeeded: "The space has been successfully removed."
+    failure:
+      create_user_favorite_space_relation_succeeded: "Could not add to favorite space now. Please try it later."
+      remove_user_favorite_space_relation_failed: "Could not removed now. Please try it later."
+    errors:
+      payment_failed: "Payment failed!"
+      invalid_payment_method: "Invalid payment method"
+      card_error:  "Card Error, Payment Failed!"
+
+  users:
+    registrations:
+      edit:
+        title: Profile
+    verifications:
+      show:
+        title: Verification
+    profile:
+      passwords:
+        edit:
+          title: Password
+    payment_methods:
+      show:
+        title: Payment Method
+      new:
+        title: Add Credit Card
+    bank_accounts:
+      show:
+        title: Bank Account
+      new:
+        title: Add Bank Account
+    ratings:
+      index:
+        title: Rating
+    spaces:
+      index:
+        title: Spaces
+        filter: Filter
+        hide_map: Hide Map
+        show_map: Show Map
+      well_done:
+        title: Well Done!
+        description: Your listing has been completed! We will informed you once it has been approved and published!
+      space:
+        status:
+          available: Available
+          not_available: Not Available
+          booked: Booked
+    space:
+      tab:
+        guest: Your Favourite
+        host: Your Listings
+      edit: Edit
+      edit_promotion: Edit Promotion
+      remove: Remove
+    storages:
+      new:
+        title: Become a Host
+        set_promotion: Step 5 - Set Promotion
+        no_promotion: No, I don’t want to set promotion on this space.
+        need_promotion: Yes, I want to offer promotion for this space.
+        one_month_free: First month free.
+        two_months_free: First and sixth month free.
+        six_months_free: 50% discount for first six months.
+        one_month_promotion_tip: If Guest choose First month free promotion, the booking cannot be terminated within 3 months.
+        two_months_promotion_tip: If Guest choose First and sixth month free promotion, the booking cannot be terminated within 6 months.
+        six_months_promotion_tip: If Guest choose 50% discount for first six months promotion, the booking cannot be terminated within 6 months.
+        auto_extend_slot: Select to extend calendar for one year.  (System auto extends the booking availability period for one year, when the remaining days are <180 days.)
+      edit:
+        rent_payout_type:
+          one_month: Receive payout once a month.
+          ten_days: Receive payout every ten days.
+  find_out_mores:
+    thank_you:
+      title: Thank you!
+      description: Thank you for contacting %{space_next_door}. We will get back to you shortly.
+    host_submitted:
+      title: Thank you!
+      description: Thank you for contacting %{space_next_door}. We will get back to you shortly.
+  channels:
+    index:
+      title: Messages
+    show:
+      title: Messages
+  notifications:
+    index:
+      title: Notifications
+  orders:
+    index:
+      title: Bookings
+    show:
+      title: Booking
+      snd_rules: Please do not store...
+    payments:
+      well_done:
+        title: Your payment is successful!
+        description: Thank you for your booking with Space Next Door!
+    form:
+      long_lease_terms: Your storage period will be extended automatically and your account debited monthly until 16 days notice is given.
+      long_lease_terms_early_end: 'This booking is only available till %{end_date}'
+      promotion: Promotion
+    cancel_long_lease:
+      cancellation_notice: Please enter your termination date here.  Minimum 16 days is needed but we'll take advance notice too!
+    edit_transform_long_lease:
+      title: Renew Booking
+    edit_insurance:
+      title: Update Insurance
+      notice: New insurance option will be updated in your next renewal.
+    order:
+      terms: Insurance Terms
+      insurance_options: Insurance Options
+      transform_long_lease: Renew Booking
+  roles:
+    guest: Guest
+    host: Host
+  home:
+    landing_header:
+      welcome_to_space_next_door: Space Next Door
+      welcome_messages: ["Connecting people to storage space", "Commercial Storage", "Residential Storage", "Industrial Storage", "Speciality Storage"]
+      explore_spaces: Explore Spaces
+      host_a_space: Host A Space
+    about:
+      about_space_next_door: ABOUT SPACE NEXT DOOR
+      describe: Space Next Door, a marketplace for you to list, discover and book the nearest, most suitable storage space at affordable prices. Encouraging people to list their unutilised space for lease, so that those looking for personal or business storage space have a wide selection, closer to where they need it.
+    works:
+      book_space: BOOK A SPACE TODAY
+      find_out_more: Find Out More
+      find: Find
+      book: Book
+      move: Move
+      find_description: Browse our list of storage spaces to find a Host near you
+      book_description: Message us to learn more then book the space that best fits your needs
+      move_description: Set up a move in time with the Host and start storing
+    why:
+      why_space_next_door: WHY SPACE NEXT DOOR
+      reasons:
+        - title: Fully Vetted Storage Locations
+          content: To ensure quality listings, we visit all locations before we approve them.
+          image_path: icons/icon-pin.svg
+          image_alt: pin
+        - title: Protect Your Property
+          content: Our customer protection scheme protects your property.
+          image_path: icons/icon-lock.svg
+          image_alt: lock
+        - title: Secure Online Payment
+          content: Quick and secure online payment with Stripe.  For your convenience you only enter your details once.
+          image_path: icons/icon-payment.svg
+          image_alt: payment
+        - title: Easy Friendly Services
+          content: Our friendly personnel are just a phone call away.
+          image_path: icons/icon-setting.svg
+          image_alt: identity
+      find_out_more: Find Out More
+    glance:
+      at_a_glance: OUR SPACES AT A GLANCE
+    space:
+      all_new: All New
+      book_now: Book Now
+      residential: Residential
+      commercial: Commercial
+      industrial: Industrial
+    blog:
+      blog_title: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      blog_summary: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    size:
+      storage_size_guide: STORAGE SIZE GUIDE
+      storage_size_guide_description: Browse through our storage size guide to estimate how much space you will need for your items.
+      contact_us: Contact Us
+      detail: Detail
+      storages:
+        - title: Small
+          size: 3 SQM
+          active: small
+          thumbnail: size_visualize/thumbnails/small_transparent_thumbnail.png
+        - title: Medium
+          size: 6 SQM
+          active: medium
+          thumbnail: size_visualize/thumbnails/medium_transparent_thumbnail.png
+        - title: Large
+          size: 9 SQM
+          active: large
+          thumbnail: size_visualize/thumbnails/large_transparent_thumbnail.png
+        - title: Extra Large
+          size: 12 SQM
+          active: extra_large
+          thumbnail: size_visualize/thumbnails/extra_large_transparent_thumbnail.png
+  size_guide_modal:
+    small:
+      find_out_more: Find Out More!
+    medium:
+      find_out_more: Find Out More!
+    large:
+      find_out_more: Find Out More!
+    extra_large:
+      find_out_more: Find Out More!
+  channel:
+    tab:
+      guest: Guest
+      host: Host
+      notification: Notifications
+    message:
+      system: "%{name} has just made a booking from %{start_at} to %{end_at}"
+  spaces:
+    index:
+      title: Search
+      not_found: Based on your request, this is the closest search we can offer. Currently we do not have any spaces under your requested category in the location preferred.
+    show:
+      title: View Space
+      description: Check out this listing if you wish to rent a space.
+    information:
+      snd_rules: "Storage Guidelines"
+      not_yet_charged: Don’t worry, no charges taken yet
+      one_month_charge_message: Only one month’s fees taken at a time.
+      unavailable_notice: This property is booked up
+      min_days_notice: This is the first 30 day charge. Minimum storage is %{days} with this host.
+      toggle_min_days_notice: Click here to show first 30 day charge. Minimum storage is %{days} with this host.
+      promotion_tips_first_month: Minimum storage of 3 months. No pre-payment required. No termination within 3 months.
+      promotion_tips_sixth_month: Minimum storage of 6 months. No pre-payment required. No termination within 6 months.
+      no_promotion: |
+        No, I don’t need promotion
+      promotion_block_title: "Promotion:"
+      promotion_first_month_free: |
+        First month FREE*
+      promotion_first_and_sixth_month_free: |
+        First and sixth month FREE*
+      promotion_six_months_50_discount: |
+        50% discount for first six months*
+      index:
+        small: 0
+        medium: 1
+        large: 2
+        extra_large: 3
+      service_fee_notice: This helps us to run our platform where we manage collection of payment and provide 24/7 support to ensure a good experience.
+      deposit_notice: "1 month refundable deposit is collected to ensure responsible usage of host's property."
+    insurance_options:
+      insurance_notice: Monthly insurance to protect storage contents against losses from fire, lightning, and/or extraneous perils. Min. coverage is $1,000. You may choose a suitable coverage of your choice of up to $50,000.
+    show_map_spaces:
+      map: Map
+      hide_map: Hide Map
+      did_not_find_your_loacation: Didn't find your location ?
+      contact_us: Contact Us
+    hide_map_spaces:
+      map: Map
+      show_map: Show Map
+    space:
+      tag: All New
+      book_now: Book Now
+      status:
+        booked: Booked
+        available: Available
+        not_available: Not Available
+    search_form:
+      price: Daily Rate
+      size: Size
+      check_in: Check In
+      check_out: Check Out
+      type: Type
+      sort: Sort
+      promotion: Show only spaces with promotion
+      sort_options:
+        created_at_desc: Newest
+        area_desc: Size ( Large > Small )
+        area_asc: Size ( Small > Large )
+        daily_price_cents_desc: Price ( High > Low )
+        daily_price_cents_asc: Price ( Low > High )
+      space:
+        property:
+          residential: Residential
+          commercial: Commercial
+          industrial: Industrial
+      clear_filters: 'Clear Filters'
+  shared:
+    header:
+      find_a_space: Find A Space
+      how_it_work: How It Works
+      faq: FAQ
+      why_choose_us: Why Choose Us
+      types_of_storage: Types of Storage
+      need_more_storage: Need More Storage
+      become_host: Become A Host
+      about_us: About Us
+      sign_in: Sign in
+      sign_up: Get Started
+    common_headers:
+      find_a_space: Find A Space
+      how_it_work: How It Works
+      faq: FAQ
+      why_choose_us: Why Choose Us
+      types_of_storage: Types of Storage
+      need_more_storage: Need More Storage
+      become_host: Become A Host
+      about_us: About Us
+      sign_in: Sign in
+      sign_up: Get Started
+    header_user_dropdown:
+      spaces: Spaces
+      booking: Booking
+      messages: Messages
+      profile: Profile
+      verification: Verification
+      password: Password
+      rating: Rating
+      sign_out: Sign out
+    footer:
+      trust: Trust
+      terms_of_service: Terms Of Service
+      guest_trust_and_safety: Guest Trust & Safety Policy
+      host_trust_and_safety: Host Trust & Safety Policy
+      host: Host
+      why_become_a_host: Why Become A Host?
+      host_standard: Host Standard
+      about_us: About Us
+      the_team: The Team
+      contact_us: Contact Us
+      sitename: Space Next Door.
+      help: Help
+      address: 743 Lorong 5 Toa Payoh, Level 2, Singapore 319457
+      phone: +65 6353 9325
+      email: help@spacenextdoor.com
+      copyright: Copyright 2017. All rights reserved by
+    testimonials:
+      title: What Our Customers Say
+      homepage:
+      - avatar: testimonials_homepage_4.png
+        user: Ash Lee
+        role: Space Next Door Guest
+        content: Friendly & responsive customer service. Well done up facility.
+      - avatar: testimonials_homepage_5.png
+        user: Cheryl Cheng
+        role: Space Next Door Guest
+        content: We are very pleased with the excellent service provided by Space Next Door, making the move a smooth and hassle free one.<br> The storage area is big and spacious. We're happy with the clean and well-ventilated environment.<br> Thank you for making the experience better than expected.
+      - avatar: testimonials_homepage_6.png
+        user: Annissa Koh
+        role: Space Next Door Guest
+        content: The serving staff is great, very patient, helped to answer all queries and offered various storage options to save money and maximize my money spent. Thanks.
+      - avatar: testimonials_homepage_7.png
+        user: Nur Rakeezah
+        role: Space Next Door Guest
+        content: Extremely good service! Easy to view the storage unit before booking and setting up the account and maintaining it was a breeze! Great competitive pricing as well as pro-rated fees. Easy to store with 24/7 access. Will recommend to those looking for storage.
+      - avatar: testimonials_homepage_8.png
+        user: Razinna
+        role: Space Next Door Guest
+        content: Clean, spacious, and reasonably price!!!
+      - avatar: testimonials_homepage_9.png
+        user: Satheswary
+        role: Space Next Door Guest
+        content: Space Next Door is definitely strongly recommendable for the following:- <br>♡ Customer Oriented<br>♡ Cost Effective<br> ♡ Storage are very well maintained<br> ♡ Dedicated Staffs <br>Special Mention:- Ms Norita was extremely helpful in assisting me throughout the process, from enquiry to post service. She was always on the ball!<br>Good Job Team!
+      - avatar: testimonials_homepage_10.png
+        user: Steven
+        role: Space Next Door Guest
+        content: Very nice & helpful coordinator to guide you throughout the whole process. Price definitely is a plus point. Able to offer additional help if the storage chosen wasn’t big enough to fit in your items. Would recommend Space Next Door to those who needed temporary or additional space. Thumbs up 👍 for the excellent service.
+      - avatar: testimonials_homepage_1.png
+        user: Denise Low
+        role: Space Next Door Guest
+        content: Space Next Door saved me a lot of time by helping me compare various space options. Their website is also easy to use.
+      - avatar: testimonials_homepage_2.png
+        user: Ivan Lim
+        role: Space Next Door Guest
+        content: I was pleased to renew my booking recently as it was also very convenient to get the procedure done smoothly. I look forward to continue the booking when it expires.
+      - avatar: testimonials_homepage_3.png
+        user: Rebecca Lim
+        role: Space Next Door Guest
+        content: Space Next Door is a great concept! I managed to sign up straight away and was contacted almost immediately by the very helpful staff.
+      become_a_host:
+      - avatar: store_it.png
+        user: Store It! Self Storage, Space Next Door Host
+        content: Space Next Door has given us another great channel to advertise our storage spaces.  Listing on the website is quick and straightforward and convenient if we need to edit any part.  The ability to upload photos is also a good idea as customers can make a better decision with more visuals.  Thanks Space Next Door!
+      - avatar: ebc_lifestyle_hub.png
+        user: EBC Lifestyle Hub, Space Next Door Host
+        content: Space Next Door is a great platform where we can list our spaces.  The process is simple and the Space Next Door team is always ready to help
+      - avatar: eagle_indo_land.png
+        user: Eagle Indo Land (Pte) Ltd, Space Next Door Host
+        content: The Space Next Door team was very helpful with getting our spaces listed on the website. One of our spare office space was being rented out shortly after and the coordination with the Guest was a breeze.
+    hosting:
+      title: Start Hosting Now
+      descriptions: ["Make money from your idle space!", "Create a listing now with a few simple steps."]
+      create_your_listing: Create your listing
+    search:
+      search: Search
+    become_guest_details:
+      details:
+        - image: icons/icon-pin.svg
+          alt: pin
+          title: Fully Vetted Storage <br>Locations
+          description: To ensure quality listings, we visit all locations before we approve them.
+        - image: icons/icon-lock.svg
+          alt: lock
+          title: Protect Your <br>Property
+          description: Our customer protection scheme protects your property.
+        - image: icons/icon-payment.svg
+          alt: payment
+          title: Secure Online <br>Payment
+          description: Quick and secure online payment with Stripe. For your convenience you only enter your details once.
+        - image: icons/icon-register.png
+          alt: convenient
+          title: Convenient
+          description: Book a storage space that’s right for you from the comfort of your home.
+        - image: icons/icon-setting.svg
+          alt: setting
+          title: Easy Friendly <br>Services
+          description: Our friendly personnel are just a phone call away.
+    become_host_details:
+      details:
+        - image: icons/icon-earn.svg
+          alt: earn
+          title: Monetise unused spaces
+          description: Earn additional income from empty spaces.
+        - image: icons/icon-collection.svg
+          alt: collection
+          title: Easy collection
+          description: Seamless collection of monies on your behalf.
+        - image: icons/icon-decide.svg
+          alt: decide
+          title: Decide how you want to Host
+          description: Choose your own timeline, prices, and requirements for guests. We’re there to help along the way.
+        - image: icons/icon-exposure.svg
+          alt: exposure
+          title: Maximum exposure
+          description: Effective social media marketing to promote your spaces to large online audiences.
+        - image: icons/icon-register.svg
+          alt: registration
+          title: Online registration
+          description: As easy as 1-2-3. Hassle-free and agent-free.
+    cannot_create_space_modal:
+      required_fields_message: Please add %{fields} to continue.
+      phone: phone
+      address: address
+      avatar: avatar
+      bank_account: bank account
+      contact: alternate contact
+      edit_profile: Edit Profile
+    contact:
+      add_contact: Add Contact
+      edit_contact: Edit Contact
+  schedule:
+    orders:
+      payment: Charge Next Payment
+    payments:
+      service_start: Accounting Rent & GSF
+      service_end: Accounting HSF
+  time:
+    formats:
+      joined_at: Joined in %B %Y
+      short: "%B %Y"
+      compact: "%d%m%Y"
+      compact_with_dash: "%d-%m-%Y"
+      compact_with_space: "%d %m %Y"
+      date: "%B %d, %Y"
+      mail_date: "%d-%b-%y"
+      normal: "%Y / %-m / %d"
+      normal_inverse: "%d / %m / %Y"
+      abbr_month: "%^b-%d-%Y"
+      abbr_month_inverse: "%d-%b-%Y"
+      printed_on: Printed on %d-%b-%y %r
+  date:
+    formats:
+      joined_at: Joined in %B %Y
+      short: "%B %Y"
+      compact: "%d%m%Y"
+      compact_with_dash: "%d-%m-%Y"
+      date: "%B %d, %Y"
+      date_inverse: "%d %B, %Y"
+      mail_date: "%d-%b-%y"
+      normal: "%Y / %-m / %d"
+      normal_inverse: "%d / %m / %Y"
+      abbr_month: "%^b-%d-%Y"
+      abbr_month_inverse: "%d-%b-%Y"
+      printed_on: Printed on %d-%b-%y %r
+  helpers:
+    submit:
+      message:
+        create: Send
+  simple_form:
+    labels:
+      user:
+        biography: Describe Yourself
+      find_out_request:
+        location: Preferred location
+        start_at: Preferred start date
+        end_at: Approximate end date
+        description: Tell us more about the items you are planning to store
+        size: How much space do you need?
+        address: Where is your space?
+        postal_code: Postal Code
+        accept_receive_updates: I'd like to receive updates from Space Next Door
+        host:
+          location: Location
+          start_at: Do you have a preferred start date?
+          end_at: Do you have a preferred end date?
+          size: Size of your space?
+    placeholders:
+      user:
+        first_name: First Name
+        last_name: Last Name
+        biography: Tell us more about yourself
+    hints:
+      find_out_request:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            phone:
+              invalid_phone: "invalid phone number"
+              reconfirm_too_fast: "please wait a moment for the verification code"
+            preferred_phone:
+              invalid_phone: "Invalid phone number"
+              phone_blank: "Verify your phone in Trust and Verification before updating preferred phone."
+        contact:
+          attributes:
+            phone:
+              invalid_phone: "invalid phone number"
+        bank_account:
+          attributes:
+            base:
+              immutable: "record is immutable"
+        order:
+          attributes:
+            discount_code:
+              not_over_one_month_needed_days: Minimum storage days for first month free promotion is 90 days.
+              not_over_two_months_needed_days: Minimum storage days for first and sixth month free promotion is 180 days.
+              not_over_six_months_needed_days: Minimum storage days for 50% discount is 180 days.
+            days:
+              no_enough_days: Minimum storage with this host is %{days}. Please adjust your dates.
+              selected_dates_must_be_within_space_activated_dates: Selected dates must be within space activated dates
+              selected_dates_must_be_within_space_available_dates: Selected dates must be within space available dates
+        channel:
+          attributes:
+            guest:
+              host_cannot_open_a_channel_with_himself: host cannot open a channel with himself
+        storage:
+          attributes:
+            rules:
+              blank: 'Select at least one option'
+  pages:
+    signup_success:
+      title: Sign up successful!
+    how_it_work:
+      title: How It Works
+      head: BOOK A SPACE TODAY
+      content: Storing with us is as easy as 1-2-3
+      steps:
+        - title: Find
+          description: Browse our list of storage spaces to find a Host near you
+          image: 'icons/icon-map.svg'
+          alt: map
+        - title: Book
+          description: Message us to learn more then book the space that best fits your needs
+          image: 'icons/icon-booking.svg'
+          alt: book
+        - title: Move
+          description: Set up a move in time with the Host and start storing
+          image: 'icons/icon-move.svg'
+          alt: move
+      tabset: ['FIND', 'BOOK', 'MOVE']
+      tab_content:
+        - image: 'img40.png'
+          head: FIND
+          list_bullets: ['Search for your preferred location', 'Set criteria for Check In/Check Out dates, Daily Rate & Size', 'Scroll through options available and click to view details']
+        - image: 'img41.png'
+          head: BOOK
+          list_bullets: ['Click on the “BOOK” tab to select the start and end dates (Check In/Check Out dates). If you intend to use the space long term, please select “LONG TERM / UNSURE” tab', 'Click “BOOK” and select the space that best fits your requirements Add & verify contact. Key in credit card details.', 'Click “PAY” to complete your transaction']
+        - image: 'img42.png'
+          head: MOVE
+          list_bullets: ['Check your email for booking details', 'Use that to plan your move-in with your host', 'Start storing with us']
+
+    need_more_storage:
+      title: Need More Storage?
+      explore_spaces: Explore Spaces
+      articles:
+        - image_path: 'img19.jpg'
+          title: MOVING HOME
+          btn_class: btn btn-secondary
+          contents: ["Whether you’re moving countries, into a new home or just renovating your existing one, we can assist you with finding room for your furniture and precious belongings in a neighbourhood next door.", "Choose from our <a href='/#size__section'>Size Guide</a> to discover the right space for you."]
+        - image_path: 'img20.jpg'
+          title: GROWING FAMILIES
+          btn_class: btn btn-primary
+          contents: ["A new addition to the family? Children’s toys have taken over your entire home?", "Need a space to store their precious memories? We can find you some  Space Next Door."]
+        - image_path: 'img21.jpg'
+          title: TRAVELLER/SPORTS ENTHUSIAST/ COLLECTOR
+          btn_class: btn btn-secondary
+          contents: ["Too many winter clothes or no place to store that extra golf set or your collection of limited edition magazines and superheroes.", "We have a solution for you right next door."]
+        - image_path: 'img22.jpg'
+          title: BUSINESS SOLUTIONS
+          btn_class: btn btn-primary
+          contents: ["Whether you have an online business and need space to store your inventory or have a seasonal business that requires different stock every few months.", "We have various storage options available to suit your needs and the best part it can be right next door."]
+        - image_path: 'img23.jpg'
+          title: WINE COLLECTOR
+          btn_class: btn btn-secondary
+          contents: ["Precious bottles of vintage wines to store? Store them in optimal conditioned units which have controlled lighting, temperature and anti-vibration.", "Check out our wine storage units today."]
+    types_of_storage:
+      title: Types of Storage
+      article_title: ABOUT OUR SPACES
+      article_contents: ["Space Next Door offers a wide range of storage solutions, suitable for both personal or business usage. ", "We offer you immediate self storage solutions to suit your specific needs. You can enjoy the freedom of flexible lease terms as well as access storage space closest to you at the most affordable prices."]
+      find_out_more: Find Out More
+      articles:
+        - image_path: 'img27.jpg'
+          title: RESIDENTIAL STORAGE
+          content: Our personal storage listings consist of homes located all over Singapore. Suitable for storing personal items and even for small business owners that need a little more Space Next Door.
+        - image_path: 'img28.jpg'
+          title: COMMERCIAL STORAGE
+          content: Our commercial storage listings come in multiple sizes to suit all your storage needs. Store your files and other items with all the benefits of commercial storage without being bogged down for long periods of time.
+        - image_path: 'img29.jpg'
+          title: INDUSTRIAL STORAGE
+          content: Need a larger space for your business needs? We have spaces that have high ceilings as well as, loading/unloading docks that cater to light industrial need.
+        - image_path: 'img30.jpg'
+          title: SPECIALITY STORAGE
+          content: Looking for a Work cum Storage unit for your startup? How about a space to store wine or other items that need specific environment? Look no further than Space Next Door to find storage to suit your specific needs.
+
+    about:
+      title: About Us
+      about_space_next_door: ABOUT SPACE NEXT DOOR
+      content: ["Space Next Door is inspired by the sharing economy in which we hope to encourage people to put up their unused space so that users looking for personal or business storage space have better options, closer to where they need it. We are striving to build a trusted community marketplace for you to list, discover and book the nearest and best space at affordable prices.", "Having spent more than a decade in the storage industry and after renting out millions of square feet of space to tens of thousands of customers, we are passionate about helping you discover new ways to organise and use your space."]
+      section_head: ABOUT THE TEAM
+      ceo:
+        name: Mike Hagbeck
+        position: Founder & CEO
+        contents: ["Today's dynamic business environment requires leaders to possess basic functional skills and the ability to spot opportunities and keep with the trends. These attributes are rarely found in the same person, given their diverse requirements. Mike Hagbeck continues to build his reputation in the storage industry by developing heritage markets and exploring trailblazing possibilities.", "Two decades since entering the industry in Australia, he has helmed a number of significant companies to develop a comprehensive understanding of the industry practices in the region — from Singapore to China, Australia to South Korea. Mike has embraced technology to develop an innovative way of maximising unutilised spaces; at a micro level. His brainchild, Space Next Door, opens new opportunities to match available space with needs at a global level."]
+      members:
+        - name: Payal Michelle Parekhji
+          image: 'img33.jpg'
+          position: Business Development Director
+          content: A good idea has to be well executed to deliver its potential value. Payal Parekhji has two decades of experience in helping organisations build their brand value and leverage strategic partnerships. Payal’s forte lies in business development and maximising growth opportunities within and between organisations. Her ability to spot an opportunity for growth or potential obstacles makes her a valued member of any management team.
+        - name: Daphne Lim
+          image: 'img34.jpg'
+          position: Product Lead
+          content: Having immersed herself in the storage industry, Daphne Lim knows the ins and outs of operating a successful business with efficiency and effectiveness. She has worked with leading self storage brands in Asia, both at the back end and interacting with customers. Her track record for developing and implementing marketing plans to launch new facilities has helped to drive the business forward.
+        - name: Norita Senin
+          image: 'img35.jpg'
+          position: Customer Service Manager
+          content: Even the best idea has to be well articulated to the customer. Norita Senin engages clients and partners to ensure the best possible outcomes. With industry experience gained in the non-profit and quasi-government sectors, she is able to understand the needs of customers to deliver the best fit to fulfil their requirements. She provides the human touch in the tech driven platform.
+    contact:
+      contact_us: Contact Us
+      please_contact: "Please contact "
+      contacts:
+        - section: For press/media related matters
+          contact_link: payal@spacenextdoor.com
+        - section: For partnerships or space management
+          contact_link: payal@spacenextdoor.com
+        - section: For general enquiries
+          contact_link: help@spacenextdoor.com
+          phone: "<br>or Phone <a href='tel: +65 6353 9325'>+65 6353 9325</a>"
+      facebook: " Facebook"
+    tax_and_law:
+      update_date: "Last Updated: February, 2017"
+      content:
+        |
+        Space Next Door (”SND”) want to make sure that everything about your time with us goes perfectly for our Hosts. So, before you become one, please make sure that you have familiarised yourself with the relevant legal and tax regulations in your city.
+
+        Most cities generally have comprehensive applicable property laws. These may cover property use, zoning, building permits, fire safety or licencing requirements.
+
+        Likewise, there will be national, state and/ or local tax rules that you will have to follow.
+
+        Since you are responsible for your own decision to list your space on SND, you need to first get comfortable with the relevant rules.
+
+        By accepting our terms of service, you are confirming that you will abide by all applicable laws and regulations.
+    become_host:
+      title: List your space with Space Next Door
+      why_host_with_us: WHY HOST WITH US?
+      find_out_more: Find Out More
+      click_here: Click here
+    why_choose_us:
+      explore_spaces: Explore Spaces
+      for_guests: FOR GUESTS
+      start_hosting_now: Start Hosting Now
+      for_hosts: FOR HOSTS
+      click_here: Click here
+    how_to_become_a_host:
+      how_to_become_a_host: HOW TO BECOME A HOST
+      create_your_listing: Create your listing
+      steps:
+        - image: step1.svg
+          order: "STEP : 1"
+          content: Add house rules and high resolution photos that best reflect the space.
+        - image: step2.svg
+          order: "STEP : 2"
+          content: Write an interesting description of your space to capture audiences.
+        - image: step3.svg
+          order: "STEP : 3"
+          content: Set your per day rate.
+        - image: step4.svg
+          order: "STEP : 4"
+          content: Accept your bookings.
+        - image: step5.svg
+          order: "STEP : 5"
+          content: Receive payment to your account hassle free.
+    terms_and_policies:
+      terms_and_policies: Terms And Policies
+      links:
+        - name: Terms Of Service
+          path: terms_of_service_path
+        - name: Guest Trust & Safety Policy
+          path: guest_policy_path
+        - name: Host Trust & Safety Policy
+          path: host_policy_path
+        - name: Privacy Policy
+          path: privacy_path
+        - name: IP Policy
+          path: ip_policy_path
+        - name: Cancellation Policy
+          path: cancellation_policy_path
+        - name: Termination Policy
+          path: termination_policy_path
+
+  controllers:
+    orders:
+      cancel_long_lease: Your order has been canceled
+
+  custom_error_msgs:
+    orders:
+      term_blank_full: Please agree with our terms and policies before proceeding
+      term_blank: Please agree before proceeding.
+    transform_long_lease_by_guest_form:
+      term_blank_full: Please agree with our terms and policies before proceeding
+  backstage:
+    space:
+      none: None
+      one_month: One Month
+      two_months: Two Months
+      one_and_two_months: One and Two Months
+  insurance:
+    options:
+      - text: $1,000 coverage at $3 premium / 30 days
+        value: coverage_1000
+      - text: $5,000 coverage at $7 premium / 30 days
+        value: coverage_5000
+      - text: $10,000 coverage at $10 premium / 30 days
+        value: coverage_10000
+      - text: $15,000 coverage at $13 premium / 30 days
+        value: coverage_15000
+      - text: $20,000 coverage at $16 premium / 30 days
+        value: coverage_20000
+      - text: $25,000 coverage at $22 premium / 30 days
+        value: coverage_25000
+      - text: $30,000 coverage at $28 premium / 30 days
+        value: coverage_30000
+      - text: $35,000 coverage at $32 premium / 30 days
+        value: coverage_35000
+      - text: $40,000 coverage at $34 premium / 30 days
+        value: coverage_40000
+      - text: $45,000 coverage at $40 premium / 30 days
+        value: coverage_45000
+      - text: $50,000 coverage at $50 premium / 30 days
+        value: coverage_50000
+
+    coverage_null:
+      insurance: None
+      insurance_short: None
+      mailer_item: None
+    coverage_1000:
+      insurance: $1,000 coverage at $3 premium / 30 days
+      insurance_short: Insurance ($1,000 coverage)
+      mailer_item: Insurance (Sum insured $1,000)
+    coverage_5000:
+      insurance: $5,000 coverage at $7 premium / 30 days
+      insurance_short: Insurance ($5,000 coverage)
+      mailer_item: Insurance (Sum insured $5,000)
+    coverage_10000:
+      insurance: $10,000 coverage at $10 premium / 30 days
+      insurance_short: Insurance ($10,000 coverage)
+      mailer_item: Insurance (Sum insured $10,000)
+    coverage_15000:
+      insurance: $15,000 coverage at $13 premium / 30 days
+      insurance_short: Insurance ($15,000 coverage)
+      mailer_item: Insurance (Sum insured $15,000)
+    coverage_20000:
+      insurance: $20,000 coverage at $16 premium / 30 days
+      insurance_short: Insurance ($20,000 coverage)
+      mailer_item: Insurance (Sum insured $20,000)
+    coverage_25000:
+      insurance: $25,000 coverage at $22 premium / 30 days
+      insurance_short: Insurance ($25,000 coverage)
+      mailer_item: Insurance (Sum insured $25,000)
+    coverage_30000:
+      insurance: $30,000 coverage at $28 premium / 30 days
+      insurance_short: Insurance ($30,000 coverage)
+      mailer_item: Insurance (Sum insured $30,000)
+    coverage_35000:
+      insurance: $35,000 coverage at $32 premium / 30 days
+      insurance_short: Insurance ($35,000 coverage)
+      mailer_item: Insurance (Sum insured $35,000)
+    coverage_40000:
+      insurance: $40,000 coverage at $34 premium / 30 days
+      insurance_short: Insurance ($40,000 coverage)
+      mailer_item: Insurance (Sum insured $40,000)
+    coverage_45000:
+      insurance: $45,000 coverage at $40 premium / 30 days
+      insurance_short: Insurance ($45,000 coverage)
+      mailer_item: Insurance (Sum insured $45,000)
+    coverage_50000:
+      insurance: $50,000 coverage at $50 premium / 30 days
+      insurance_short: Insurance ($50,000 coverage)
+      mailer_item: Insurance (Sum insured $50,000)
+
+  mails:
+    discount_code:
+      one_month: First month FREE
+      two_months: First and sixth month FREE
+      six_months: 50% discount for first six months
+      none: None

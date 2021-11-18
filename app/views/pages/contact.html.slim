@@ -1,0 +1,18 @@
+.block-template
+  .container
+    header.section-head
+      h2
+        span.text = t('.contact_us')
+    article.article-box
+      ul
+        - t('.contacts').each do |contact|
+          li
+            h2 = contact[:section]
+            p
+              = t('.please_contact')
+              = mail_to contact[:contact_link]
+              = contact[:phone].html_safe if contact[:phone].present?
+
+      = link_to 'https://www.facebook.com/spacenextdoor/', class: 'btn btn-primary', target: :_blank do
+        i.ico.ico-facebook
+        = t('.facebook')

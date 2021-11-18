@@ -1,0 +1,81 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for your booking with Space Next Door. The last day of your storage was #{ l @late_fee_payment.order.end_at, format: :mail_date } but we noticed that the unit had not been vacated. As such we will charge the overdue storage fee to your credit card up to #{ l @late_fee_payment.service_end_at, format: :mail_date }. Subsequently we will be charging the daily storage fee every three days until the unit has been emptied.
+  mj-text
+    | Booking ID : #{@order.identity}
+    br
+    | Transaction ID : #{@late_fee_payment.identity}
+  mj-text
+    | Your Tax Invoice is available on the
+    | &nbsp;
+    = link_to "Space Next Door website", root_url
+    | .
+    | &nbsp;
+    | To retrieve it, please log in and go to
+    | &nbsp;
+    b Booking
+    | &nbsp;
+    | then select
+    | &nbsp;
+    b Details.
+  mj-table
+    tr style="border-bottom:1px solid #ecedee;text-align:center;"
+      th From
+      th To
+    tr style="text-align:center;"
+      td
+        = l @late_fee_payment.service_start_at, format: :mail_date
+      td
+        = l @late_fee_payment.service_end_at, format: :mail_date
+  mj-text
+    | Title of Property:
+    br
+    = link_to @order.space.name, space_url(@order.space_id), class: "lk-blue"
+  mj-text
+    | Address:
+    br
+    = @order.space.location
+  mj-text
+    | House rules:
+    - space_rules(@order.space).each do |rule|
+      br
+      | #{rule}
+  mj-text
+    | Hosted by: #{@order.host.name}
+    br
+    | Phone: #{@order.host.display_phone}
+  mj-text
+    | Charges:
+    br
+    | Paid for
+    | &nbsp;
+    = l @late_fee_payment.service_start_at, format: :mail_date
+    | &nbsp;to&nbsp;
+    = l @late_fee_payment.service_end_at, format: :mail_date
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align: left;"
+      th Item
+      th Amount
+    tr
+      td
+        | &#36;#{@late_fee_payment.price.format(symbol: nil)}/day * #{@late_fee_payment.days_rented} of days
+      td
+        | &#36;#{@late_fee_payment.rent.format(symbol: nil)}
+    tr
+      td
+        | Service Fee
+      td
+        | &#36;#{@late_fee_payment.guest_service_fee.format(symbol: nil)}
+    - if @late_fee_payment.insurance_enable?
+      tr
+        td
+          = I18n.t("insurance.#{@late_fee_payment.insurance_type}.mailer_item")
+        td
+          | &#36;#{@late_fee_payment.premium.format(symbol: nil)}
+    tr
+      td
+        | Total
+      td
+        | &#36;#{@late_fee_payment.amount.format(symbol: nil)}

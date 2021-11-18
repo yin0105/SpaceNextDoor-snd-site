@@ -1,0 +1,35 @@
+spaces:
+  storage:
+    features:
+      Locker:                 10
+      Cupboard:               20
+      Racking shelf:          30
+      Part room:              40
+      Floor space:            50
+      Entire room:            60
+      Unit:                   70
+      Wine cellar:            80
+    facilities:
+      Air con:           10
+      "24 hours access": 20
+      Lift access:       30
+      Security:          40
+      Loading dock:      50
+      CCTV:              60
+      Lockable doors:    70
+      On-Site staff:     80
+      Free parking:      90
+      Trolleys:          100
+      Step ladder:       110
+      Racking/Shelving:  120
+      Sprinkler:         130
+      Power supply:      140
+      WIFI:              150
+    rules:
+      No smoking:            10
+      Access by appointment: 20
+    minimum_rent_days:
+      One Week:         7
+      One Month:        30
+      Three Months:     90
+      Six Months:       180

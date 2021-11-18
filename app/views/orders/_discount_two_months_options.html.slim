@@ -1,0 +1,9 @@
+.discount-area-title.mb-1 = t('spaces.information.promotion_block_title')
+.form-group
+  .option-group.mb-1
+    = radio_button_tag 'order[discount_code]', 2, true, class: 'discount-options-checkboxes order-date-inputs', disabled: true
+    == content_tag :label, t('spaces.information.promotion_first_and_sixth_month_free'), class: 'ml-1'
+  br
+  .promotion-tips.mb-2
+    strong.text-error-text.mb-1 = t('spaces.information.promotion_tips_sixth_month')
+  br

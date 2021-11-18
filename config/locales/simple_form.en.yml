@@ -1,0 +1,60 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+      # You can uncomment the line below if you need to overwrite the whole required html.
+      # When using html, text and mark won't be used.
+      # html: '<abbr title="required">*</abbr>'
+    error_notification:
+      default_message: "Please review the problems below:"
+    placeholders:
+      search:
+        region: Location
+        check_in: Check In
+        check_out: Check Out
+    labels:
+      order:
+        end_at: Paid through date
+    options:
+      storage:
+        property:
+          residential: Residential
+          commercial: Commercial
+          industrial: Industrial
+        category:
+          personal: Personal
+          business: Business
+          wine: Wine
+        checkin_time:
+          office_hours: 'Office hours'
+          appointment: 'By appointment'
+      space:
+        property:
+          residential: Residential
+          commercial: Commercial
+          industrial: Industrial
+        rent_payout_type:
+          one_month: Receive payout once a month.
+          ten_days: Receive payout every ten days.
+    # Examples
+    # labels:
+    #   defaults:
+    #     password: 'Password'
+    #   user:
+    #     new:
+    #       email: 'E-mail to sign in.'
+    #     edit:
+    #       email: 'E-mail.'
+    # hints:
+    #   defaults:
+    #     username: 'User name to sign in.'
+    #     password: 'No special characters, please.'
+    # include_blanks:
+    #   defaults:
+    #     age: 'Rather not say'
+    # prompts:
+    #   defaults:
+    #     age: 'Select your age'

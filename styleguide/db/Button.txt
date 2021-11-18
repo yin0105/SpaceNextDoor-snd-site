@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Default",
+    "code": "<button class=\"btn btn-default\">Default</button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 2,
+    "name": "Search",
+    "code": "<button class=\"btn btn-search glyphicon glyphicon-search\"></button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 3,
+    "name": "Primary",
+    "code": "<button class=\"btn btn-primary\">Primary</button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 4,
+    "name": "Info",
+    "code": "<button class=\"btn btn-info\">Info</button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 5,
+    "name": "Pager",
+    "code": "<nav aria-label=\"...\">\n  <ul class=\"pagination\">\n    <li class=\"page-item disabled\">\n      <a class=\"page-link glyphicon glyphicon-triangle-left\" href=\"#\" tabindex=\"-1\"></a>\n    </li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">1</a></li>\n    <li class=\"page-item active\">\n      <a class=\"page-link\" href=\"#\">2 <span class=\"sr-only\">(current)</span></a>\n    </li>\n    <li class=\"page-item\"><a class=\"page-link\" href=\"#\">3</a></li>\n    <li class=\"page-item\">\n      <a class=\"page-link glyphicon glyphicon-triangle-right\" href=\"#\"></a>\n    </li>\n  </ul>\n</nav>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": true,
+    "isDeleted": false
+  },
+  {
+    "id": 10,
+    "name": "Large",
+    "code": "<button class=\"btn btn-primary btn-lg\">Large Button</button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": false,
+    "isDeleted": false
+  },
+  {
+    "id": 11,
+    "name": "Disabled",
+    "code": "<button class=\"btn btn-primary\" disabled=\"disabled\">Disabled</button>",
+    "description": "",
+    "inlineCss": "#snippet { \n  \n}",
+    "includeJs": "false",
+    "isEdited": false,
+    "isDeleted": false
+  }
+]

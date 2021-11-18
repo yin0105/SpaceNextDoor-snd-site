@@ -1,0 +1,16 @@
+.map-popup {
+  &__content {
+    position: relative;
+
+    padding: 56% 10px 10px;
+  }
+}
+
+#popup-map {
+  position: absolute;
+
+  top: 50px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+}

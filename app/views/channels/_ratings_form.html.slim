@@ -1,0 +1,12 @@
+- if ratings.any?
+  .channel-ratings-form.mt-3.p-3.text-gray-deep.text-center
+    .channel-ratings-form__title
+      = l order.start_at, format: :date
+      | &nbsp;~&nbsp;
+      = l order.end_at, format: :date
+    = simple_form_for Rating::MultipleUpdateForm.new, url: ratings_bulk_update_index_path do |form|
+      = form.simple_fields_for :ratings, ratings do |rating_form|
+        = rating_form.hidden_field :id
+        = rating_form.input :rate, as: :star_rating, label: rating_subject_for(rating_form.object)
+        = rating_form.input :note, placeholder: rating_note_placeholder_for(rating_form.object), label: false, :input_html => { 'rows' => 5 }
+      = form.button :submit, 'Send', class: 'mt-3 mx-auto button text-white bg-gray-deep message-dialog__send-button'

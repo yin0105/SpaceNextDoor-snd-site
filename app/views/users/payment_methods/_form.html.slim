@@ -1,0 +1,8 @@
+= simple_form_for 'stripe', html: { class: 'form-horizontal', data: {'stripe-token': true} },
+wrapper: :horizontal_form do |form|
+  = form.input :card_number, as: :card_number
+  = form.input :expiration, as: :card_expiry, label: 'Expires on'
+  = form.input :cvc, as: :card_cvc, label: 'Security Code'
+  / TODO Add name column
+  .form-actions.profile__form-actions.text-center
+    = form.submit 'Submit', class: 'profile__button button-secondary text-white px-3 py-2 border-0'

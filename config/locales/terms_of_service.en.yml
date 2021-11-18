@@ -1,0 +1,287 @@
+en:
+  pages:
+    terms_of_service:
+      terms_of_service: Terms Of Service
+      update_date: 'Last Updated: April, 2019'
+      content: |
+        PLEASE READ THESE TERMS OF SERVICE CAREFULLY AS THEY CONTAIN IMPORTANT INFORMATION REGARDING YOUR LEGAL RIGHTS, REMEDIES AND OBLIGATIONS AS WELL AS A SECTION GOVERNING THE JURISDICTION AND VENUE OF DISPUTES. THESE TERMS OF SERVICE ALSO CONTAIN AN ARBITRATION CLAUSE.
+
+        BY ACCEPTING THESE TERMS OF SERVICE (“TERMS”), YOU AGREE TO BE BOUND BY SAID PROVISIONS.
+      contents: Contents
+      contents_list: ['About Us#About_Us', 'Terms Of Service#Terms_Of_Service', 'Hosts#Hosts', 'Guests#Guests', 'Cancellation Policies#Cancellation_Policies', 'Our Services#Our_Services', 'Rights#Rights', 'Content#Content', 'Other Legal Terms#Other_Legal_Terms', 'Dispute Resolution#Dispute_Resolution', 'Contacting Us#Contacting_Us']
+
+      policies:
+        - section: Information about us
+          anchor: About_Us
+          content: |
+            Spacenextdoor.com is owned and operated by Space Next Door Singapore Pte Ltd (hereafter referred to as "SND", “The Company”, the “Website”, "we", "us", or "our"). SND is a website facilitating short term space rentals between Hosts and Guests.  “Host” is defined as the person advertising via the Website and providing a storage space for the Guest to store their belongings.  “Guest” is the person paying the storage and service fees and utilising the Space to store items belonging to them or in their possession.  Collectively, Guests and Hosts are referred to as “Users”. “Space” is the physical space at the Hosts’ address in which items are stored.
+
+            SND is not itself a party to any such rental transaction, except where it has listed a Space and identified itself as a Host, and is otherwise not a contracting agent or representative of any Host, nor is it a rental agent or property broker, and as such, disclaims all liability arising from or related to any such transactions to the fullest extent permitted by law.
+
+            SND collects and transfers payment from the Guest to the Host and solely acts on behalf of the Host for collecting payment. The spaces available on our Website are not owned or operated by SND, except where it has listed a Space and identified itself as a Host. In all other cases, SND only acts as an intermediary. The site allows users to connect, agree on applicable terms and then enter into a comprehensive, legally-binding agreement (“Agreement”).
+        - section: Terms of Service for SND’s Services and Content
+          anchor: Terms_Of_Service
+          content: |
+            The terms and conditions laid out below set out the terms of use of our services, including our various websites, APIs, email notifications, applications buttons, widgets, which are collectively known as “Services”. Information, text, graphics, photos or other materials uploaded, downloaded or appearing on the website will be collectively referred to as “Content”. Your use and access of the Services and Content signifies your acceptance of these Terms of Service and agreement to be bound by them and any and all other applicable terms herein referenced.
+
+            We reserve the right, at our sole discretion, to change these Terms of service and applicable conditions at any time without notice.  You will be deemed to have read and accepted these Terms of service, including any changes, each time you use the SND website.
+
+            Fees payable for using the Services include the fee payable by the Guest to the Host for use of the Space (“Storage Fees”), the fee payable to SND by both the Host and Guest for use of the services (“SND Service Fee”) and the fee for Insurance. These fees together are referred to as “Total Fees”. The Storage Fee, SND Service Fee and the Insurance Fee, may be adjusted from time to time.
+
+            Upon acceptance of the Agreement between Host and a Guest, SND will collect Total Fees plus an additional one month of Storage Fees as Security Deposit from the Guest. All financial transactions between the parties will be processed by a third-party electronic payment system. By using the payment system, you confirm that you have read and agree to the terms and conditions applying to that service.
+
+            By using our Service you agree and understand that SND is not involved in any Agreements entered between Hosts and Guests, except where SND has listed a Space and identified itself as a Host.
+
+            SND has no control over the conduct of users of its service and disclaims all liability in this regard to the maximum extent permitted by Law.
+        - section: Other Applicable Terms
+          content: |
+            These Terms of service refer to the additional terms in our Privacy Policy Statement, which also apply to your use of our Services.  You must read and agree to the Privacy Policy prior to using the Website. Click <a href="privacy">here</a> to see our Privacy Policy Statement.
+
+            Our Privacy Policy Statement sets out the terms on which we process any personal data we collect from you or that you provide to us. By using our Services, you consent to such processing and you warrant that all data provided by you is accurate. You understand that through your use of the Services you consent to the collection and use (as set forth in the Privacy Policy) of this information, including the transfer of this information both within and outside of your home jurisdiction for storage, processing and use by us. In providing you the Services, we may need to provide you with certain communications, such as service announcements and administrative messages.  These communications are considered part of the Services and of your SND account, which you may not be able to opt-out from receiving.
+        - section: Identity
+          content: |
+            When you create an account, we require all Users to verify their identity. By submitting identity documents to SND, you warrant that these are complete, current and accurate. You must notify us within seven days of any change to your identity documents. For example: if you change your name, address or obtain a new version of your passport, identity card or drivers licence.
+        - section: Use of the Services
+          subjects:
+            - order_lists:
+                list_title: |
+                  We reserve the right at all times (but will not have an obligation) to remove or refuse to distribute any Content on the Services, to suspend or terminate Users, and to reclaim usernames without liability to you. We also reserve the right to access, read, preserve, and disclose any information as we reasonably believe is necessary to:
+                lists: ['satisfy any applicable law, regulation, legal process or governmental request,', 'enforce the Terms of Service, including investigation of potential violations hereof,', 'detect, prevent, or otherwise address fraud, security or technical issues,', 'respond to user support requests, or', 'protect the rights, property or safety of SND, its Users and the public.']
+            - content: |
+                We do not guarantee that our Services will be secure or free from bugs or viruses. You are responsible for configuring your information technology, computer programs and platform in order to access our Services. You should use your own virus protection software.
+            - order_lists:
+                list_title: "You may not do any of the following while accessing or using the Services:"
+                lists: ["Use our Website if you are not able to form legally binding contracts, are under the age of 18, or are temporarily or indefinitely suspended from using our sites;", "Upload content or items that are, in our sole judgment, lewd, inappropriate or of a sexual nature;", "Violate any laws or rights of third parties or our policies;", "Change or interfere with other Users' listings;", "Upload false, inaccurate, misleading, defamatory, or libelous content (including personal information);", "Transfer your SND account or user ID to another party without our consent;", "Distribute or upload spam, unsolicited or bulk electronic communications, chain letters, or pyramid schemes", "Distribute viruses or any other technologies that may harm SND or the interests or property of SND Users;", "Copy, modify, or distribute rights or content from the SND sites or SND ‘s copyrights and trademarks", "Use or distribute information about other Users, including names, physical addresses and email addresses, without their prior written consent.", "access, tamper with, or use non-public areas of the Services, SND’s computer systems, or the technical delivery systems of SND’s providers;", "probe, scan, or test the vulnerability of any system or network or breach or circumvent any security or authentication measures;", "access or search or attempt to access or search the Services by any means (automated or otherwise) other than through currently available, published interfaces that are provided by us (and only pursuant to these terms and conditions). Data scraping the Services without our prior consent is expressly prohibited;", "forge any TCP/ IP packet header or any part of the header information in any email or posting, or in any way use the Services to send altered, deceptive or false source-identifying information; or", "interfere with, or disrupt, (or attempt to do so), the access of any User, host or network, including, without limitation, sending a virus, trojan, worm, logic bomb or other material which is malicious or technologically harmful, overloading, flooding, spamming, mail-bombing the Services, or by scripting the creation of Content in such a manner as to interfere with or create an undue burden on the Services."]
+            - content: |
+                We will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use our Services will cease immediately.
+        - section: Associated Links
+          content: |
+            You may link to our Services provided you do so in a way that is fair and legal and does not damage our reputation or take advantage of it.  You must not establish a link in such a way as to suggest any form of association, approval or endorsement on our part where none exists.  You must not establish a link to our Services in any website that is not owned by you.  We reserve the right to withdraw linking permission without notice.
+        - section: Third party links
+          content: |
+            The links from the Services may take you to other sites or services and you acknowledge and agree that SND has no responsibility for the accuracy or availability of any Information provided by third parties services and websites.
+
+            The Services may include advertisements, which may be targeted to the Content or information on the Services, queries made through the Services, or other information.  The types and extent of advertising by SND on the Services are subject to change.  In consideration for us granting you access to and use of the Services, you agree that SND and its third party providers and partners may place such advertising on the Services or in connection with the display of Content or information from the Services whether submitted by you or others.
+
+            Links to other websites and services do not constitute an endorsement by us of such websites or services or the Information, products, advertising or other materials available made available by such third parties.
+        - section: Hosts
+          anchor: Hosts
+          content: |
+            Each listing of a Space by a Host is an offer to enter a legally binding Agreement with a Guest, also referred to as a Booking. If the Guest accepts the offer through the Website or App, they are considered to have accepted the terms of the listing and the Total Fees are collected from the Guest. In the event that the Total Fees are not collected, the Booking is considered invalid.
+
+            If you as the Host use the Services on behalf of a company or other organisation, you represent and warrant that you are authorised to bind such company or organisation to these Terms and to act on behalf of such company with respect to any actions you take in connection with the Services and, in such event, “you” and “your” will refer and apply to that company or other legal entity. You agree to respond promptly and completely to requests from SND for additional information that SND deems necessary to determine your authority to act on behalf of a company or organisation. SND may suspend or terminate your access to the Services and your account if SND has reason to believe that you are not authorised to act on behalf of the company or organization for whom you claim to be acting in connection with the Services.
+
+            As a Host, you may create Listings. To create a Listing, the Host must describe the Space, along with any house rules they wish to apply, on the listing page of the Website. Such description will include text, graphics, pictures and other relevant content and should include details like size, location, security and access offered. The Host will also state the Storage Fee for the space. All information must be accurate, complete, up-to-date and truthful to the best of your knowledge.
+
+            Listings will be made publicly available via our Website, smartphone application (App) and Services. Guests will be able to book your space via the Website, App and Services based upon the information provided in your Listing. You understand and agree that once a guest requests a Booking of your Space, the price for the Booking may not be altered.
+          subjects:
+            - order_lists:
+                list_title: |
+                  By creating a Listing you represent and warrant you have sufficient rights in and to the Space to participate in the Service as a Host, and your participation in the Service as a Host will not violate or result in the breach of any agreement between you and any third party, including any lease agreement or other agreement relating to the Space and that any Space you offer for bookings hereunder is:
+                lists: ['free of any known conditions or defects that would pose a hazard or risk to the safety of any User;', 'clean and ready to use at the start of each booking period;', 'in a safe condition and in compliance with law and any applicable building requirements;', 'does not violate any lease or other agreements relating to the Space or any building policies, and you are solely responsible for and shall indemnify SND against any fines, losses or other liability arising from such violations; and', 'the Space will be available as agreed between you and the Guest.  In the event that the Space becomes unavailable for any reason, you agree to remove or suspend the Listing as soon as reasonably practicable.']
+            - content: |
+                Guests will be charged Total Fees on a recurring 30-day basis. SND will collect Total Fees and initiate payment of the Storage Fees to the Host every ten (10) days of each 30 day booking period. You authorise SND, on behalf of the Host, to collect the Total Fees associated with the applicable recurring 30-day basis. SND will continue to collect Total Fees on a recurring basis until the Guest and Host confirm termination of the Booking.
+
+                Hosts agree to never insist, ask or imply to a Guest that they pay any or all of the Fees directly to the Host with any payment method other than by payment through SND and its payment system.
+
+                Hosts may terminate the Booking by providing 30 days' notice (“Notice Period”) in writing to the Guest through SND of your intention to terminate the Booking.  By terminating the Booking, you acknowledge that you are breaking the terms of the Agreement, agree to let the Guest continue to use the Space for the Notice Period and forfeit the Storage Fees payable to you for the period of the Notice Period.  Please click <a href="termination_policy">here</a> to see the Termination Policy.
+
+                If, as a Host, you have reasonable suspicion that a Guest is in breach of these Terms Of Service, you should immediately notify SND. Depending on the circumstances, we may simply require the Guest to remedy the breach, or we may terminate the Booking and require the Guest to remove their items. The Host shall provide reasonable notice and opportunity for the Guest to cure any breach or vacate if they cannot. If necessary, SND may inform law enforcement authorities or take actions to remove items from the Space if there is an immediate threat to persons or property.
+            - order_lists:
+                list_title: |
+                  Upon termination, if the Guest does not remove such items upon reasonable notice, or they fail to reclaim their goods upon expiry of the Agreement (“Abandoned Goods”) such items may be removed by SND.  A Host is entitled to sell or dispose of Abandoned Goods where:
+                lists: ['the Host first notifies SND, with full particulars of the Abandoned Goods;', 'the Host follows all reasonable directions of SND;', 'having regard to the circumstances of the default or abandonment, SND will, at our absolute discretion, direct the Host to remit or retain any remaining proceeds of sale.']
+            - order_lists:
+                list_title: |
+                  You acknowledge and agree that you are responsible for any and all Listings you post.  Accordingly, you further represent and warrant that any Listing you post and the booking of, or Customer booking of, a space in a Listing you post:
+                lists: ['will not breach any agreements you have entered into with any third parties and not conflict with the rights of such third parties', 'will be in compliance with all applicable laws, tax requirements, and rules and regulations that may apply to any Space included in a Listing you post.']
+            - content: |
+                Please note that SND assumes no responsibility for a User’s compliance with any applicable laws, rules and regulations. SND reserves the right, at any time and without prior notice, to remove or disable access to any Listing for any reason, including Listings that SND, in its sole discretion, considers to be objectionable for any reason, in violation of these Terms or otherwise harmful to our Website, App or Services.
+
+                You understand and agree that SND does not act as an insurer or as a contracting agent for you as a Host. If a Guest requests a Booking of your Space and attends at your Space, any Agreement you enter into with such Guest is between you and the guest and SND is not a party thereto.  Notwithstanding the foregoing, SND serves as the limited authorised agent of the Host for the purpose of accepting payments from Guests on behalf of the Host and is responsible for transmitting such payments to the Host.  Each Host is responsible for determining applicable taxes and for including any applicable taxes to be collected or obligations relating to applicable taxes in their Listings.
+
+                You acknowledge and agree that, as a Host, you are responsible for your own acts and omissions and are also responsible for the acts and omissions of any individuals who work at or are otherwise present at the Space at your request or invitation.
+        - section: Guests
+          anchor: Guests
+          content: |
+            Each listing by a Host is an offer to enter a legally binding Agreement with a Guest.  If the Guest accepts the offer through the Website or App, they are considered to have accepted the terms of the listing and the Fees are collected from the Guest.  In the event that the Fees are not collected, the Booking is considered invalid.
+
+            The Guest undertakes to pay the Fees promptly, fully and in good faith and using the SND payment function, upon confirmation of the Agreement with the Host and for each subsequent month’s usage of the Space.
+
+            Guests will be charged Total Fees on a recurring 30-day basis. SND will collect Total Fees and initiate payment of the Storage Fees to the Host every ten (10) days of each 30 day booking period. You authorise SND, on behalf of the Host, to collect the Total Fees associated with the applicable recurring 30-day basis. SND will continue to collect Total Fees on a recurring basis until the Guest and Host confirm termination of the Booking.
+
+            Guests may terminate the Booking by providing 16 days’ notice (“Notice Period”) in writing to the Host through the SND Website of your intention to vacate the Space.  You must continue to pay Total Fees for the whole Notice Period, regardless of whether you have vacated or removed your belongings in that period.  The Host will receive the Storage Fee for the entire Notice Period. Please click <a href="termination_policy">here</a> to see the Termination Policy.
+
+            Similarly, Hosts may terminate the booking by providing 30 days&#39; notice (“Notice Period”) in writing to the Guest through SND of their intention to terminate the Booking.  By terminating the Booking, they acknowledge that they are breaking the terms of the Agreement, agree to let the Guest continue to use the Space for the Notice Period and forfeit the Storage Fees payable to them for the period of the Notice Period.
+
+            At or before the end of the Booking period or upon terminating the Agreement in keeping with these terms, the Guest must vacate the Space completely. The Guest must remove all contents and debris and leave the Space in good and tenantable condition.
+
+            Guests agree to never insist, ask or imply to a Host that they pay any or all of the Fees directly to the Host with any payment method other than by payment through SND.
+
+            If a Host has reasonable suspicion that a Guest is in breach of these Storage terms, the Host may terminate the Booking and require the Guest to remove their items.  The Host shall provide reasonable notice and opportunity for the Guest to cure any breach or vacate if they cannot.  If necessary, SND may inform law enforcement authorities or take actions to remove items from their Space.
+          subjects:
+            - order_lists:
+                list_title: |
+                  Upon termination, if the Guest does not remove such items upon reasonable notice, or they fail to reclaim their goods upon expiry of the Agreement (“Abandoned Goods”) such items may be removed and disposed of.  SND is entitled to sell or dispose of Abandoned Goods where:
+                lists: ['the Host first notifies SND with full particulars of the Abandoned Goods;', 'the Host follows all reasonable directions of SND;', 'having regard to the circumstances of the default or abandonment, SND will, at our absolute discretion, direct the Host to remit or retain any remaining proceeds of sale.']
+            - order_lists:
+                list_title: "By using our Website, App and Services both Hosts and Guests agree that:"
+                lists: ['You will only use our Website and the Spaces booked through our platform for lawful purposes. You will not use our Website and the offerings in our Website for any illegal or immoral purposes, including but not limited to pornography, storage of illegal or stolen goods, illicit drug, storage use or production, gambling or prostitution, residential use or any other purpose reasonably likely to reflect negatively on SND or its Hosts.', 'You will abide by the House Rules as specified by the Host.  In addition, you will not store any items that are illegal, chemical, radioactive, perishable, toxic or bacteriological.  Weapons and explosive materials may not be stored at any time.', 'In addition to the above, you agree to abide by all government laws and regulations in your jurisdiction.', 'You will not make excessive noise in the spaces booked through SND.', 'You will not use the Website, App, Services or SND’s Spaces for sending or storing any unlawful material or for fraudulent purposes.', 'You will not use the Website, App or services to cause nuisance, harassment, annoyance or inconvenience.', 'You will not impair the normal operation of the network.', 'You will not try to harm the Website, App, Spaces or Services in any way whatsoever.', 'You will not copy, or distribute the Website, App or other content without written permission from SND.', 'You will keep secure and confidential your account password and any identification provided by SND.', 'You will not install, remove or modify any fixtures, equipment, machinery or appliances in the Spaces you are booking nor will you re-paint or re-decorate the space.', 'You are responsible for leaving the Space you are booking in a clean and tidy condition.', 'Neither the Company nor the Host is responsible for any property you may leave behind in a Space you have vacated. It is your responsibility to ensure that you have retrieved all of your personal items prior to leaving vacating the Space.', 'You may be held liable (and do hereby authorise the Company to charge you) for the repair cost for any and all damage to the Space and items therein during your stay.', 'You may be held liable (and do hereby authorise the Company to charge you) for any items not belonging to you, which are taken from the Space.']
+              content: You do further acknowledge that your use of the Spaces through SND constitutes a limited, non-exclusive, non-transferable license on the terms set out herein.
+        - section: Cancellation policies
+          anchor: Cancellation_Policies
+          content: |
+            Guests can cancel their Booking prior to moving in, according to the Cancellation Policy.  Please click <a href="cancellation_policy">here</a> to see the Cancellation Policy.  In the event a Guest cancels a Booking, SND shall transfer to the Host the Fees collected by SND from the Guest, minus SND’s Service Fee and any penalty fee, in accordance with the selected cancellation policy. When a cancellation is confirmed, SND will refund the remaining monies to the Guest.  Hosts should not cancel a confirmed Booking.  If however, exceptional circumstances require the Host to cancel a Booking, please notify SND for assistance.
+
+            SND has the right to cancel any Booking at any time for security or fraud-protection purposes.  This is generally due to our fraud-detection processes reporting a problem with the payment card submitted.  In such cases the cancellation policy will not apply and Hosts will receive no payment for the cancelled Booking
+        - section: Our Services
+          anchor: Our_Services
+          content: |
+            The Services that we provide are always evolving and the form and nature of the Services that we provide may change from time to time without prior notice to you.  In addition, we may stop (permanently or temporarily) providing the Services (or any features within the Services) to you or to Users generally and may not be able to provide you with prior notice. We also retain the right to create limits on use and Storage at our sole discretion at any time and without prior notice to you.
+
+            We make no representations, warranties or guarantees, whether express or implied that our Services or any content on our site is accurate, complete or up-to-date.
+        - section: Accessing our Services
+          content: |
+            We do not guarantee that our Services, or any content, will always be available or be uninterrupted. Access to our Services may be suspended, withdrawn, discontinued or changed, fully or in part without notice. We will not be liable to you if for any reason our Services are unavailable at any time or for any period.
+
+            You are responsible for making all arrangements necessary for you to have access to our Services. You are also responsible for ensuring that all persons who access our Services through your internet connection or User account are aware of these Terms of Service and other applicable terms and conditions, and that they comply with them.
+
+            SND provides the Service as a platform and its responsibilities are limited to: (i) facilitating the availability of the Site, App and the Service to allow Guests and Hosts to transact and communicate directly with one another, and (ii) serving as a limited payment collection agent. SND does not take part in Guest - Host transactions or communications, except where it has listed a Space and identified itself as a Host, other than to the limited extent set out in these Terms of Service. Each User is solely responsible for assessing the suitability of any space it is considering using. SND has no control over the quality, suitability or availability of any Space, or over the reliability, integrity or conduct of any User.
+
+            If SND or the Services provides professional information or recommendations (for example, legal, insurance, financial or real estate), such information is for informational purposes only and should not be construed as professional advice.  No decision or other action should be made on the basis of such information and no fiduciary or other privileged relationship exists between you and SND.  SND recommends that you seek the advice of a licensed professional qualified to provide advice in such areas.
+
+        - section: Your account and password
+          content: |
+            You are responsible for safeguarding the password that you use to access the Services and for any activities or actions under your password.  We encourage you to use "strong" passwords (passwords that use a combination of upper and lower case letters, numbers and symbols) with your account.  You must treat such information as confidential.  You must not disclose it to any third party.  SND cannot and will not be liable for any loss or damage arising from your failure to comply with the above.  We have the right to disable any password at any time, if in our reasonable opinion you have failed to comply with any of the provisions of these Terms of Service.
+
+            If you know or suspect that anyone other than you knows your password, you must promptly notify us at <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>
+
+        - section: Rights
+          anchor: Rights
+          subjects:
+            - title: Your license to use the Services
+              content: |
+                SND gives you a personal, worldwide, royalty-free, non-assignable and non-exclusive license to use the software that is provided to you by us as part of the Services.  This license is for the sole purpose of enabling you to use and enjoy the benefit of the Services as provided by SND, in the manner permitted by these Terms of Service.
+            - title: Our Intellectual property rights
+              content: |
+                All intellectual property rights subsisting in respect of the Services belong to SND or have been lawfully licensed to SND for use in connection with the Services.  All rights under applicable laws are hereby reserved.  You are not allowed to upload, post, publish, reproduce, transmit or distribute in any way any component of the website itself or create derivative works with respect thereto, as the website is copyrighted under applicable laws.
+
+                You agree that we are free to use, disclose, adopt and modify all and any ideas, concepts, know-how, proposals, suggestions, comments and other communications and information provided by you to us (“Feedback”) in connection with the Services and/or your use of the Services without any payment to you.  You hereby waive and agree to waive all and any rights and claims for any consideration, fees, royalties, charges and/ or other payments in relation to our use, disclosure, adoption and/ or modification of any or all of your Feedback.
+            - title: Your rights
+              content: |
+                You retain your rights to any Content you submit, post or display on or through the Services.  By submitting, posting or displaying Content on or through the Services, you grant us a worldwide, non-exclusive, royalty- free license (with the right to sublicense) to use, copy, reproduce, process, adapt, modify, publish, transmit, display and distribute such Content in any and all media or distribution methods (now known or later developed).
+
+                You agree that this license includes the right for us to provide, promote, and improve the Services and to make Content submitted to or through the Services available to other companies, organisations or individuals who partner with SND for the syndication, broadcast, distribution or publication of such Content on other media and services, subject to our terms and conditions for such Content use.
+
+                Such additional uses by SND or other companies, organisations or individuals who partner with SND may be made with no compensation paid to you with respect to the Content that you submit, post, transmit or otherwise make available through the Services.
+
+                We may modify or adapt your Content in order to transmit, display or distribute it over computer networks and in various media and/or make changes to your Content as are necessary to conform and adapt that Content to any requirements or limitations of any networks, devices, services or media.
+
+                You are responsible for your use of the Services, for any Content you provide, and for any consequences thereof, including the use of your Content by other users and our third party partners.  You understand that your Content may be syndicated, broadcast, distributed, or published by our partners and if you do not have the right to submit Content for such use, it may subject you to liability.  SND will not be responsible or liable for any use of your Content by SND in accordance with these Terms.  You represent and warrant that you have all the rights, power and authority necessary to grant the rights granted herein to any Content that you submit.
+            - title: Limited liability and warranty
+              content: |
+                Please read this section carefully since it limits the liability of SND and its parents, subsidiaries, affiliates, related companies, officers, directors, employees, agents, representatives, partners, and licensors (collectively, the Entities of SND).  Each of the subsections below only applies up to the maximum extent permitted under applicable law.  Some jurisdictions do not allow the disclaimer of implied warranties or the limitation of liability in contracts, and as a result the contents of this section may not apply to you.  Nothing in this section is intended to limit any rights you may have which may not be lawfully limited.  All Information is for your general reference only. We do not accept any responsibility whatsoever in respect of such information.
+
+                Your access to and use of our Services is at your sole risk and is provided as is or as available and for your personal use only and the entities of SND make no representation or warranty of any kind, express or implied, including, without limitation, any warranties on merchantability or fitness for any particular purpose or non-infringement.
+
+                The entire liability of the SND entities and your exclusive remedy with respect to the services or otherwise, is re-performance of defective services.  In jurisdictions, which do not allow the exclusion or limitation of certain types of liability, our liability will be limited, to the maximum extent permitted by law.  SND does not endorse, warrant or guarantee any material, product or service offered through our services or us.  SND is not and will not be a party to any transaction between you and any third party.
+            - order_lists:
+                list_title: "The Entities of SND shall not guarantee or assume any responsibility that:"
+                lists: ['The information presented in our Services is accurate, adequate, current or reliable, or may be used for any purpose other than for general reference;', 'The information presented in our Services is free of defect, error, omission, virus or anything, which may change, erase, add to or damage your software, data or equipment;', 'Messages sent through the internet including in connection with the Services will be free from interception, corruption, error, delay or loss;', 'Access to the Services will be available or be uninterrupted;', 'Use of the Services will achieve any particular result; or', 'Defects in the Services will be corrected.']
+            - content: |
+                Without limiting the generality of the foregoing, in no event will the Entities of SND be liable to you or any other person for any direct, indirect, incidental, special, punitive or consequential loss or damages, including any loss of business or profit, arising out of any use, or inability to use, the information or the Services, even if any of the Entities of SND has been advised of the possibility of such loss or damages.
+
+                You will exercise and rely solely on your own skill and judgment in your use and interpretation of the information and use of the Services. You are responsible to ensure that your use of the information and the Services complies with all applicable legal requirements
+
+                Without prejudice to the foregoing, if your use of the Services does not proceed satisfactorily and/ or where applicable you do not receive appropriate responses from us, as set out in these Terms of Service or otherwise, you are advised to contact us at <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>.  No such lack of response shall be deemed to constitute any acquiescence or waiver.  The limitation of liability contained in these Terms of Service will apply to the fullest extent permitted by applicable laws.
+        - section: Content
+          anchor: Content
+          content: |
+            All Content, whether publicly posted or privately transmitted, is the sole responsibility of the person who originated such Content.
+
+            You warrant that any such contribution does comply with those standards and you will be liable to us and indemnify us for any breach of that warranty and you will be responsible for any loss or damage we suffer as a result of your breach of warranty.  Any content you upload to our Website will be considered non-confidential and non-proprietary, and we have the right to use, copy, distribute and disclose to third parties any such content for any purpose.  We also have the right to disclose your identity to any third party who is claiming that any content posted or uploaded by you to our Website constitutes a violation of their intellectual property rights, or of their right to privacy.  We will not be responsible or liable to any third party, for the content or accuracy of any content posted by you or any other user of our Website.
+
+            The views expressed by other users on our Website do not represent our views or values.  We do maintain the right to remove any posting you make on our Website if, in our opinion, your post does not comply with our content standards.  We do not endorse, support, represent or guarantee the completeness, truthfulness, accuracy, or reliability of any Content or communications posted via the Services or endorse any opinions expressed via the Services.  You understand that by using the Services, you may be exposed to Content that might be offensive, harmful, inaccurate or otherwise inappropriate, or in some cases, postings that have been mis-labeled or are otherwise deceptive.  Under no circumstances will we be liable in any way for any Content, including, but not limited to, any errors or omissions in any Content, or any loss or damage of any kind incurred as a result of the use of any Content posted, emailed, transmitted or otherwise made available via the Services or broadcast elsewhere.
+
+            We may not monitor or control the Content posted via the Services and, we cannot take responsibility for such Content.  Any use or reliance on any Content or materials posted via the Services or obtained by you through the Services is at your own risk.
+        - section: Content copyright policy
+          content: |
+            SND respects the intellectual property rights of others and expects Users of the Services to do the same. We will respond to notices of alleged copyright infringement that fail to comply with applicable law and are properly provided to us. If you believe that your Content has been copied in a way that constitutes copyright infringement, please provide us with the following information:
+          subjects:
+            - order_lists:
+                lists: ['a physical or electronic signature of the copyright owner or a person authorised to act on their behalf;', 'identification of the copyrighted work claimed to have been infringed;', 'identification of the material that is claimed to be infringing or to be the subject of infringing activity and that is to be removed or access to which is to be disabled, and information reasonably sufficient to permit us to locate the material;', 'your contact information, including your address, telephone number, and an email address;', 'a statement by you that you have a good faith belief that use of the material in the manner complained of is not authorised by the copyright owner, its agent, or the law; and', 'a statement that the information in the notification is accurate, and that you are authorised to act on behalf of the copyright owner.']
+              content: |
+                We reserve the right to remove Content alleged to be infringing without prior notice, at our sole discretion, and without liability to you.  In appropriate circumstances, we will also terminate a User's account if the user is determined to be a repeat infringer.  Our address for notice of alleged copyright infringement appearing on the Services is <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>
+
+        - section: Other Legal Terms
+          anchor: Other_Legal_Terms
+          subjects:
+            - title: Indemnity
+              content: |
+                You agree to release, defend, indemnify and hold SND, our officers, directors, employees, affiliates, agents and representatives harmless from and against any claims, liabilities, damages, actions, costs and expenses (including without limitation reasonable legal fees and litigation expenses), in connection with or arising out of your breach of any of these Terms of Service and/or your use of our Website, App or Service.  We may, if necessary, participate in the defence of any claim or action and any negotiations for settlement.  No settlement, which may adversely affect our rights or obligations, shall be made without our prior written approval. We reserve the right, at our own expense and on notice to you, to assume exclusive defence and control of any claim or action.
+            - title: Severance
+              content: |
+                The illegality, invalidity or unenforceability of any provision of these Terms of Service under the law of any jurisdiction shall not affect its legality, validity or enforceability under the laws of any other jurisdiction nor the legality, validity or enforceability of any other provision.
+            - title: Several users
+              content: |
+                If there are two or more persons adhering to these Terms of Service as a User, their liability under the Terms of Service is joint and several, and their rights are joint.
+            - title: Waiver
+              content: |
+                No failure or delay by a party to exercise any right or remedy provided under these Agreements or by law shall constitute a waiver of that or any other right or remedy, nor shall it prevent or restrict the further exercise of that or any other right or remedy.  No single or partial exercise of such right or remedy shall prevent or restrict the further exercise of that or any other right or remedy.
+            - title: Assignment
+              content: |
+                You may not assign or transfer these Terms, by operation of law or otherwise, without SND’s prior written consent.  Any attempt by you to assign or transfer these Terms, without such consent, will be null and of no effect.  SND may assign or transfer these Terms, at its sole discretion, without restriction.  Subject to the foregoing, these Terms will bind and inure to the benefit of the parties, their successors and permitted assigns.
+            - title: Termination
+              content: |
+                We will make reasonable efforts to notify you by the email address associated with your account or the next time you attempt to access your account. In all such cases, any provision of these Terms of Service that expressly or by implication is intended to come into or continue in force on or after termination of this Agreement shall remain in full force and effect.
+
+                You may end your Agreement with us at any time for any reason by deactivating your accounts and discontinuing your use of the Services. You do not need to specifically inform us when you stop using the Services.
+
+                Nothing in this section shall affect our rights to change, limit or stop the provision of the Services without prior notice, as provided above in the clause titled “Changes to Our Services”. Please note that if your SND Account is cancelled, we do not have an obligation to delete or return to you any Content you have posted to the Website, App or Service, including, but not limited to, any reviews or Feedback.
+              order_lists:
+                list_title: |
+                  The Terms of Service will continue to apply until terminated by either you or us as follows in our discretion and without liability to you, with or without cause, with or without prior notice and at any time.
+
+                  We may suspend or terminate your accounts or cease providing you with all or part of the Services at any time for any reason, including, but not limited to, if we reasonably believe:
+                lists: ['you have violated these Terms of Service', 'you create risk or possible legal exposure for us; or', 'our provision of the Services to you is no longer commercially viable.']
+            - title: Third party beneficiary
+              content: |
+                These SND Terms of Service shall not confer any rights or remedies upon any third party person or entity other than the parties.
+            - title: Notices
+              content: |
+                Unless provided otherwise by Law, any notices or other communications referred or required in these Terms of Service, shall be in writing and given by SND (i) via email to the email address provided to us (the date of receipt being deemed to be the date on which such email was transmitted) or (ii) by online post to the site or mobile application.
+            - title: Controlling Law and Jurisdiction
+              content: |
+                These Terms of Service shall be interpreted in accordance with the laws of the jurisdiction in which the Space is located.
+            - title: Disclaimers
+              content: |
+                IF YOU CHOOSE TO USE THE SERVICE, YOU DO SO AT YOUR SOLE RISK. YOU ACKNOWLEDGE AND AGREE THAT SND DOES NOT HAVE AN OBLIGATION TO CONDUCT BACKGROUND CHECKS ON ANY MEMBER, INCLUDING, BUT NOT LIMITED TO, GUESTS AND HOSTS, BUT MAY CONDUCT SUCH BACKGROUND CHECKS AT ITS SOLE DISCRETION. THE SERVICES AND COLLECTIVE CONTENT ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED. WITHOUT LIMITING THE FOREGOING, SND EXPLICITLY DISCLAIMS ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF THE COURSE OF DEALING OR USAGE FOR TRADE. SND MAKES NO WARRANTY THAT THE SERVICES OR COLLECTIVE CONTENT, INCLUDING, BUT NOT LIMITED TO, THE LISTINGS OF SPACES, WILL MEET YOUR REQUIREMENTS OR BE AVAILABLE ON AN UNINTERRUPTED, SECURE, OR ERROR-FREE BASIS. SND MAKES NO WARRANTY REGARDING THE QUALITY OF ANY LISTINGS, SPACES, THE SERVICES OR COLLECTIVE CONTENT OR THE ACCURACY, TIMELINESS, TRUTHFULNESS, COMPLETENESS OR RELIABILITY OF ANY COLLECTIVE CONTENT OBTAINED THROUGH THE SERVICE.
+
+                NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED FROM SND OR THROUGH THE SERVICE OR COLLECTIVE CONTENT, WILL CREATE ANY WARRANTY NOT EXPRESSLY MADE HEREIN.
+
+                YOU ARE SOLELY RESPONSIBLE FOR ALL OF YOUR COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE SERVICES AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE SERVICES, INCLUDING, BUT NOT LIMITED TO, ANY HOSTS OR GUESTS.  YOU UNDERSTAND THAT SND DOES NOT MAKE ANY ATTEMPT TO VERIFY THE STATEMENTS OF USERS OF THE SITE, APPLICATION OR SERVICES OR TO REVIEW OR INSPECT ANY SPACES.
+
+                SND MAKES NO REPRESENTATIONS OR WARRANTIES AS TO THE CONDUCT OF USERS OF THE WEBSITE, APPLICATION OR SERVICES OR THEIR COMPATIBILITY WITH ANY CURRENT OR FUTURE USERS OF THE WEBSITE, APPLICATION OR SERVICES.
+
+                YOU AGREE TO TAKE REASONABLE PRECAUTIONS IN ALL COMMUNICATIONS AND INTERACTIONS WITH OTHER USERS OF THE WEBSITE, APPLICATION OR SERVICES AND WITH OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE WEBSITE, APPLICATION OR SERVICES, INCLUDING, BUT NOT LIMITED TO, GUESTS, AND HOSTS, PARTICULARLY IF YOU DECIDE TO MEET OFFLINE OR IN PERSON REGARDLESS OF WHETHER SUCH MEETINGS ARE ORGANISED BY SND.
+
+                NOTWITHSTANDING SND’S APPOINTMENT AS THE LIMITED AGENT OF THE HOST FOR THE PURPOSE OF ACCEPTING PAYMENTS FROM GUESTS ON BEHALF OF THE HOSTS, SND EXPLICITLY DISCLAIMS ALL LIABILITY FOR ANY ACT OR OMISSION OF ANY GUESTS OR OTHER THIRD PARTY.
+            - title: Limitation of Liability
+              content: |
+                TO THE MAXIMUM EXTENT PERMITTED BY LAW, YOU ACKNOWLEDGE AND AGREE THAT, NEITHER SND, ITS OFFICERS, DIRECTORS, AFFILIATES, AGENTS AND REPRESENTATIVES, NOR ANY OTHER PARTY INVOLVED WITH THE WEBSITE, APPLICATION OR SERVICES, SHALL BE LIABLE FOR ANY INCIDENTAL, SPECIAL, PUNITIVE OR CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, LOSS OF DATA OR LOSS OF GOODWILL, SERVICE INTERRUPTION, COMPUTER DAMAGE OR SYSTEM FAILURE OR THE COST OF SUBSTITUTE PRODUCTS OR SERVICES, OR FOR ANY DAMAGES FOR PERSONAL OR BODILY INJURY OR EMOTIONAL DISTRESS ARISING OUT OF OR IN CONNECTION WITH THESE TERMS, FROM THE USE OF OR INABILITY TO USE THE WEBSITE, APPLICATION, SERVICES OR COLLECTIVE CONTENT, FROM ANY COMMUNICATIONS, INTERACTIONS OR MEETINGS WITH OTHER USERS OF THE WEBSITE, APPLICATION, OR SERVICES OR OTHER PERSONS WITH WHOM YOU COMMUNICATE OR INTERACT AS A RESULT OF YOUR USE OF THE WEBSITE, APPLICATION, SERVICES, OR FROM YOUR LISTING OR BOOKING OF ANY SPACE VIA THE WEBSITE, APPLICATION AND SERVICES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR ANY OTHER LEGAL THEORY, AND WHETHER OR NOT SND HAS BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE, EVEN IF A LIMITED REMEDY SET FORTH HEREIN IS FOUND TO HAVE FAILED OF ITS ESSENTIAL PURPOSE.
+
+                IN NO EVENT WILL SND’S AGGREGATE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THESE TERMS AND YOUR USE OF THE WEBSITE, APPLICATION AND SERVICES INCLUDING, BUT NOT LIMITED TO, FROM YOUR LISTING OR BOOKING OF ANY SPACE VIA THE WEBSITE, APPLICATION AND SERVICES, OR FROM THE USE OF OR INABILITY TO USE THE WEBSITE, APPLICATION OR SERVICES, EXCEED THE AMOUNTS YOU HAVE PAID OR OWE FOR BOOKINGS OR OCCUPYING A SPACE VIA THE WEBSITE, APPLICATION AND SERVICES, IN THE TWELVE MONTH PERIOD PRIOR TO THE EVENT GIVING RISE TO SAID POTENTIAL LIABILITY, OR AS THE CASE MAY BE THE AMOUNTS PAID BY SND TO YOU IN THE TWELVE MONTH PERIOD PRIOR TO THE EVENT GIVING RISE TO THE LIABILITY, OR A SUM OF FIVE HUNDRED U.S. DOLLARS (US$500), IF NO SUCH PAYMENTS HAVE BEEN MADE, AS APPLICABLE. THE LIMITATIONS OF DAMAGES SET FORTH ABOVE ARE MATERIAL CONDITIONS OF THE BARGAIN FOR EXCHANGE BETWEEN SND AND YOU.
+        - section: Dispute Resolution
+          anchor: Dispute_Resolution
+          content: |
+            You and SND agree that any dispute or claim arising out of these Terms of Service or the breach, termination, enforcement, interpretation or validity thereof, or to the use of our Services (collectively, "Disputes") shall be exclusively settled by binding arbitration as set forth below, except that each party retains the right to seek injunctive or other equitable relief in a court of competent jurisdiction to prevent the actual or threatened infringement, misappropriation or violation of a party's copyrights, trademarks, trade secrets, patents, or other intellectual property rights.
+        - section: Contacting Us
+          anchor: Contacting_Us
+          content: |
+            If you have any questions, requests or inquiries on or related to this Agreement, please contact SND at <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>
+        - section: Feedback
+          content: |
+            We welcome and encourage you to provide feedback, comments and suggestions for improvements to the Service (“Feedback”).  You may submit Feedback by emailing us at <a href="mailto:help@spacenextdoor.com">help@spacenextdoor.com</a>.  You acknowledge and agree that all Feedback will be the sole and exclusive property of SND and you hereby irrevocably assign to SND and agree to irrevocably assign to SND all of your right, title, and interest in and to all Feedback, including without limitation all worldwide patent, copyright, trade secret, moral and other proprietary or intellectual property rights therein.
+        - section: Languages
+          content: |
+            In case of discrepancies between the English and other foreign language versions of these Terms of Service and contents of this site, the English version shall prevail.

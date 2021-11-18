@@ -1,0 +1,15 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | You have requested for your booking to be changed. We have heard you.
+    | &nbsp;
+    | Your storage period will now be extended automatically every 30 days until 16 days notice is given starting from #{@order.long_term_start_at.strftime('%d-%b-%Y')}.
+  mj-text
+    | Booking ID: #{@order.identity}
+    br
+    | Transaction ID : #{@payment.identity}
+  mj-text
+    | Title of Property:
+    br
+    = link_to @order.space.name, space_url(@order.space_id), class: "lk-blue"

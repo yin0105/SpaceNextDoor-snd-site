@@ -1,0 +1,155 @@
+html
+  head
+    title = "Invoice ##{@payment.identity}"
+    = javascript_pack_tag 'application'
+    scss:
+      body { visibility: hidden; }
+      @media print {
+        @page { size: auto; margin: 0mm; }
+        body {
+          visibility: visible;
+          font-size: 15px;
+          margin: 1.5cm 1cm;
+        }
+        .container {
+          width: 80%;
+          margin: 0 auto;
+        }
+
+        #header {
+          margin-top: 3em;
+
+          clear: both;
+          overflow: hidden;
+          zoom: 1;
+
+          .logo { float: left; }
+          .information { float: right; }
+        }
+
+        .invoice__title { font-size: 20px; margin: 40px 0 20px; }
+        .meta { margin-bottom: 20px; }
+        .order, .price, .charge { margin-left: 2em; }
+        .order { margin-bottom: 40px; }
+        .order__peroid {
+          margin-bottom: 20px;
+          claer: both;
+          overflow: hidden;
+          zoom: 1;
+        }
+        .order__peroid-item {
+          float: left;
+          margin-right: 40px;
+          font-size: 20px;
+
+          span {
+            display: block;
+            font-size: 15px;
+          }
+        }
+        .order__address { margin-bottom: 20px; }
+        .order__house_rules { margin-bottom: 20px; }
+        .order__rules { color: #34aef4; }
+        .charge { margin-bottom: 40px; }
+        .price__item {
+          clear: both;
+          overflow: hidden;
+          zoom: 1;
+        }
+        .price__subject {
+          min-width: 200px;
+          margin-right: 100px;
+          float: left;
+        }
+        .price__subject--bold, .price__value--bold { font-weight: bold; }
+      }
+  body
+    header#header.container
+      .logo = image_tag('logo.png')
+      .information
+        .information__name Space Next Door Singapore Pte Ltd
+        .information__address Address: 743 Lorong 5 Toa Payoh, Level 2, S(319457)
+        .information__acra-no ACRA No: 201632807E
+
+    article#invoice.invoice.container
+      h1.incoice__title = "TAX INVOICE: #{@payment.days} Days at #{@payment.order.space.name}"
+      .meta
+        .meta__booker
+          - if @identity == 'host'
+            = "Hosted by #{@payment.order.host.name}"
+          - else
+            = "Booked by #{@payment.user.name}"
+        .meta__date = "Date: #{l @payment.created_at, format: :mail_date}"
+        .meta__order-id = "Booking ID: #{@payment.order_id}"
+        .meta__transction-id = "Transaction ID: #{@payment.identity}"
+      .order
+        .order__peroid
+          .order__peroid-item
+            span From:
+            = l @payment.service_start_at, format: :date
+          .order__peroid-item
+            span To:
+            = l @payment.service_end_at, format: :date
+        .order__property = "Title of Property: #{@payment.order.space.name}"
+        .order__address = "Address #{@payment.order.space.address}"
+        .order__house_rules= "House rules: #{space_rules(@payment.order.space).join(", ")}"
+        .order__host
+          - if @identity == 'host'
+            = "Booked by #{@payment.user.name}"
+          - else
+            = "Hosted by #{@payment.order.host.name}"
+        .order__host-phone = "Phone: #{@payment.host&.display_phone}" if @payment.host.display_phone.present?
+        .order__host-email = "Email: #{@payment.host&.email}" if @identity == 'guest'
+      - if @identity == 'host'
+        .charge
+          .charge__subject Charges
+          .charge__value = "#{l @payment.service_start_at, format: :date} to #{l @payment.service_end_at, format: :date}"
+        - if @payment.refund_due?
+          .price
+            .price__item
+              .price__subject Service fee (Host)
+              .price__value = @payment.early_end_host_service_fee.format
+            .pricel__item
+              .price__subject.price__subject--bold Total
+              .price__value = @payment.early_end_host_service_fee.format
+        - else
+          .price
+            .price__item
+              .price__subject Service fee (Host)
+              .price__value = @payment.host_service_fee.format
+            .pricel__item
+              .price__subject.price__subject--bold Total
+              .price__value = @payment.host_service_fee.format
+      - else
+        .charge
+          .charge__subject Charges
+          .charge__value = "Paid for #{l @payment.service_start_at, format: :date} to #{l @payment.service_end_at, format: :date}"
+        .price
+          .price__item
+            .price__subject = "#{@payment.order.price.format} x #{@payment.days} days"
+            .price__value = @payment.rent.format
+          .price__item
+            .price__subject Service fee
+            .price__value = @payment.guest_service_fee.format
+          - if @payment.insurance_enable?
+            .price__item
+              .price__subject = I18n.t("insurance.#{@payment.insurance_type}.mailer_item")
+              .price__value = @payment.premium.format
+          .price__item
+            .price__subject Deposit
+            .price__value = @payment.deposit.format
+          .pricel__item
+            .price__subject Total
+            .price__value = @payment.amount.format
+          .price__item
+            .price__subject.price__subject--bold Amount Paid
+            .price__value.price__value--bold = @payment.amount.format
+          .price__item
+            .price__subject Promotion Applied: #{render_promotion(@payment.order)}
+    javascript:
+      $(document).ready(function() {
+        window.print();
+        window.onafterprint = function(e){
+            document.location.href = '#{order_path(@payment.order, identity: @identity)}'
+        }
+      });

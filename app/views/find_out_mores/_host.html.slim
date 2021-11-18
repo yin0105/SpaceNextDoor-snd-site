@@ -1,0 +1,15 @@
+h1.p-4.pt-5.text-center.text-orange How to Become a Host? Find Out More!
+.alert.alert-success.mb-4.rounded
+  | Tell us more about your space and we’ll help you with listing your space!
+= form.input :identity, as: :hidden
+= form.input :location, label: t('simple_form.labels.find_out_request.host.location'), as: :select2, collection: @locations
+= form.input :address
+= form.input :postal_code, required: true
+= form.input :size, label: t('simple_form.labels.find_out_request.host.size') do
+  .clearfix.mb-3
+    .w-md-50
+      = form.text_field :size, class: 'form-control'
+    .w-md-50
+      strong.find-out-more__size-unit.d-inline-block sqm
+= form.input :start_at, label: t('simple_form.labels.find_out_request.host.start_at'), as: :datepicker, min_date: Date.today
+= form.input :end_at, label: t('simple_form.labels.find_out_request.host..end_at'), as: :datepicker, min_date: Date.today

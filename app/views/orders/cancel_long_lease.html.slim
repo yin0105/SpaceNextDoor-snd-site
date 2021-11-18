@@ -1,0 +1,18 @@
+.order-cancel
+	.container.order-cancel__container.pt-100.pb-5
+		h1.p-4.pt-5.text-center.text-orange Termination Notice
+		h2.text-center.text-gray-deep.font-size-large = @order.space.name
+		.order__cancel-notice.text-gray-deep
+			p = t('.cancellation_notice')
+		.order__cancel-notice.text-gray-deep
+			| Promotion Applied: #{render_promotion(@order)}.
+			br
+			| The first available date is #{display_cancelling_date(@order).to_s(:long)}.
+		.order__cancel-form.text-gray-deep
+			= form_for @order, url: order_long_leases_path(@order), html: {method: :delete} do |f|
+				.form-group
+					label.font-bold Choose Termination Date
+					input.form-control.bg-gray.order_early_checkout.mt-2 name='early_check_out' data-datepicker=true  required='true' data-enables="#{enabled_checkout_dates(@order)}"
+					.order__cancel-form-buttons.mt-3.text-center
+						= link_to 'Cancel', orders_path, class: 'order-cancel__cancel-button button'
+						=	f.submit 'Terminate', class: 'order-cancel__terminate-button button button-secondary bg-orange border-0 ml-3'

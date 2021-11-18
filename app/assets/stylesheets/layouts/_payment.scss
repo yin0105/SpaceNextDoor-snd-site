@@ -1,0 +1,13 @@
+.payment-item {
+  border: 1px solid $color-gray-deep;
+
+  &__details {
+    float: left;
+
+    line-height: 2;
+  }
+
+  &__actions {
+    float: right;
+  }
+}

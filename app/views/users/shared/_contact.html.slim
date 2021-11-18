@@ -1,0 +1,13 @@
+.bg-gray
+  .container.profile-contact.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = "For #{type.titleize} - Alternate Contact"
+        .profile__content-body.profile--verified-form.p-4.bg-white
+          - if current_contact("as_#{type}")&.present?
+            = render 'users/shared/contact_info', contact: current_contact("as_#{type}")
+            p.text-center.profile-contact__button = link_to t('.edit_contact'), public_send("new_#{type}_contact_path"), class: 'button-secondary text-white px-3 py-2 rounded-sm'
+          - else
+            p.text-center.profile-contact__button = link_to t('.add_contact'), public_send("new_#{type}_contact_path", identity: params[:identity]), class: 'button-secondary text-white px-3 py-2 rounded-sm'

@@ -1,0 +1,47 @@
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.1.2
+  node: circleci/node@2
+
+jobs:
+  test:
+    docker:
+      - image: cimg/ruby:2.6.6-node
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: ubuntu
+          POSTGRES_DB: db_name
+
+    environment:
+      DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
+    steps:
+      - checkout
+      - ruby/install-deps
+      - node/install:
+          install-yarn: true
+          node-version: 12.18.2
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - ruby/rubocop-check
+
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      - run:
+          name: Run backend tests
+          command: |
+            bundle exec rspec $(circleci tests glob "spec/**/*_spec.rb" | grep -ve "spec/features/" | circleci tests split --split-by=timings) --profile=10 --format RspecJunitFormatter --out /tmp/test-results/rspec/results.xml --format progress
+
+workflows:
+  app-tests:
+    jobs:
+      - test

@@ -1,0 +1,11 @@
+.channel-item.mb-3
+  .clearfix
+    .w-md-50.clearfix
+      .channel-item__avatar.float-left
+        = image_tag channel.target.avatar.small.url, class: 'avatar'
+      .channel-item__meta.float-left.ml-4
+        h1.channel-item__username.font-size-large.mt-2 = channel.target.name
+        h2.channel-item__space-name.font-size-medium = link_to channel.space.name, channel.space, class: 'text-gray-deep'
+    w-md-50
+      p.channel-item__message.font-size-small = render_message_content(channel.messages.latest.first)
+      .channel-item__date.text-gray-deep.font-size-small = render_message_time(channel.messages.latest.first)

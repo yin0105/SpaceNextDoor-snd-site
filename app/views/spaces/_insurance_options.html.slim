@@ -1,0 +1,9 @@
+.space__booking-premium.space__pricing-item.py-1.premium
+  span
+    | Insurance
+    a.text-gray-deep.ml-2
+      i.icon.fa.fa-question-circle.question-circle__insurance tabindex='0'
+        .text-left.bg-white.content = t('.insurance_notice')
+  span.pull-right.pricing-calculator__insurance = calculate_premium(1).format
+.booking-insurance-options.pricing-calculator__insurance-selector.my-2
+  = select_tag 'order[insurance_type]', options_for_select(insurance_options), class: 'pricing-calculator__insurance-option', style: 'width: 100%'

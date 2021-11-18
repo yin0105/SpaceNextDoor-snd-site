@@ -1,0 +1,22 @@
+.two-cols#space-index
+  .container
+    = render_google_map_layout
+
+javascript:
+  $( document ).ready(function() {
+    ele = document.querySelector('.js-scroll-area');
+    ele.addEventListener('click', getCurrentScrollPosition)
+    ele.scrollTop = getCookie('currentScrollPosition') || 0;
+  });
+
+  function getCookie(name) {
+    let arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+    if(arr != null) return unescape(arr[2]); return null;
+  }
+
+  function getCurrentScrollPosition(){
+    let currentScrollPosition = this.scrollTop;
+    let now = new Date().getTime();
+    let afterTenMin = new Date(now + (10 * 1000));
+    document.cookie = `currentScrollPosition = ${currentScrollPosition}; expires=${afterTenMin}`;
+  }

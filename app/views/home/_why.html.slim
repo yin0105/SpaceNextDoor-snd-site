@@ -1,0 +1,15 @@
+section.block-info
+  .container
+    header.section-head
+      h2
+        span.text = t('.why_space_next_door')
+    .row
+      - t('.reasons').each do |reason|
+        .col
+          .image-holder = image_tag(reason[:image_path], alt: reason[:image_alt])
+          .text-holder
+            strong.title
+              span.text
+                span = reason[:title]
+            p = reason[:content]
+    = link_to t('.find_out_more'), why_choose_us_path, class: 'btn btn-primary'

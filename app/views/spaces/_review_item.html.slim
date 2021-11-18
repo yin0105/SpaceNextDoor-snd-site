@@ -1,0 +1,8 @@
+article.col-md-7.space__reviews-item
+  .space__reviews-profile
+    = image_tag review_item.user.avatar.small.url, class: 'space__reviews-avatar'
+    span.space__reviews-name = review_item.user.name
+  .space__reviews-body
+    .space__reviews-date = l review_item.created_at, format: :short
+    .space__reviews-content
+      = review_item.note

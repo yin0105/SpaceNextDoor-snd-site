@@ -1,0 +1,33 @@
+mjml
+  mj-head
+    mj-attributes
+      mj-all font-family="Open Sans"
+      mj-class name="pd-tp-0" padding-top="0"
+      mj-class name="pd-bm-0" padding-bottom="0"
+      mj-class name="pd-tp-10" padding-top="10"
+      mj-class name="pd-bm-10" padding-bottom="10"
+      mj-class name="bg-black" background-color="#54585e"
+      mj-class name="ftr-dvdr" padding-top="0" padding-bottom="0" padding-left="20" padding-right="20" border-width="2px" border-color="#ffffff"
+      mj-text line-height="22px"
+    mj-style inline="inline"
+      | .lk-blue { color: #2da5f2; }
+      | .btn-warning {
+      |   display: inline-block;
+      |   color: white;
+      |   text-decoration: none;
+      |   text-align: center;
+      |   line-height: 40px;
+      |   font-size: 15px;
+      |   padding: 0 10px;
+      |   background-color: #f46634;
+      |   border-radius: 3px;
+      |   width: 100px;
+      |   height: 40px;
+      |   white-space: nowrap;
+      | }
+  mj-body
+      = render partial: 'shared/mailer/header', formats: [:html]
+      mj-section background-color="#fff"
+        = yield
+      = render partial: 'shared/mailer/signature', formats: [:html]
+      = render partial: 'shared/mailer/footer', formats: [:html]

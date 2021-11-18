@@ -1,0 +1,18 @@
+.form-group {
+  .address-input {
+    .select2-container {
+      display: inline-block;
+
+      margin-right: 10px;
+    }
+
+    .form-control {
+      margin-bottom: 10px;
+    }
+
+    [data-address="postal_code"] {
+      width: 154px;
+      margin: 0 10px 10px;
+    }
+  }
+}

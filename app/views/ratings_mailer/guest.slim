@@ -1,0 +1,9 @@
+mj-column
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for booking through Space Next Door. We hope you had a good experience. As we strive to build a strong and trusted community, we hope that you could take a few seconds to share your experience at #{@ratable.name}, hosted by #{@ratable.user.name}. Please click the link below.
+  mj-text
+    = link_to "Rate the host", channel_url(@order.channel.id), class: "btn-warning"
+  mj-text
+    | Thank you!

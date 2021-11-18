@@ -1,0 +1,23 @@
+.space-host.mb-5
+  .container.space-host__container.clearfix
+    div
+      .w-lg-60
+        h1.mt-5.text-center.text-gray-deep.font-size-large Host
+    div
+      aside.w-lg-60
+        .w-35.w-md-20
+          .space-host__avatar.mx-auto = image_tag @space.user.avatar.small.url
+          .text-center.my-2
+            .rating.text-orange = render_rating_icons(@space.user.as_host.rate_score)
+            .mt-1 = "#{@space.user.as_host.evaluations.count} Reviews"
+          .space-host__contact
+            = simple_form_for :channel, url: channels_path, method: :post do |f|
+              = f.hidden_field :space_id, value: @space.id
+              = f.submit "Contact", class: "button button-secondary border-0 mx-auto"
+        .space-host__information.text-gray-deep.pl-2.w-65.w-md-80
+          h1.font-size-large = @space.user.name
+          .font-size-small
+            .py-1 = @space.user.location
+            .py-1 = l @space.user.created_at, format: :joined_at
+          p.py-1 = @space.user.biography
+          = render_user_verified_badge(@space.user)

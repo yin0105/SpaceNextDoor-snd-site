@@ -1,0 +1,16 @@
+.storages-new.pt-100.pb-5
+  .container.find-out-more
+    = simple_form_for @request, url: find_out_more_path do |form|
+      - if @request.host?
+        = render 'host', form: form
+      - else
+        = render 'guest', form: form
+      = form.input :name
+      = form.input :phone, required: true
+      = form.input :email, required: true
+      = form.input :accept_receive_updates
+      - if @show_recaptcha_v2_checkbox
+        = recaptcha_tags site_key: Settings.google.recaptcha_v2_site_key
+      - else
+        = recaptcha_v3(action: 'new_enquiry')
+      = form.submit 'Send Enquiry Now', class: 'button button-secondary btn-block my-4 mx-auto w-100 border-0 find-out-more__button'

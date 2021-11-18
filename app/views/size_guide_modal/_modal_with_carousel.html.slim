@@ -1,0 +1,20 @@
+#size-guide-popup.modal.fade.size-guide
+  .modal-dialog
+    .modal-content.size-guide__content
+      .modal-body
+        button type='button' class='close' data-dismiss='modal' aria-label='close'
+        #carousel-size-guide.carousel.slide data-interval='false' data-ride='carousel'
+          .carousel-inner
+            .carousel-item.small_item
+              = render '/size_guide_modal/small'
+            .carousel-item.medium_item
+              = render '/size_guide_modal/medium'
+            .carousel-item.large_item
+              = render '/size_guide_modal/large'
+            .carousel-item.extra_large_item
+              = render '/size_guide_modal/extra_large'
+
+        .carousel-control.left href='#carousel-size-guide' role='button' data-slide='prev'
+          span class='ico ico-arrow-left'
+        .carousel-control.right href='#carousel-size-guide' role='button' data-slide='next'
+          span class='ico ico-arrow-right'

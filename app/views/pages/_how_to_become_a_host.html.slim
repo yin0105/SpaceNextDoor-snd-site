@@ -1,0 +1,12 @@
+.steps-area
+  header.section-head
+    h2
+      span = t('.how_to_become_a_host')
+  .steps-row
+    - t('.steps').each do |step|
+      .step-holder
+        .image-holder = image_tag(step[:image], alt: 'step')
+        .text-holder
+          h3 = step[:order]
+          p = step[:content]
+  = link_to t('.create_your_listing'), host_onboarding_path(unauthenticated_path: become_a_host_path, msg: "Please sign in or sign up to create your listing."), class: "btn btn-primary"

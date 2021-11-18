@@ -1,0 +1,30 @@
+mj-column
+  mj-text
+    | Hi #{@user.name},
+  mj-text
+    | Thank you for being part of the Space Next Door community.
+  mj-text
+    | With reference to your last transaction No #{@payout.payment_identity}. We have refunded your storage fee amount of #{@payout.amount.format} to your credit card No. ending with #{@user.payment_method.identifier}.
+  mj-text
+    | Title of Property: #{@space.name}
+  mj-text
+    | Refund Period: From
+    | &nbsp;
+    = render_payout_refund_period_start(@payout)
+    | &nbsp;
+    | To
+    | &nbsp;
+    = l @payout.payment_service_end_at, format: :mail_date
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:left;"
+      th Item
+      th Amount
+    tr
+      td = render_payout_refund_item(@payout)
+      td &#36;#{@order.long_term? ? @payout.amount - @payment.service_fee_to_refund : (@payment.rent).format(symbol: false)}
+    tr
+      td = @order.long_term? ? 'Service Fee' : 'Deposit'
+      td &#36;#{@order.long_term? ? @payment.service_fee_to_refund : (@payment.deposit).format(symbol: false)}
+    tr
+      td Total
+      td &#36;#{(@payout.amount).format(symbol: false)}

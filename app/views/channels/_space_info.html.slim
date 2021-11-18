@@ -1,0 +1,12 @@
+article.channel-show__space.clearfix
+  .channel-show__space-icon.float-left
+    = image_tag @channel.space.featured_image_url(size: :thumb)
+  .channel-show__space-info.ml-3.float-left.text-gray-deep
+    h1.channel-show__space-name.mb-1.font-size-large = @channel.space.name
+    .channel-show__space-meta.font-size-small
+      .channel-show__space-location.mb-1 = @channel.space.location
+      .channel-show__space-review.text-gray
+        .channel-show__space-rating.text-orange.d-inline-block.pr-2
+          = render_rating_icons @channel.space.rate_score
+        | #{@channel.space.evaluations.count} Reviews
+  = render_channel_book_space_button(@channel)

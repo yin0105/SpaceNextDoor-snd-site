@@ -1,0 +1,38 @@
+div = "#{I18n.l(start_date, format: :mail_date)} to #{I18n.l(start_date.end_of_month, format: :mail_date)}"
+
+table
+  tr.bottom
+    th Space ID
+    th Transaction No.
+    th Guest
+    th Beginning Balance
+    th Guest Rent
+    th Guest Service Fee
+    th Deposit
+    th Payment
+    th Ending Balance
+  - payments.each do |payment|
+    tr.bottom
+      td.text-left = payment[:space_id]
+      td.text-left = payment[:identity]
+      td.text-left = payment[:guest_name]
+      td = payment[:beginning_balance].format
+      td = payment[:rent].format
+      td = payment[:guest_service_fee].format
+      td = payment[:deposit].format
+      td = payment[:amount].format
+      td = payment[:ending_balance].format
+  tr.total
+    td.text-left Total
+    td
+    td.text-left = payments.size
+    td = total_by_field(payments, :beginning_balance)
+    td = total_by_field(payments, :rent)
+    td = total_by_field(payments, :guest_service_fee)
+    td = total_by_field(payments, :deposit)
+    td = total_by_field(payments, :amount)
+    td = total_by_field(payments, :ending_balance)
+h4 Report Explanation
+hr
+- t('report_explanations.account_receivable').each do |content|
+  div = content

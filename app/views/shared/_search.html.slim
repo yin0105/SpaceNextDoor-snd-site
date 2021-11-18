@@ -1,0 +1,3 @@
+= simple_form_for searches, method: :get, html: { class: 'form-wrap' } do |form|
+  .container
+    = form.input :region, label: false, placeholder: 'Where do you need storage space?', as: :search_box, mode: :search, search: :region

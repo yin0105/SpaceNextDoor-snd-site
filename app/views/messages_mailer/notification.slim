@@ -1,0 +1,14 @@
+mj-column
+  mj-text
+    | You have a new message from #{@message.user.name}.
+    | &nbsp;
+    | Please log in to
+    | &nbsp;
+    = link_to "Space Next Door website", root_url
+    | &nbsp;
+    | to reply.
+  mj-image width="100px" src="#{@message.user.avatar.medium.url}"
+  mj-text
+    = @message.content
+  mj-text
+    = link_to "Reply", channel_url(@message.channel), class: 'lk-blue'

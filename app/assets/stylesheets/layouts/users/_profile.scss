@@ -1,0 +1,405 @@
+.profile {
+  &__wrap {
+    position: relative;
+
+    @include breakpoint($tablet) {
+      width: 80%;
+    }
+
+    @include breakpoint($pc) {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    border: 1px solid $color-gray-deep;
+  }
+
+  &__sidebar-list > a {
+    display: block;
+
+    margin-right: 90px;
+    padding: 8px 0;
+
+    transition: unset;
+
+    color: $color-gray-deep;
+
+    &.active {
+      color: $color-orange;
+
+      text-decoration: underline;
+    }
+
+    &:hover {
+      color: $color-gray-deep;
+
+      text-decoration: none;
+    }
+  }
+
+  &__form-actions {
+    @include breakpoint($tablet) {
+      padding-left: 35%;
+
+      text-align: left;
+    }
+  }
+
+  &__button[type='submit'] {
+    border-radius: 3px;
+  }
+}
+
+// Verification
+.profile-verification,
+.user-space-serach {
+  &__form-inputs {
+    max-width: 400px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint($tablet) {
+      max-width: 550px;
+    }
+
+    @include breakpoint($pc) {
+      max-width: unset;
+    }
+
+    label {
+      @include breakpoint($tablet) {
+        padding-right: 18px;
+
+        text-align: right;
+      }
+    }
+  }
+
+  &__form-button {
+    display: inline-block;
+
+    border: 1px solid $color-orange;
+
+    color: $color-orange;
+  }
+
+  .control-label {
+    margin-bottom: 8px;
+    padding-top: 10px;
+  }
+
+  .form-inline {
+    .form-group {
+      display: inline-block;
+    }
+
+    .form-control {
+      width: 190px;
+
+      background-color: $sidebar-input-background;
+
+      @include breakpoint($tablet) {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.profile-verification-code.form-inline {
+  .form-group {
+    padding: 10px 0;
+  }
+
+  .form-control {
+    display: inline-block;
+
+    width: 60%;
+
+    @include breakpoint($tablet) {
+      width: 200px;
+    }
+  }
+
+  .control-label {
+    width: 100%;
+
+    padding-top: 0;
+
+    @include breakpoint($tablet) {
+      width: 35%;
+    }
+  }
+}
+
+// Common: payment method、bank account、change password、basic info
+.profile-contact,
+.profile-payment-method,
+.profile-bank-account,
+.profile-change-password,
+.profile-basic-info {
+  &__button {
+    @include breakpoint($pc) {
+      text-align: left;
+    }
+
+    a:hover {
+      background-color: $color-orange-deep;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+
+    > div {
+      width: 100%;
+
+      @include breakpoint($tablet) {
+        width: 65%;
+      }
+    }
+  }
+
+  .control-label {
+    padding: 8px 0;
+
+    @include breakpoint($tablet) {
+      width: 35%;
+
+      padding-right: 18px;
+
+      text-align: right;
+    }
+  }
+
+  .form-control {
+    width: 100%;
+    height: 40px;
+  }
+}
+
+// Select2
+.profile-bank-account,
+.profile-basic-info {
+  .select2-container--snd {
+    height: 40px;
+
+    .select2-selection__rendered {
+      padding: 8px;
+
+      border: 1px solid $border-color;
+
+      font-size: 16px;
+    }
+  }
+}
+
+// scss-lint:disable SelectorFormat
+#select2-bank_account_country-results {
+  .select2-results__option {
+    padding: 10px;
+  }
+}
+
+// Change password and basic info button hover
+.profile-change-password,
+.profile-basic-info {
+  &__button {
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px solid $color-gray;
+
+      background-color: $color-white;
+      color: $color-gray;
+    }
+  }
+}
+
+// Basic info
+.profile-basic-info {
+  .profile__form-actions {
+    @include breakpoint($tablet) {
+      padding-left: 30%;
+    }
+  }
+
+  .form-control {
+    border: 1px solid $border-color;
+
+    color: rgba($color-gray-deep, .7);
+
+    &::placeholder {
+      color: $color-gray;
+    }
+  }
+
+  .form-group {
+    > div {
+      @include breakpoint($tablet) {
+        width: 70%;
+      }
+    }
+
+    [data-address="postal_code"] {
+      margin-left: 0;
+    }
+  }
+
+  .user_first_name,
+  .user_last_name {
+    display: inline-block;
+
+    width: 145px;
+
+    margin-right: 10px;
+
+    > div {
+      width: 100%;
+    }
+  }
+
+  .control-label {
+    @include breakpoint($tablet) {
+      width: 30%;
+    }
+  }
+
+  .text {
+    height: auto;
+  }
+
+  .select2-container {
+    margin-bottom: 8px;
+  }
+
+  .selection {
+    color: $color-gray;
+  }
+}
+
+// Profile avatar
+.basic-image-uploader-input {
+  .preview-area,
+  .upload-area {
+    display: inline-block;
+
+    margin-right: 20px;
+
+    vertical-align: middle;
+  }
+
+  .image-thumbnail {
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    img {
+      max-height: 80px;
+    }
+  }
+
+  .add-image {
+    position: relative;
+
+    min-height: 40px;
+
+    padding: 10px 12px 8px;
+
+    overflow: hidden;
+
+    border: 1px solid $border-color;
+    border-radius: 3px;
+
+    color: $color-gray;
+
+    input {
+      position: absolute;
+
+      top: -150%;
+      right: -150%;
+      bottom: -150%;
+      left: -150%;
+    }
+  }
+}
+
+// Profile rating
+.profile-rating {
+  &__navigation a {
+    color: $color-gray-deep;
+  }
+
+  &__navigation.active {
+    a {
+      color: $color-orange;
+
+      text-decoration: underline;
+    }
+  }
+
+  &__item-wrapper {
+    border: 1px solid $color-gray;
+  }
+
+  &__item-avatar {
+    width: 80px;
+    height: 80px;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+  }
+}
+
+// Dropdown sidebar
+.profile-dropdown {
+  &__icon--open,
+  &__icon--close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  &__button {
+    position: relative;
+  }
+
+  &__menu {
+    display: none;
+
+    border: 1px solid $color-gray-deep;
+    box-shadow: 0 6px 12px rgba($color-black, .2);
+  }
+
+  &__sidebar-list {
+    &:hover {
+      background-color: $sidebar-input-background;
+    }
+
+    a {
+      margin: 0;
+    }
+  }
+}
+
+[aria-expanded= 'false'] .profile-dropdown__icon--open {
+  display: block;
+}
+
+[aria-expanded= 'false'] .profile-dropdown__icon--close {
+  display: none;
+}
+
+[aria-expanded= 'true'] .profile-dropdown__icon--open {
+  display: none;
+}
+
+[aria-expanded= 'true'] .profile-dropdown__icon--close {
+  display: block;
+}
+
+.open .profile-dropdown__menu {
+  display: block;
+}

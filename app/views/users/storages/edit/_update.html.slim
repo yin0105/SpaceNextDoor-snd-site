@@ -1,0 +1,8 @@
+.step-1
+  h1.p-4.pt-5.text-center.text-orange Step1: Understanding Your Space
+  = space_form.input :address, as: :address, label: 'Where is your space?'
+  = render 'contact_info'
+  = space_form.input :property, collection: Space::PROPERTY.keys, label: 'What type of property?', include_blank: false
+  = form.input :category, collection: Storage::CATEGORY.keys, label: 'What type of storage?', include_blank: false
+  = form.input :features, as: :check_boxes, collection: SpaceOption.features(:storage), label: 'Describe the space'
+  = form.input :facilities, as: :check_boxes, collection: SpaceOption.facilities(:storage), label: 'Additional comments about your space'

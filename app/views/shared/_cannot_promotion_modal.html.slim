@@ -1,0 +1,9 @@
+#cannot_promotion_modal.modal.pt-5.pb-3 data-backdrop='static' data-keyboard='false'
+  .modal-dialog.modal-dialog--md
+    .modal-content.row
+      .modal-body.text-center.pb-4
+        p.text-center.text-gray-deep.pb-4 = "Credit card expiry date must more than #{ min_days } days from the check-in date."
+        = link_to 'Change Credit Card', payment_method_path, class: 'btn button-secondary rounded py-3 px-3 ml-2 text-white'
+
+javascript:
+  $('#cannot_promotion_modal').modal('show');

@@ -1,0 +1,17 @@
+.mobile-menu
+  nav#nav
+    br
+    ul.list-contact
+      li = link_to t('.find_a_space'), spaces_path, class: 'btn btn-primary'
+    ul.menu
+      li.dropdown.nav__dropdown.text-center
+        = link_to t('.how_it_work'), how_it_work_path
+        ul.dropdown-menu.nav__dropdown-menu
+          li.nav__dropdown-item = link_to t('.faq'), help_path
+      li.dropdown.nav__dropdown.text-center
+        = link_to t('.why_choose_us'), why_choose_us_path
+        ul.dropdown-menu.nav__dropdown-menu
+          li.nav__dropdown-item = link_to t('.types_of_storage'), types_of_storage_path
+          li.nav__dropdown-item = link_to t('.need_more_storage'), need_more_storage_path
+      li = link_to t('.become_host'), become_a_host_path
+    ul.list-contact = render_navigation

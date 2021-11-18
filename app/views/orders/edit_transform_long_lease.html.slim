@@ -1,0 +1,25 @@
+.edit-transform-long-lease
+  .container.edit-transform-long-lease__container.text-center.pt-100.pb-5
+    h1.p-4.pt-5.text-orange = t('.title')
+    .d-inline-block
+      p.text-left
+        | Space name : &nbsp; #{@order.space.name}
+      p.text-left
+        | 30 Days Rent : &nbsp; #{@order.monthly_amount.format}
+      p.text-left
+        | Service Fee : &nbsp; #{@order.monthly_service_fee.format}
+      p.text-left
+        | Insurance Fee : &nbsp; #{@order.premium.format}
+      p.text-left
+        | Total Fees : &nbsp; #{@order.monthly_total_without_deposit.format}
+      p.text-left
+        | Your storage period will be extended automatically every 30 days until 16 days notice is given starting from 
+        span.renewal_date #{(@order.end_at + 1.day).strftime('%d-%b-%Y')}
+        | .
+      = simple_form_for @form, url: update_transform_long_lease_order_path(@order), html: { class: 'text-left text-orange' } do |form|
+        p.text-left.text-orange.pt-2
+          = form.check_box :term
+          label for='transform_long_lease_form_term' &nbsp; #{render_order_policies(@order).html_safe}
+        .mx-auto.text-center.mt-5
+          = link_to 'Back', orders_path, class: 'px-3 py-2 mr-5'
+          = form.submit 'Confirm & Pay', class: 'js-confirm-btn button-secondary text-white px-3 py-2 border-0 rounded-sm'

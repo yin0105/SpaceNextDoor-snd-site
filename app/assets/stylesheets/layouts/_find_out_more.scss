@@ -1,0 +1,15 @@
+.find-out-more {
+  &__size-unit {
+    margin-top: 10px;
+
+    font-size: $font-size-large;
+
+    @include breakpoint($tablet) {
+      padding-left: 20px;
+    }
+  }
+
+  &__button {
+    max-width: 35%;
+  }
+}

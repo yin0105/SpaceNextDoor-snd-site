@@ -1,0 +1,94 @@
+en:
+  pages:
+    host_standard:
+      host_standard: Host Standards
+      update_date: "Last Updated: February, 2017"
+      content: |
+        A well presented and maintained space will always be popular and should generate more revenue for the Host in the longer term. Following is a general guide for Hosts which we hope will help you maximise the benefits from listing your space on SND.
+
+        In addition to maximising the revenue you earn from you space, we encourage Hosts to think carefully about their responsibilities. Here we share some ways you can be a responsible host.
+      policies:
+        - section: Accuracy
+          content: |
+            One key Hosting Standard is accuracy. Giving potential Guests a sense what your listing has to offer as well as who you are will make them feel more comfortable making a reservation. Creating a detailed profile and accurate listing will help attract guests and set their expectations.
+        - section: Your personal profile
+          content: |
+            Your SND profile is an opportunity for you to introduce yourself to potential Guests and get them interested in using your space. We recommend using a photo that clearly shows your face, as well as sharing some details about your hosting style.
+        - section: Your Listing
+          subjects:
+            - unorder_lists:
+                list_title: "An accurate, informative listing lets potential Guests know what to expect from your space:"
+                lists: ["Use high quality photos, write a detailed description of the space, select the correct space type, and highlight the amenities you have.", "Make clear what isn’t available to Guests. For example, if you have no stepladders or if the air-con does not run 24 hours.", "Let Guests know if there are parts of the listing that are off-limits, like a shared space or cupboards used by yourself or others.", "Provide detailed House Rules that address situations that are relevant your guests. For example, if you don't want your guests bringing other people into the space, tell them in advance.", "Be honest and candid about any unexpected factors that will impact your guests' stay. If your neighbours just started a messy construction project, your Guests should be told."]
+              content: |
+                Not being clear when describing your listing may hurt when it comes time for a guest to leave a review. It’s better to be straightforward about what you are offering and transparent about any imperfections.
+        - section: Pricing
+          content: |
+            Guests will evaluate the value-for-money of your listing, so it's importantto set a price that balances your expectations with what your listing has to offer to the user. When you're setting your price, you may want to start with SND's tips and make adjustments based on similar spaces nearby. You can always adjust your prices later.
+        - section: How should I communicate with my guests?
+          content: |
+            One of SND's Hosting Standards is communication. It's important to respond to booking enquiries and reservation requests within 24 hours in order maintain your response rate. Before you confirm a booking, you may wish to get to know your prospective Guest to see if you're a good fit for one another.  If their plans don't match your style or what your listing has to offer you should just promptly decline the reservation.
+        - section: Responding to guests
+          content: |
+            Every time a Guest tries to communicate with you—whether you already have a booking with them or not—it's important that you respond quickly.  Timely responses show that you’re an attentive and considerate Host.  Make sure you maintain a helpful and polite tone and find opportunities to personalise your communication.
+
+            Be quick to address complaints, or risk a negative review.  If a light breaks or the air-con doesn’t work, send someone to fix these.  If a remote control was misplaced by a previous Guest, have a backup ready.
+        - section: Before your guest arrives
+          content: |
+            When you have a confirmed booking that's about to begin, you should communicate with your guest shortly before their arrival.
+
+            Ensure they know how to reach you, and see if there’s anything you can do to help make their move in more smooth and efficient.
+        - section: Unexpected changes
+          content: |
+            If something about your listing changed since you confirmed a booking, please share it with the Guest.  If your previous Guest moved out and damaged the space for example, your new Guest deserves to know.
+        - section: Why is Calendar availability important as a host?
+          content: |
+            Another Hosting Standard is availability.  It is important to share up-to-date availability with potential Guests to help them make plans.
+
+            Keeping your listing calendar up to date is an ongoing commitment. Making sure it accurately reflects your availability helps ensure that you won't receive reservation requests for dates that you can't accommodate.
+
+            If you need to decline a reservation request because you accidentally made your calendar available when it should be blocked, be sure to let the Guest know you're declining because your space isn't available on the dates they requested.  They may be interested in other dates.
+        - section: Reservation requirements
+          content: |
+            Setting reservation requirements can help ensure you receive requests from Guests who match your hosting style. You can also check out the reviews a Guest received from other Hosts to learn more about them.
+        - section: What does commitment mean for Hosts?
+          content: |
+            Commitment is an important Hosting Standard. When you confirm that you'll host someone, they're trusting you to take care of their needs.  That's why it's important to make sure you are able to commit to a booking, before accepting a paid reservation.
+          subjects:
+            - unorder_lists:
+                list_title: "If the unexpected happens and you must cancel a confirmed booking, here are some things to keep in mind:"
+                lists: ["As soon as you become aware that you need to cancel, let your Guest know right away. This will give them time to find a new space.", "Be empathetic when you tell your guest that you need to cancel.", "If you know other Hosts in your area, consider asking them if they can accommodate this Guest and offer to make an introduction.", "You'll need to cancel the reservation within SND to initiate the refund process."]
+              content: |
+                Of course, Hosts always decide who stays in their space. When there is an extenuating circumstance or a safety concern, we may make an exception to the Host cancellation penalties.  In such cases, Hosts should select the Extenuating Circumstance option when cancelling the reservation.
+        - section: How can I help make my guests feel welcome?
+          subjects:
+            - unorder_lists:
+                list_title: "Always try to make your Guest feel welcome. One of the main ways you can make Guests feel welcome in a new place is to provide a clear and simple move-in process:"
+                lists: ["Communicate your move-in procedure in advance, and make sure you're able to follow through with it at the time you discussed.", "Make sure your Guests know how to contact you in the event of a delay or last-minute question.", "Provide your Guests with detailed directions so they can get to your listing easily.", "Let your guests know if you'll greet them yourself, or if they should plan on getting the keys from a lockbox or a neighbour."]
+        - section: Provide a clean space for my guests?
+          content: |
+            Another important Hosting Standard is cleanliness.  Providing a clean and tidy space will make your Guest feel comfortable from the moment they arrive—and show your commitment to making your Guests feel welcome.
+          subjects:
+            - unorder_lists:
+                list_title: "To make your listing shine, consider starting with these steps before the Guest's arrival:"
+                lists: ["Clean the space before they move in.", "Show consideration by thinking about the small things like dusting cupboards, wiping down fans or removing any rubbish left behind."]
+              content: |
+                We know that cleaning is one of the more challenging aspects of preparing your listing, particularly if you're not based at the space yourself. If you can't do the cleaning, you can always add a cleaning fee to your listing price and hire a professional cleaning service.
+
+                It's important to have enough time to clean your space, particularly when you have back-to-back bookings. Giving your Guests the ability to tidy up after themselves will be a big help, so consider leaving cleaning supplies in your space, such as a dustpan and broom and garbage bags.
+        - section: Safety
+          content: |
+            It is both a legal obligation and a SND listing requirement for owners of a property to comply with all relevant health and safety laws and regulations.  In particular, fire safety is an essential area to be covered.
+
+            If a Guest encounters an urgent or emergency situation, it's important they know what to do and where to go. To help make this information clear and easy to understand, we recommend leaving a card or signage in your space, which includes important information like locations of fire extinguishers and fire alarms and emergency exit routes.
+        - section: Get the guests you want
+          content: |
+            SND has a non-discrimination policy, which you can see here.
+
+            However, Hosts reserve the right to decide what types of Guest they would like to host. To help understand your potential Guest, ask them the purpose of the booking and ask them to carefully read and agree to your house rules.
+
+            Some vetting is permitted by SND’s non-discrimination policy, which says Hosts can decline to rent based on factors that are not prohibited by law.
+        - section: Document Everything
+          content: |
+            Most Guests are not bad people. But occasionally things do go wrong.
+
+            To protect yourself, periodically and diligently document everything valuable in your space.  In the event anything is damaged, SND will ask for before and after photos to prove that the Guest caused the damage.

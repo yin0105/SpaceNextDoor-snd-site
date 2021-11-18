@@ -1,0 +1,10 @@
+- content_for :header do
+  = render 'landing_header', image_path: 'img1.jpg', section: t('.title')
+= render 'about'
+= render 'works'
+= render 'glance'
+= render 'size'
+= render 'why'
+= render '/shared/testimonials', items: t('shared.testimonials.homepage')
+= render '/shared/hosting', descriptions: t('shared.hosting.descriptions')
+= render '/shared/chinese_new_year_promotion'

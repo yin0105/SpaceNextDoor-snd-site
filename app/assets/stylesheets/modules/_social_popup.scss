@@ -1,0 +1,53 @@
+.social-popup {
+  &__link-btn {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    &--envelope {
+      padding-top: 11px;
+    }
+  }
+
+  &__input[type='text'] {
+    @include input-border(1px, solid, $color-gray, border-bottom) {
+      width: 100%;
+
+      padding-left: 0;
+
+      outline: none;
+
+      color: $color-gray;
+    }
+
+    &:focus {
+      @include input-border(1px, solid, $color-gray, border-bottom)
+    }
+  }
+
+  &__copy-link {
+    position: relative;
+  }
+
+  &__copy-link-icon {
+    position: absolute;
+
+    top: 6px;
+    right: 0;
+
+    width: 24px;
+    height: 24px;
+
+    transform: rotate(90deg);
+
+    border-radius: 50%;
+
+    background-color: $primary-color;
+  }
+
+  .close {
+    top: 30px;
+    right: 24px;
+  }
+}

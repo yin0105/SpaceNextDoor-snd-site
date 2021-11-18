@@ -1,0 +1,166 @@
+.space-information.mt-3
+  .container.space-information__container.clearfix
+    .w-lg-60
+      h1.mb-2 = @space.name
+      .mb-3.text-orange = render_rating_icons(@space.rate_score)
+      .mb-3.text-white = render_space_status_tag(@space)
+      .mb-3.space_location
+        i.fa.fa-map-marker.mr-2
+        = link_to_location @space
+      ul
+        li.space-information__property-item
+          p
+            = render_space_area(@space)
+            a.js-size-open.space-information__size-estimator-btn data-toggle= 'modal' data-target= '#size-guide-popup' data-active= check_size_estimator(@space)
+              | Check Size Estimator
+        li.space-information__property-item
+          i.fa.fa-calendar.mr-2 data-min-days="#{space_min_rent_days(@space)}"
+          | Minimum storage:
+          p #{space_minimum_rent_days(@space)}
+        li.space-information__property-item
+          i.fa.fa-clock-o.mr-2
+          | Check in:
+          p #{@space.spaceable.checkin_time.humanize}
+        li.space-information__property-item
+          i.fa.fa-usd.mr-2
+          | Cancellation policy:
+          p
+            | 50% return except for service fee
+            = link_to 'Local Tax and Law', tax_and_law_path, target: '_blank', class: 'space-information__tax-law-btn'
+        li.space-information__property-item
+          i.fa.fa-cube.mr-2
+          | Type of space:
+          p #{@space.spaceable.category}
+        li.space-information__property-item
+          i.fa.fa-cube.mr-2
+          | Type of property:
+          p #{@space.property}
+      section
+        h2 House rules
+        ul
+          - space_rules(@space).each do |rule|
+            li.space-information__rules-item = rule
+          = render_addational_rules(@space)
+      = link_to t('.snd_rules'), snd_rules_path, target: '_blank'
+      .space-information__description.mt-3.py-3 = @space.description
+      section
+        h2.my-3 Describe
+        ul.clearfix
+          - space_features(@space).each do |feature|
+            li.space-information__features-item = feature
+      section
+        h2.my-3 Amenities
+        ul.clearfix
+          - space_facilities(@space).each do |facility|
+            li.space-information__categories-item  = facility
+    .w-lg-40.space-sidebar
+      aside.space__sidebar.px-3.pt-3
+        .space__sidebar-wrapper
+          form.space__pricing-calculator.pricing-calculator(method='get' action="#{new_order_path}")
+            input(type='hidden' name='order[space_id]' value="#{@space.id}")
+            .space__sidebar-header.p-3.text-white.pc-only
+              span.space__sidebar-price.pricing-calculator__price = @space.daily_price.format
+              span.pull-right PerDay
+            .space__sidebar-header.p-2.clearfix.hidden-pc
+              span.space__sidebar-price.pull-left.p-2.text-white
+                span Total: &nbsp;
+                span.pricing-calculator__total = calculate_total(@space)
+              span.space__sidebar-actions.pull-right.px-2
+                .space__sidebar-favorite.d-inline-block.mr-2.text-white
+                  = render_save_space_to_favorite_button(@space, true)
+                = link_to 'Close', '#', class: 'space__sidebar-toggle d-inline-block border-0 text-white collapsed'
+            #space-sidebar-toggle.space__booking-details.bg-white.px-3.collapse
+              .space__sidebar-overlay.hidden-pc
+              .space__booking.text-gray-deep
+                .clearfix
+                  .space__booking-datepicker.check-in.mb-4.w-lg-50 data-automonth= Settings.order.extended_days
+                    .form-group
+                      label.space__booking-label.d-block.w-100.mb-1.font-bold Check In
+                      input.space__booking-input.pricing-calculator__from.order-date-inputs.w-100.bg-gray-input name='order[start_at]' data-datepicker=true data-enables="#{space_available_dates(@space)}" required=true
+                      span.space__booking-datepicker-blank-error.text-error-text.hidden Can't be blank
+                      span.space__booking-datepicker-over-month-error.text-error-text.hidden You may only book this space up to 30 days in advance. Please select another check in date.
+                  .space__booking-datepicker.check-out.w-lg-50
+                    .form-group
+                      label.space__booking-label.d-block.w-100.mb-1.font-bold Check Out
+                      input.space__booking-input.pricing-calculator__to.order-date-inputs.w-100.bg-gray-input name='order[end_at]' data-datepicker=true data-enables="#{space_available_dates(@space)}"
+                      span.space__booking-datepicker-discount-one-month-error.text-error-text.hidden = t('activerecord.errors.models.order.attributes.discount_code.not_over_one_month_needed_days')
+                      span.space__booking-datepicker-discount-two-months-error.text-error-text.hidden = t('activerecord.errors.models.order.attributes.discount_code.not_over_two_months_needed_days')
+                .space__booking-toggle-long-term.mt-3.mb-4 data-start-days= orders_start_days(@space)
+                  .text-right.form-group
+                    input type='checkbox' id='long_term_mark' class='space__booking-long-term-mark' name='order[long_term]' disabled=true
+                    label.mr-2 for='long_term_mark' &nbsp;&nbsp;Long term / unsure
+                    a.text-gray-deep
+                      i.icon.fa.fa-question-circle.question-circle__long-term tabindex='0'
+                        .text-left.bg-white.content
+                          = t('.toggle_min_days_notice', days: space_minimum_rent_days(@space).downcase)
+                .space__min-days-notice.text-center.p-4.hidden
+                  span = t('.min_days_notice', days: space_minimum_rent_days(@space).downcase)
+                .space__booking-rent.space__pricing-item.py-1
+                  span
+                    = @space.daily_price.format
+                    | &nbsp; x &nbsp;
+                    span.pricing-calculator__days 1 day
+                  span.pull-right.pricing-calculator__rent = calculate_price_in_days(@space, 1)
+                .space__booking-service-fee.space__pricing-item.py-1.service-fee
+                  span
+                    | Service Fee
+                    a.text-gray-deep.ml-2
+                      i.icon.fa.fa-question-circle.question-circle__service-fee tabindex='0'
+                        .text-left.bg-white.content = t('.service_fee_notice')
+                  span.pull-right.pricing-calculator__service-fee = calculate_guest_service_fee(@space, 1)
+                - if @space.insurance?
+                  .space__booking-insurance-options = render partial: 'insurance_options'
+
+                .space__booking-deposit.space__pricing-item.py-1.deposit
+                  span
+                    | Deposit
+                    a.text-gray-deep.ml-2
+                      i.icon.fa.fa-question-circle.question-circle__deposit tabindex='0'
+                        .text-left.bg-white.content = t('.deposit_notice')
+                  span.pull-right.pricing-calculator__deposit = calculate_deposit(@space)
+                - if has_discount_code?(@space)
+                  .space__booking-promotion.space__pricing-item.py-1.promotion
+                    span = t('orders.form.promotion')
+                    span.pull-right.pricing_calculator__promotion -$0
+                input.space__booking-promotion-val.hidden
+                .space__booking-total.space__pricing-item.font-bold.py-1
+                  span
+                    | Total&nbsp;for&nbsp;
+                    span.pricing-calculator__days 1 day
+                  span.pull-right.pricing-calculator__total = calculate_total(@space)
+                .space__booking-discount-options = render partial: 'discount_options', locals: { space: @space }
+                .space__booking-notice-message.my-2 hidden = true
+                  span = t('.one_month_charge_message')
+                .space__booking-cancellation-policy.my-2
+                  = link_to 'Cancellation Policy', cancellation_policy_path, target: '_blank'
+                .space__booking-find-out-more
+                  = render_find_out_more_button(@space)
+                .space__booking-book.mt-2
+                  = render_book_space_button(@space)
+                .space__booking-not-yet-charged.text-center.mt-2
+                  span = t('.not_yet_charged')
+                .space__booking-unavailable-notice.text-center.text-orange.hidden
+                  span = t('.unavailable_notice')
+              .space__booking-social.text-center.p-3
+                = link_to content_tag(:i, nil ,class: 'fa fa-facebook'), space_url(@space),class: 'ml-3', data: { 'facebook-share': true }
+        .space__actions
+          .space__actions-favorite.text-center
+            = render_save_space_to_favorite_button(@space)
+    = render '/size_guide_modal/modal_with_carousel'
+
+
+javascript:
+  var $findOutMoreBtn = $('.js-find-out-more-btn');
+  var findOutMoreLink, startDate, endDate = '';
+
+  function updateFindOutMoreLink() {
+    startDate = $("input[name='order[start_at]']")[0].value;
+    endDate = $("input[name='order[end_at]']")[0].value;
+
+    findOutMoreLink = '&start_at=' + startDate + '&end_at=' + endDate;
+    $findOutMoreBtn[0].href += findOutMoreLink;
+  }
+
+  $findOutMoreBtn.on('click', (event) => {
+    updateFindOutMoreLink();
+  })

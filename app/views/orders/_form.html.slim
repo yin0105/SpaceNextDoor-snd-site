@@ -1,0 +1,80 @@
+= simple_form_for @form.order, html: { class: 'space__pricing-calculator pricing-calculator', id: 'order-input-form' } do |form|
+  .order-new__sidebar-header.p-3.text-white.bg-gray-sidebar
+    span Your Order
+    span.pricing-calculator__price.hidden = current_space.daily_price.format
+    = form.hidden_field :space_id, value: params[:space_id] || params.dig(:order, :space_id)
+    = form.hidden_field :insurance_type, value: @form.order.insurance_type
+  .bg-white.p-3
+    .pb-3
+      .w-50
+        span Your Phone
+      = link_to 'Add', verification_path, class: 'pull-right'
+      span.mr-2 = current_user&.phone
+    .pb-3
+      .w-50
+        span Your Card
+      = link_to 'Add', payment_method_path, class: 'pull-right'
+      span.mr-2 = current_user.payment_method&.identifier
+    .pb-3
+      .w-50
+        span Your Alternate Contact
+      .w-50
+        = link_to 'Add', guest_contact_path, class: 'pull-right'
+        p.order-new__contact.mr-2.text-left = current_contact("as_guest")&.name
+        p.order-new__contact.mr-2.text-left = current_contact("as_guest")&.phone
+        p.order-new__contact.mr-2.text-left = current_contact("as_guest")&.email
+    .pb-2.clearfix
+      .w-50.space__booking-datepicker.order-new__booking-datepicker.check-in.pr-2 data-automonth= Settings.order.extended_days
+        = form.input :start_at, input_html: { class: 'pricing-calculator__from order-date-inputs mt-2' }, as: :datepicker, enable: @form.order.space.available_dates
+      .w-50.space__booking-datepicker.order-new__booking-datepicker.check-out.pl-2
+        = form.input :end_at, input_html: { class: 'pricing-calculator__to order-date-inputs mt-2' }, as: :hidden, mode: :single, enable: @form.order.space.available_dates
+    .pb-2
+      = auto_renewal_terms(@form.order)
+    .pb-2
+      span
+        = current_space.daily_price.format
+        | &nbsp; x &nbsp;
+        span.pricing-calculator__days = lease_differentiator(@form.order, long_term_days, pluralize(@form.order.days, 'day'))
+      span.pull-right.pricing-calculator__rent = lease_differentiator(@form.order, @form.order.monthly_amount.format, calculate_price_in_days(current_space, @form.order.days))
+    .pb-2
+      span
+        | Service Fee
+        a.text-gray-deep.ml-2
+          i.icon.fa.fa-question-circle.question-circle__service-fee tabindex='0'
+            .text-left.bg-white.content = t('spaces.information.service_fee_notice')
+      span.pull-right.pricing-calculator__service-fee = lease_differentiator(@form.order, @form.order.monthly_service_fee.format, calculate_guest_service_fee(current_space, @form.order.days))
+    - if @form.order.insurance_enable
+      .pb-2
+        span
+          = t("insurance.#{@form.order.insurance_type}.insurance_short")
+          a.text-gray-deep.ml-2
+            i.icon.fa.fa-question-circle.question-circle__insurance tabindex='0'
+              .text-left.bg-white.content = t('spaces.insurance_options.insurance_notice')
+        span.pull-right.pricing-calculator__insurance = lease_differentiator(@form.order, calculate_premium(30, premium: @form.order.premium), calculate_premium(@form.order.days, premium: @form.order.premium)).format
+    .pb-2
+      span
+        | Deposit
+        a.text-gray-deep.ml-2
+          i.icon.fa.fa-question-circle.question-circle__deposit tabindex='0'
+            .text-left.bg-white.content = t('spaces.information.deposit_notice')
+      span.pull-right.pricing-calculator__deposit = calculate_deposit(current_space)
+    - if @form.order.discounted?
+      .pb-2
+        span = t('orders.form.promotion')
+        span.pull-right.pricing_calculator__promotion = calculate_discount(@form.order)
+    .font-bold.pb-2
+      span
+        | Total&nbsp;for&nbsp;
+        span.pricing-calculator__days = lease_differentiator(@form.order, long_term_days, pluralize(@form.order.days, 'day'))
+      span.pull-right.pricing-calculator__total = lease_differentiator(@form.order, calculate_long_lease_total(current_space, @form.order), calculate_total(current_space, order: @form.order))
+    .space__booking-discount-option
+      input.space__booking-promotion-val.hidden
+      = render partial: 'spaces/discount_options', locals: { space: @form.order.space, order: @form.order }
+    .order-new__policies.pb-2
+      = form.input :term, as: :boolean, label: render_order_policies(@form.order).html_safe, error: t('custom_error_msgs.orders.term_blank')
+
+    .clearfix.pt-3
+      .w-50.pr-3
+        = button 'Back', space_path(current_space), :info, class: 'button bg-gray-deep text-white button-full-width'
+      .w-50.pl-3
+        = render_pay_button(current_user, form)

@@ -1,0 +1,30 @@
+{
+    "extends": "airbnb-base",
+    "rules": {
+      "indent": ["error", 2, { "SwitchCase": 1 }],
+      "semi": ["error", "never"],
+      "comma-dangle": ["error", "never"],
+      "import/extensions": ["error", "never", {"js": "never"}],
+      "import/no-unresolved": "off"
+    },
+    "env": {
+      "browser": true,
+      "jquery": true
+    },
+    "globals": {
+      "Stripe": true,
+      "google": true,
+      "Turbolinks": true,
+      "FB": true,
+      "ga": true,
+      "GlobalConfig": true,
+      "jcf": true,
+      "ActiveAdmin": true
+    },
+    "settings": {
+      "import/core-modules": [ "lodash", "flatpickr", "smoothScroll", "jcf", "jcf_range_input"]
+    },
+    "plugins": [
+        "import"
+    ]
+}

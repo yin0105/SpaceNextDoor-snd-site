@@ -1,0 +1,14 @@
+<%= semantic_form_for :order, url: admin_create_booking_create_booking_path do |f| %>
+
+    <%= f.inputs :name => "Booking" do %>
+      <%= f.input :guest_id , :label => 'Guest ID'%>
+      <%= f.input :space_id, :label => 'Space ID' %>
+      <%= f.input :check_in, :as => :date_select %>
+      <%= f.input :check_out, :as => :date_select %>
+    <% end %>
+
+      <%= f.actions do %>
+        <%= f.action :submit, :as => :button %>
+      <% end %>
+
+<% end %>

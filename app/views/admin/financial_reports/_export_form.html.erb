@@ -1,0 +1,13 @@
+<%= semantic_form_for :financial, url: admin_financial_reports_export_path do |f| %>
+    <%= f.inputs :name => "Export File" do %>
+      <%= f.input :start_year, id: 'start_year', type: :number, step: 1, label: 'Year', input_html: {value: "#{Date.today.year}"} %>
+      <%= f.input :start_month, id: 'start_month', type: :select, label: 'Month', input_html: {value: "#{Date.today.strftime("%B") }"}  %>
+      <%= f.input :type, as: :radio, collection: [['Accounts Receivable', 'account_receivable', { checked: true }], ['Financial Summary', 'financial_summary'], ['Security Deposit Liability', 'security_deposit_liability']]%>
+      <%= f.input :export_type, label: 'Export Type',  as: :radio, collection: [['CSV', 'csv', { checked: true }], ['PDF', 'pdf']]%>
+    <% end %>
+
+    <%= f.actions do %>
+      <%= f.action :submit, :as => :button, label: 'Export' %>
+    <% end %>
+
+<% end %>

@@ -1,0 +1,19 @@
+mj-column width="100%"
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for booking through Space Next Door.
+    | &nbsp;
+    | We hope you are having a good experience with your host, #{@order.host.name}.
+  mj-text
+    | Your booking with Space, #{@order.space.name} is expiring soon on #{@order.end_at.strftime('%d-%b-%Y')}.
+    | &nbsp;
+    | To renew your booking, please click
+    | &nbsp;
+    = link_to "here.", order_url(@order.id), class: "lk-blue"
+  mj-text
+    | If the space is not available for the period you require, please click
+    | &nbsp;
+    = link_to "here", searches_url, class: "lk-blue"
+    | &nbsp;
+    | to search our other spaces.

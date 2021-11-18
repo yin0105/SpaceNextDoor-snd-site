@@ -1,0 +1,49 @@
+{
+  "name": "space-next-door",
+  "version": "1.0.0",
+  "description": "Space Next Door",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@rails/ujs": "^6.0.3-4",
+    "@rails/webpacker": "3.5",
+    "babel-core": "^6.21.0",
+    "babel-generator": "^6.21.0",
+    "babel-helpers": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-types": "^6.21.0",
+    "blueimp-file-upload": "^10.31.0",
+    "bootstrap": "^4.5.3",
+    "expose-loader": "^1.0.1",
+    "jquery": "^3.5.1",
+    "jquery-ui": "^1.12.1",
+    "jquery.payment": "^3.0.0",
+    "json-viewer-js": "^1.0.7",
+    "lodash": "^4.17.19",
+    "mjml": "^4.6.3",
+    "npm": "^6.14.7",
+    "popper.js": "^1.16.1",
+    "rxjs": "^6.6.0",
+    "slick-carousel": "^1.8.1",
+    "spacing-bootstrap-3": "^1.0.0"
+  },
+  "devDependencies": {
+    "devbridge-styleguide": "^0.4.18",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "webpack-dev-server": "2.11.2"
+  },
+  "scripts": {
+    "guide": "styleguide start",
+    "eslint": "eslint 'app/javascript/**/*.js' 'app/assets/javascripts/**/*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.5xruby.tw:snd/SND.git"
+  },
+  "author": "5xruby.tw"
+}

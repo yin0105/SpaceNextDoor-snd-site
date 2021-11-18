@@ -1,0 +1,23 @@
+- content_for :title, @space.name
+- content_for :cover, image_url(@space.featured_image_url(size: :cover))
+- content_for :cover_width, '640'
+- content_for :cover_height, '340'
+- content_for :script do
+  javascript:
+    $(document).ready(function() {
+      if (typeof FB === 'object') {
+        FB.AppEvents.logEvent(
+          FB.AppEvents.EventNames.VIEWED_CONTENT,
+          null,
+          {
+            CONTENT_ID: #{@space.id},
+          }
+        )
+      }
+    });
+
+#space.pt-100
+  = render 'slideshow'
+  = render 'information'
+  = render 'reviews'
+  = render 'host'

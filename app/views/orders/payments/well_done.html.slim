@@ -1,0 +1,13 @@
+.order-payment
+  .well-done.container.text-center.pt-100.pb-5
+    h1.p-4.pt-5.text-center.text-orange = t('.title')
+    .icon = image_tag('icons/payment_done.png')
+    p.py-4.text-gray-deep = t('.description')
+    p.text-gray-deep.well-done__description.mx-auto
+      | Your Host will be in touch shortly to make arrangements for your move in.  If you need any further information or clarification, please let us know how we may assist you further. Please contact
+      br
+      = mail_to 'help@spacenextdoor.com', nil
+    = link_to 'Back', orders_path, class: 'button button-full-width button-secondary mx-auto well-done__button'
+
+javascript:
+  (function(t,a,p){t.TapfiliateObject=a;t[a]=t[a]||function(){ (t[a].q=t[a].q||[]).push(arguments)}})(window,'tap');tap('create', '21415-d77a3b', { integration: "javascript" });tap('conversion');

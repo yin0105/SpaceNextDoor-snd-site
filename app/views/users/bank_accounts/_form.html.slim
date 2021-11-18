@@ -1,0 +1,11 @@
+= simple_form_for @bank_account, url: bank_account_path, html: { class: 'form-horizontal' },
+wrapper: :horizontal_form do |form|
+  = form.input :identity, as: :hidden, input_html: { value: @identity }
+  = form.input :account_name, label: 'Name', placeholder: 'Name of Account Holder'
+  = form.input :account_number, label: 'Account Number'
+  = form.input :bank_name, label: 'Name of Bank'
+  = form.input :bank_code, label: 'Bank Code'
+  = form.input :branch_code, label: 'Branch Code'
+  = form.input :country, as: :country_select
+  .form-actions.profile__form-actions.text-center
+    = form.submit 'Submit', class: 'profile__button button-secondary text-white px-3 py-2 border-0'

@@ -1,0 +1,12 @@
+.payment-item.mb-4.p-3.font-size-medium.clearfix
+  .payment-item__details
+    .payment-item__date
+      .payment-item__identity = "Charged to: #{@order.guest.payment_method.identifier}"
+    .payment-item__lease
+      | Lease Period
+      .payment-item__lease-item = "From: #{l @order.next_service_start_at, format: :date}"
+      .payment-item__lease-item = "To: #{l @order.next_service_end_at, format: :date}"
+  .payment-item__actions
+    .payment-item__status.font-size-large = render_order_or_payment_status(@order)
+    .payment-item__price.mb-1 = render_initial_payment_amount(@order)
+    = render_initial_payment_action(@order)

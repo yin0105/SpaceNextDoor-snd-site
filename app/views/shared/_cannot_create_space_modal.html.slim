@@ -1,0 +1,7 @@
+#cannot-create-space-modal.modal.pt-5.pb-3
+  .modal-dialog.modal-dialog--md
+    .modal-content
+      .modal-body.text-center.pb-4
+        p.text-center.text-gray-deep.pb-4 = display_required_fields_message(@required_fields)
+        = link_to 'Close', '', class: 'btn button-secondary rounded py-2 px-3 mr-4 text-white', data: { dismiss: 'modal' }
+        = render_edit_profile_button(@required_fields)

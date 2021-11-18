@@ -1,0 +1,27 @@
+en:
+  pages:
+    ip_policy:
+      ip_policy: IP Policy
+      destruction: Policy on notification of alleged intellectual property (“IP”) infringements
+      update_date: "Last Updated: February, 2017"
+      content: |
+        Space Next Door (&quot;SND&quot;) respects the intellectual property rights of others and expects its users to do the same.
+
+        It is SND’s policy, to restrict and/ or delete the account of users who infringe the intellectual property rights of others.
+
+        This policy outlines how to submit a complaint of intellectual property rights violation to SND, for breaches which occur on the SND website (the &quot;Site &quot;).
+      policies:
+        - section: Infringement Notice
+          content: |
+            If you believe that an intellectual property breach of your material has occurred on the Site, please complete a notification in the format provided below.
+
+            Upon receipt of the notification, SND will take whatever action, in its sole discretion, it deems appropriate, including removal of the challenged material from the Site and deletion of the offending account.
+          subjects:
+            - order_lists:
+                lists: ["Identify the URL of the specific item on the site that you believe is in breach.", "Provide evidence of your ownership of the protected work. If you are acting on behalf of the owner, please provide confirmation of this authorisation.", "Provide your full name, contact details, including email, phone and physical mailing address.", 'Conclude the notification with the following statement:<div>"I hereby confirm that the information I have provided in this notification is accurate and that I am the rightful owner, or that I am authorised to act on behalf of the rightful owner, of the intellectual property that has been infringed. I also confirm that the use of the identified intellectual property has not been authorised by the owner."</div>']
+            - content: |
+                Then, you will need to send this notice via physical mail to:
+                Space Next Door
+                Level 2
+                743 Lorong 5 Toa Payoh
+                Singapore 319457

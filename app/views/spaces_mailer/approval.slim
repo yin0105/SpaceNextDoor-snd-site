@@ -1,0 +1,9 @@
+mj-column
+  mj-text
+    | Hi #{@user.name},
+  mj-text
+    | Your listing has been approved! Thank you for your support.
+    br
+    | Please click the link below to see your listing.
+  mj-text
+    = link_to "View your listing", space_url(@space), { style: "color: #2da5f2;" }

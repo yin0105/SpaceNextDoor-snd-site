@@ -1,0 +1,19 @@
+.bg-gray
+  .container.profile-payment-method.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'For Guest - Add Credit Card'
+        .profile__content-body.profile--verified-form.p-4.bg-white
+          - if current_user.payment_method.present?
+            table.table
+              tbody
+                tr
+                  th.text-left Type
+                  td = current_user.payment_method.type.titleize
+                tr
+                  th.text-left Card Detail
+                  td = current_user.payment_method.identifier
+
+          p.text-center.profile-payment-method__button = link_to 'Add Credit Card', new_payment_method_path, class: 'button-secondary text-white px-3 py-2 rounded-sm'

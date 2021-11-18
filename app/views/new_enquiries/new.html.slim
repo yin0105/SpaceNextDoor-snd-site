@@ -1,0 +1,109 @@
+= render '/shared/chinese_new_year_promotion'
+.new-enquiry
+  nav.py-4.px-5
+    = link_to image_tag('logo.png'), root_path, class: 'd-inline-block'
+
+  section.welcome-block
+    .welcome-block__text.w-100.text-center.text-white
+      h1.welcome-block__title = t('.welcome_title')
+      p.welcome-block__message = t('.welcome_message')
+      button.js-welcome-btn.welcome-block__button.button.button-secondary.border-0 = t('.help_find_message')
+    = video_tag('/video.mp4', autoplay: true, loop: true, type: 'video/mp4', id: 'video-background', mute: true)
+
+  section.who-we-are-block.pt-5.pb-3.text-gray-deep
+    .container
+      header.section-head
+        h2 = t('.intro_first')
+      .clearfix
+        .w-md-35.text-center
+          = image_tag 'icons/meeting.png'
+        .w-md-65
+          .who-we-are-content.pt-4
+            span <span class='text-orange'>#{t('.snd')}</span> #{t('.who_we_are_content_one')}
+      .clearfix.d-flex.my-3
+        .w-md-35
+        .w-md-65
+          .who-we-are-content
+            span = t('.who_we_are_content_two')
+      .clearfix
+        .w-md-35.text-center
+          =image_tag 'icons/gift.png'
+        .w-md-65
+          .who-we-are-content.pt-5
+            span #{t('.who_we_are_content_three')} <span class='text-orange'>#{t('.snd')}</span> #{t('.who_we_are_content_three_1')}
+
+  = render './home/why'
+
+  section.available-space-block.pt-5
+    .container
+      header.section-head
+        h2 = t('.available_space_title')
+      - t('.spaces').each do |space|
+        .clearfix.pb-5
+          .w-md-40.py-4.text-gray-deep class= "available-space-block__text-wrap--#{space[:text_direction]}"
+            .available-space-block__text.d-flex.justify-content-center
+              div
+                .available-space-block__title
+                  h3 = space[:title]
+                .available-space-block__descriptions
+                  p = space[:price]
+                  p = space[:area]
+          .w-md-60.px-4
+            .available-space-block__photo-wrap
+              = image_tag space[:image]
+
+  = render './home/size'
+  = render '/shared/testimonials', items: t('shared.testimonials.homepage')
+
+  section.help-find-block.py-5
+    .help-find-block__content
+      .help-find-block__image
+        = image_tag 'help_snd_mike.jpg'
+      .help-find-block__info.d-flex.justify-content-center.flex-column.w-100.px-4.bg-orange.text-white
+        h4.mb-4 = t('.help_block_title')
+        p
+          i.fa.fa-phone-square
+          span.pl-2 = t('.help_block_phone')
+        p
+          i.fa.fa-envelope-square
+          span.pl-2 = t('.help_block_mail')
+        p.mt-1 = t('.help_block_content')
+
+  section.storages-new.pb-5
+    .container.find-out-more#find-out-more
+      = simple_form_for @request, url: new_enquiry_path(anchor: 'find-out-more') do |form|
+        h1.p-4.pt-5.text-center.text-orange = t('.find_out_title')
+        .alert.alert-success.mb-4.rounded = t('.find_out_button')
+        = form.input :location, as: :select2, collection: @locations
+        = form.input :start_at, as: :datepicker, min_date: Date.today
+        = form.input :end_at, as: :datepicker, min_date: Date.today
+        = form.input :description
+        = form.input :size, hint: "#{link_to 'Not sure? View our size visualiser', root_path(anchor: 'size__section')}".html_safe do
+          .clearfix.mb-3
+            .w-md-50
+              = form.text_field :size, class: 'form-control'
+            .w-md-50
+              strong.find-out-more__size-unit.d-inline-block sqm
+        = form.input :name
+        = form.input :phone
+        = form.input :email
+        = form.input :accept_receive_updates
+        - if @show_recaptcha_v2_checkbox
+          = recaptcha_tags site_key: Settings.google.recaptcha_v2_site_key
+        - else
+          = recaptcha_v3(action: 'new_enquiry')
+        = form.submit 'Send Enquiry Now', class: 'button button-secondary btn-block my-4 mx-auto w-100 border-0 find-out-more__button'
+
+javascript:
+  var video = document.getElementById('video-background');
+  video.oncanplaythrough = function() {
+      video.muted = true;
+      video.play();
+  }
+
+  var $findOutMoreTarget = $('#find-out-more');
+  var $welcomeBtn = $('.js-welcome-btn');
+
+  $welcomeBtn.click(function(){
+    $findOutMoreTarget[0].scrollIntoView({ behavior: 'smooth' });
+  });

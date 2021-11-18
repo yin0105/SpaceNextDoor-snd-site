@@ -1,0 +1,13 @@
+- content_for :header do
+  = render '/shared/landing_headers', image_path: 'img18.jpg', section: t('.title')
+section.block-articles
+  .container
+    - t('.articles').each do |article|
+      article.article-item
+        .image-holder = image_tag(article[:image_path], alt: 'image description')
+        .text-holder
+          h2
+            span = article[:title]
+          - article[:contents].each do |content|
+            p = simple_format(content)
+          = link_to t('.explore_spaces'), spaces_path, class: article[:btn_class]

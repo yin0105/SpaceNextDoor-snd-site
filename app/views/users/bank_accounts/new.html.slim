@@ -1,0 +1,9 @@
+.bg-gray
+  .container.profile-bank-account.pt-100.pb-5
+    .profile__wrap.mx-auto.clearfix
+      = render 'devise/shared/profile_sidebar'
+      .profile__content.w-lg-65.mt-5.text-gray-deep
+        .profile__content-header.bg-gray-deep.text-white.px-3.py-2
+          h2.font-size-large.mb-0 = 'For Host - Add Bank Account'
+        .profile__content-body.profile-bank-account__form.p-4.bg-white
+          = render 'form'

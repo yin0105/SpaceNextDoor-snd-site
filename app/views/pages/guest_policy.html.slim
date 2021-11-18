@@ -1,0 +1,12 @@
+.block-template
+  .container
+    header.section-head
+      h2
+        span.text = t('.guest_policy')
+
+    article.article-box
+      p = t('.update_date')
+      p = simple_format t('.content')
+
+    - t('.policies').each do |policy|
+      = render_policies(policy)

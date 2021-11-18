@@ -1,0 +1,49 @@
+mj-column
+  mj-text
+    | Hi #{@user.name},
+  mj-text
+    | Your listing has earned you #{@payout.amount.format} for transaction No. #{@payout.payment_identity}. We have remitted the payout to your designated bank account ending #{@user.bank_account.account_number.last(4) if @user.bank_account.present?}.
+  mj-text
+    | Title of Property: #{@space.name}
+  mj-text
+    | Your Guest: #{@order.guest.name}
+  mj-text
+    | Transaction Period: From
+    | &nbsp;
+    = l @payout.payment_service_start_at, format: :mail_date
+    | &nbsp;
+    | To
+    | &nbsp;
+    = render_transaction_period_end(@payout)
+  - if @payout.start_at.present? && @payout.end_at.present?
+  mj-text
+    | Payout Period: From
+    | &nbsp;
+    = l @payout.start_at, format: :mail_date
+    | &nbsp;
+    | To
+    | &nbsp;
+    = l @payout.end_at, format: :mail_date
+    | &nbsp;
+    = payout_duration(@payout)
+  mj-table
+    tr style="border-bottom:1px solid #ecedee; text-align:left;"
+      th
+        | item
+      th
+        | amount
+    tr
+      td
+        | #{@payout.order.price}/day * #{@payout.duration.to_s} of days
+      td
+        | &#36;#{@payout.period_rent.format(symbol: false)}
+    tr
+      td
+        | Less Service Fee
+      td
+        | (&#36;#{@payout.period_host_service_fee})
+    tr
+      td
+        | Total
+      td
+        | &#36;#{@payout.amount.format(symbol: false)}

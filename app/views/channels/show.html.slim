@@ -1,0 +1,9 @@
+.channel-show.pt-100.mb-3
+  .container.pt-5.clearfix
+    aside.w-lg-35.channel-show__sidebar.px-2.mb-3
+      = render 'space_info'
+      = render 'user_profile'
+    section.w-lg-65.channel-show__wrapper.px-2
+      = render 'channels/messages/form'
+      = render 'ratings_form', order: @channel.orders.last, ratings: @pending_ratings
+      = render partial: 'channels/messages/message', collection: @messages

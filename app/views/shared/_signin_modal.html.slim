@@ -1,0 +1,31 @@
+#signin-popup.modal.p-0.pt-5.registration
+  .modal-dialog.modal-dialog--sm
+    .modal-content
+      .modal-body.color-gray-deep
+        button type='button' class='close' data-dismiss='modal' aria-label='close'
+        .registration__body.px-5
+          = link_to omniauth_authorize_path(:user, :facebook), class: 'button button-full-width btn-facebook' do
+            i.icon.fa.fa-facebook
+            | Login with Facebook
+          .py-4.text-center OR
+          = render_signin_alert_message
+          = simple_form_for(User.new, as: :user, url: session_path(:user)) do |f|
+            = f.input :email, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-envelope-o
+                = f.input :email, label: false, required: false, autofocus: true, placeholder: 'Email', input_html: { class: 'registration__input' }
+            = f.input :password, label: false do
+              .d-table.mb-3
+                .registration__input-addon.d-table-cell
+                  i.fa.fa-lock
+                = f.input :password, label: false, required: false, placeholder: 'Password', input_html: { class: 'registration__input' }
+            .my-4
+              .mb-2
+                = f.input :remember_me, as: :boolean, input_html: { class: 'mr-2' }
+              .text-right
+                = link_to 'Forget password?', new_user_password_path
+            = f.button :submit, 'Log in', class: 'button button-secondary button-full-width registration__button'
+        .mt-4.p-4.text-center.bg-gray-deep.text-gray
+          | Don't have account?
+          = link_to 'Sign up here', '#signup-popup', class: 'ml-3', data: { dismiss: 'modal', toggle: 'modal' }

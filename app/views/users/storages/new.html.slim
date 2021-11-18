@@ -1,0 +1,9 @@
+.storages-new.pt-100.pb-5
+  .container
+    = simple_form_for [:user, @storage], url: user_storages_path, method: :post, html: { class: 'form-question-list' } do |form|
+      = form.simple_fields_for(:space) do |space_form|
+        = render "users/storages/new/#{@storage.edit_status}", form: form, space_form: space_form
+
+        .storages-new__button.text-center.mx-auto
+          = form.submit 'Next', class: 'button button-secondary button-full-width border-0'
+          = form.submit 'Back', name: 'back', class: 'button border-0 mx-auto btn-link' if @storage.may_prev_step?

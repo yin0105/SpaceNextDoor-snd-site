@@ -1,0 +1,9 @@
+- unless defined?(hide_search) && hide_search
+  - content_for :search do
+    = render '/shared/search'
+= flash_messages
+.top-container style= "background-image: url(#{image_path image_path})"
+  = render '/shared/header'
+  .visual-area.style
+    .container
+      h1 = section

@@ -1,0 +1,6 @@
+blockquote
+  cite
+    .image-holder = image_tag(item[:avatar], alt: 'image description')
+    strong.name = item[:user]
+    span.designation = item[:role]
+  q = item[:content].html_safe

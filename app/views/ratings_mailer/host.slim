@@ -1,0 +1,11 @@
+mj-column
+  mj-text
+    | Dear #{@user.name},
+  mj-text
+    | Thank you for putting up your property on Space Next Door. We hope you had a good experience.
+  mj-text
+    | As we strive to build a strong and trusted community, we hope that you could take a few seconds to share your experience with guest, #{@ratable.name}
+  mj-text
+    = link_to "Rate the guest", channel_url(@order.channel.id), class: "btn-warning"
+  mj-text
+    | Thank you!
